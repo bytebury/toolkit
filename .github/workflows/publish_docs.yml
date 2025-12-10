@@ -24,6 +24,9 @@ jobs:
       - name: Generate Deno docs
         run: deno doc --html --name="matcha" mod.ts
 
+      - name: Add CNAME
+        run: echo "matcha.boba.sh" > ./docs/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
