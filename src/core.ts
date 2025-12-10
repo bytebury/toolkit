@@ -13,12 +13,14 @@ export function clone<T>(obj: T): T {
  * and comparing them by their string value.
  *
  * @example
+ * ```ts
  * isEqual("1", 1); // true
  * isEqual({foo: "bar"}, {foo: "bar"}); // true
  * isEqual([], []); // true
  * isEqual([0], [1]); // false
  * isEqual(false, " false "); // false
  * isEqual(false, "FALSE"); // false
+ * ````
  */
 export function isEqual(thing1: unknown, thing2: unknown): boolean {
   return stringify(thing1) === stringify(thing2);
@@ -32,8 +34,10 @@ export function isEqual(thing1: unknown, thing2: unknown): boolean {
  * If an empty list is passed then this will return undefined.
  *
  * @example
+ * ```ts
  * first("hello"); // "h"
  * first([1, 2, 3]); // 1
+ * ```
  */
 export function first<T>(list: NonEmptyList<T>): T;
 export function first(value: string): string;
@@ -51,8 +55,10 @@ export function first<T>(
  * If an empty list is passed then this will return undefined.
  *
  * @example
+ * ```ts
  * last("hello"); // "o"
  * last([1, 2, 3]); // 3
+ * ```
  */
 export function last<T>(list: NonEmptyList<T>): T;
 export function last(value: string): string;
@@ -69,12 +75,14 @@ export function last<T>(
  * @remarks this is the inverse of `isEqual`.
  *
  * @example
+ * ```ts
  * isNotEqual("1", 1); // true
  * isNotEqual({foo: "bar"}, {foo: "bar"}); // true
  * isNotEqual([], []); // true
  * isNotEqual([0], [1]); // false
  * isNotEqual(false, " false "); // true
  * isNotEqual(false, "FALSE"); // false
+ * ```
  */
 export function isNotEqual(thing1: unknown, thing2: unknown): boolean {
   return !isEqual(thing1, thing2);
@@ -86,12 +94,14 @@ export function isNotEqual(thing1: unknown, thing2: unknown): boolean {
  * will lowercase both things before comparing.
  *
  * @example
+ * ```ts
  * isEqualIgnoreCase("1", 1); // true
  * isEqualIgnoreCase({foo: "bar"}, {foo: "bar"}); // true
  * isEqualIgnoreCase([], []); // true
  * isEqualIgnoreCase([0], [1]); // false
  * isEqualIgnoreCase(false, " false "); // false
  * isEqualIgnoreCase(false, "FALSE"); // true
+ * ```
  */
 export function isEqualIgnoreCase(thing1: unknown, thing2: unknown): boolean {
   thing1 = lower(stringify(thing1));
@@ -106,12 +116,14 @@ export function isEqualIgnoreCase(thing1: unknown, thing2: unknown): boolean {
  * will lowercase both things before comparing.
  *
  * @example
+ * ```ts
  * isNotEqualIgnoreCase("1", 1); // false
  * isNotEqualIgnoreCase({foo: "bar"}, {foo: "bar"}); // false
  * isNotEqualIgnoreCase([], []); // false
  * isNotEqualIgnoreCase([0], [1]); // true
  * isNotEqualIgnoreCase(false, " false "); // true
  * isNotEqualIgnoreCase(false, "FALSE"); // false
+ * ```
  */
 export function isNotEqualIgnoreCase(
   thing1: unknown,
@@ -128,9 +140,11 @@ export function isNotEqualIgnoreCase(
  * in a String and convert it to it's string representation.
  *
  * @example
+ * ```ts
  * stringify({ foo: "bar" }); // "{ "foo": "bar" }"
  * stringify([1, 2, 3]); // "[1, 2, 3]"
  * stringify(1); // "1"
+ * ```
  */
 export function stringify(thing: unknown): string {
   return typeof thing === "object" ? JSON.stringify(thing) : String(thing);
@@ -145,9 +159,11 @@ export function stringify(thing: unknown): string {
  * If the thing is a list, then it will reverse all items in the list.
  *
  * @example
+ * ```ts
  * reverse('Apple'); // "elppA"
  * reverse([1, 2, 3]); // [3, 2, 1]
  * reverse(new Set([1, 2, 3])); // Set[3, 2, 1]
+ * ```
  */
 export function reverse(thing: string): string;
 export function reverse<T>(thing: T[]): T[];
@@ -170,6 +186,7 @@ export function reverse<T>(
  *   * They have length or size
  *
  * @example
+ * ```ts
  * isEmpty([]); // true
  * isEmpty([0]); // false
  * isEmpty(""); // true
@@ -177,6 +194,7 @@ export function reverse<T>(
  * isEmpty(new Set()); // true
  * isEmpty({}); // true
  * isEmpty(new Map()); // true
+ * ```
  */
 export function isEmpty(thing: unknown[]): boolean;
 export function isEmpty(thing: unknown): boolean;
@@ -195,6 +213,7 @@ export function isEmpty(thing: string | OneOrMany<unknown>): boolean {
  * @remarks this is the inverse of `isEmpty`.
  *
  * @example
+ * ```ts
  * isNotEmpty([]); // false
  * isNotEmpty([0]); // true
  * isNotEmpty(""); // false
@@ -202,6 +221,7 @@ export function isEmpty(thing: string | OneOrMany<unknown>): boolean {
  * isNotEmpty(new Set()); // false
  * isNotEmpty({}); // false
  * isNotEmpty(new Map()); // false
+ * ```
  */
 export function isNotEmpty(thing: unknown[]): boolean;
 export function isNotEmpty(thing: unknown): boolean;
@@ -215,8 +235,10 @@ export function isNotEmpty(thing: string | OneOrMany<unknown>): boolean {
  * @remarks same as `distinct`.
  *
  * @example
+ * ```ts
  * const myList = [1, 2, 3, 3];
  * unique(myList); // [1, 2, 3];
+ * ```
  */
 export function unique<T>(list: T[]): T[] {
   return [...new Set(list)];
@@ -228,8 +250,10 @@ export function unique<T>(list: T[]): T[] {
  * @remarks alias for `unique`.
  *
  * @example
+ * ```ts
  * const myList = [1, 2, 3, 3];
  * distinct(myList); // [1, 2, 3];
+ * ```
  */
 export function distinct<T>(list: T[]): T[] {
   return unique(list);
@@ -242,11 +266,13 @@ export function distinct<T>(list: T[]): T[] {
  * If you pass an empty list, then this function will return `undefined`.
  *
  * @example
+ * ```ts
  * const myList = [1, 2, 3, 4];
  * const randomItem = sample(myList);
  *
  * console.log(randomItem); // could be 1, 2, 3, or 4
  * console.log(sample([])); // undefined
+ * ```
  */
 export function sample<T>(list: NonEmptyList<T>): T {
   return list[Math.floor(Math.random() * list.length)];
@@ -258,8 +284,10 @@ export function sample<T>(list: NonEmptyList<T>): T {
  * the box.
  *
  * @example
+ * ```ts
  * rand(0, 10); // 0 -> 9
  * rand(3, 7); // 3 -> 6
+ * ```
  */
 export function rand(start: number, end: number): number {
   return Math.floor(Math.random() * (end - start)) + start;
@@ -269,9 +297,11 @@ export function rand(start: number, end: number): number {
  * Determines if the given value is truthy.
  *
  * @example
+ * ```ts
  * truthy(true); // true
  * truthy(false); // false
  * truthy(''); // false
+ * ```
  */
 export function truthy(thing: unknown): boolean {
   return Boolean(thing) === true;
@@ -281,9 +311,11 @@ export function truthy(thing: unknown): boolean {
  * Determines if the given value is falsy.
  *
  * @example
+ * ```ts
  * falsy(true); // false
  * falsy(false); // true
  * falsy(''); // true
+ * ```
  */
 export function falsy(thing: unknown): boolean {
   return !truthy(thing);
@@ -293,10 +325,12 @@ export function falsy(thing: unknown): boolean {
  * Returns true if the given value is not null or undefined.
  *
  * @example
+ * ```ts
  * isSome(null); // false
  * isSome(undefined); // false
  * isSome(0); // true
  * isSome({}); // true
+ * ```
  */
 export function isSome(thing: unknown): boolean {
   return !isNone(thing);
@@ -306,10 +340,12 @@ export function isSome(thing: unknown): boolean {
  * Returns true if the given value is null or undefined.
  *
  * @example
+ * ```ts
  * isNone(null); // true
  * isNone(undefined); // true
  * isNone(true); // false
  * isNone(0); // false
+ * ```
  */
 export function isNone(thing: unknown): boolean {
   return thing === null || thing === undefined;
@@ -320,8 +356,10 @@ export function isNone(thing: unknown): boolean {
  * them directly. If you pass a list of objects, provide the key to sum.
  *
  * @example
+ * ```ts
  * sum([1, 2, 3]); // 6
  * sum([{ x: 1 }, { x: 2 }], "x"); // 3
+ * ```
  */
 export function sum(list: number[]): number;
 export function sum<T extends Record<PropertyKey, number>>(
@@ -347,8 +385,10 @@ export function sum(list: any[], key?: PropertyKey): number {
  * If you pass a list of objects, provide the key to calculate the average.
  *
  * @example
+ * ```ts
  * average([1, 2, 3]); // 2
  * average([{ x: 1 }, { x: 2 }], "x"); // 1.5
+ * ```
  */
 export function average(list: number[]): number;
 export function average<T extends Record<PropertyKey, number>>(
