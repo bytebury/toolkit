@@ -31,13 +31,5 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
-      - name: Install OIDC token tool
-        run: npm install -g @npmcli/oidc-token
-
-      - name: Authenticate with npm via OIDC
-        run: |
-          TOKEN=$(npx @npmcli/oidc-token)
-          npm config set //registry.npmjs.org/:_authToken=$TOKEN
-
       - name: Publish to NPM
         run: cd npm && npm publish --access public
