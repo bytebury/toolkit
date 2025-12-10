@@ -5,12 +5,13 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+  id-token: write # The OIDC ID token is used for authentication with NPM.
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write # The OIDC ID token is used for authentication with NPM.
 
     steps:
       - name: Checkout code
@@ -20,6 +21,9 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: latest
+
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - name: Run npm build
         run: deno -A scripts/build_npm.ts
