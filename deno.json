@@ -9,5 +9,5 @@
 	"imports": {
 		"@std/assert": "jsr:@std/assert@1"
 	},
-	"exclude": ["**/*_test.ts", "deno.lock"]
+	"exclude": ["**/*_test.ts", "deno.lock", "scripts/**"]
 }
