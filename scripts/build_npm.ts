@@ -1,5 +1,8 @@
 import { build, emptyDir } from "jsr:@deno/dnt";
 
+const denoJson = JSON.parse(Deno.readTextFileSync("deno.json"));
+const version = denoJson.version;
+
 await emptyDir("./npm");
 
 await build({
@@ -14,7 +17,7 @@ await build({
   },
   package: {
     name: "@bobatea/matcha",
-    version: Deno.args[0], // Use the version passed via command line
+    version,
     description: "TypeScript utility library to help energize your projects with useful functions for any size project. Save yourself some time and focus on shipping features.",
     license: "MIT",
     private: false,

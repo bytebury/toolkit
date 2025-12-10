@@ -1,0 +1,25 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: latest
+
+      - name: Run npm build
+        run: deno -A scripts/build_npm.ts
+
+      - name: Publish to NPM
+        run: npm publish --access public
