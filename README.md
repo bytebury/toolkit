@@ -1,15 +1,18 @@
 <div align="center">
 
 <img src="./assets/logo.png" alt="Matcha Logo" width="128" height="128" /><br />
+
 # matcha
 
-Deliciously energize your projects with matcha, a TypeScript utility library<br />
-to help speed up your development cycle with a focus on correctness.
+Deliciously energize your projects with matcha, a TypeScript utility
+library<br /> to help speed up your development cycle with a focus on
+correctness.
 
 </div>
 <hr />
 
 ## Getting Started
+
 You can install this application from `npm` or `jsr`.
 
 ```sh
@@ -21,6 +24,7 @@ deno add jsr:@bobatea/matcha
 ```
 
 ## Sample Usage
+
 ```ts
 function sayHelloTo(name: string): void {
   if (isWhitespace(name) {
