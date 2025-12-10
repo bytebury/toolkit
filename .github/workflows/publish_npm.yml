@@ -22,9 +22,6 @@ jobs:
         with:
           deno-version: latest
 
-      - name: Update npm
-        run: npm install -g npm@latest
-
       - name: Run npm build
         run: deno -A scripts/build_npm.ts
 
