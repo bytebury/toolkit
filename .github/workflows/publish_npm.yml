@@ -22,8 +22,22 @@ jobs:
         with:
           deno-version: latest
 
-      - name: Run npm build
+      - name: Build NPM package
         run: deno -A scripts/build_npm.ts
+
+      - name: Setup Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install OIDC token tool
+        run: npm install -g @npmcli/oidc-token
+
+      - name: Authenticate with npm via OIDC
+        run: |
+          TOKEN=$(npx @npmcli/oidc-token)
+          npm config set //registry.npmjs.org/:_authToken=$TOKEN
 
       - name: Publish to NPM
         run: cd npm && npm publish --access public
