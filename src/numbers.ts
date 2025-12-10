@@ -5,6 +5,7 @@
  * This is `null | undefined` safe. If you pass `null | undefined` this will return `true`.
  *
  * @example
+ * ```ts
  * isEven(null); // false
  * isEven(1); // false
  * isEven(2); // true
@@ -13,6 +14,7 @@
  * isEven(11); // false
  * isEven(21); // false
  * isEven(112); // true
+ * ```
  */
 export function isEven(num: number): boolean {
   return (num || 0) % 2 === 0;
@@ -25,6 +27,7 @@ export function isEven(num: number): boolean {
  * This is `null | undefined` safe. If you pass `null | undefined` this will return `false`.
  *
  * @example
+ * ```ts
  * isOdd(null); // false
  * isOdd(1); // true
  * isOdd(2); // false
@@ -33,6 +36,7 @@ export function isEven(num: number): boolean {
  * isOdd(11); // true
  * isOdd(21); // true
  * isOdd(112); // false
+ * ```
  */
 export function isOdd(num: number): boolean {
   return !isEven(num);
@@ -45,6 +49,7 @@ export function isOdd(num: number): boolean {
  * This is `null | undefined` safe. If you pass `null | undefined` this will return `0th`.
  *
  * @example
+ * ```ts
  * ordinalize(null); // "0th"
  * ordinalize(1); // "1st"
  * ordinalize(2); // "2nd"
@@ -53,6 +58,7 @@ export function isOdd(num: number): boolean {
  * ordinalize(11); // "11th"
  * ordinalize(21); // "21st"
  * ordinalize(112); // "112th"
+ * ```
  */
 export function ordinalize(num: number): string {
   num ||= 0;

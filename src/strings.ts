@@ -5,10 +5,12 @@
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `true`.
  *
  * @example
+ * ```ts
  * isWhitespace(null); // true
  * isWhitespace("   "); // true
  * isWhitespace("\n\t"); // true
  * isWhitespace("Hello"); // false
+ * ```
  */
 export function isWhitespace(text: string): boolean {
   return trim(text).length === 0;
@@ -21,9 +23,11 @@ export function isWhitespace(text: string): boolean {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `false`.
  *
  * @example
+ * ```ts
  * isNotWhitespace(null); // false
  * isNotWhitespace("   "); // false
  * isNotWhitespace("Hello"); // true
+ * ```
  */
 export function isNotWhitespace(text: string): boolean {
   return !isWhitespace(text);
@@ -37,9 +41,11 @@ export function isNotWhitespace(text: string): boolean {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * trim(null); // ""
  * trim(" HELLO WORLD    \n"); // "HELLO WORLD"
  * [' hello ', ' world '].map(trim); // ['hello', 'world'];
+ * ```
  */
 export function trim(text: string): string {
   return (text || "").trim();
@@ -54,11 +60,13 @@ export function trim(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * title(null); // ""
  * title("hello world"); // Hello World
  * title("hello-world"); // Hello-world
  * title("hello_world"); // Hello World
  * title("HELLO wORLD"); // Hello World
+ * ```
  */
 export function title(text: string): string {
   return lower(text)
@@ -76,8 +84,10 @@ export function title(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * lower(null); // ""
  * lower("Hello WORLD"); // "hello world"
+ * ```
  */
 export function lower(text: string): string {
   return (text || "").toLowerCase();
@@ -91,8 +101,10 @@ export function lower(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * upper(null); // ""
  * upper("Hello world"); // "HELLO WORLD"
+ * ```
  */
 export function upper(text: string): string {
   return (text || "").toUpperCase();
@@ -106,9 +118,11 @@ export function upper(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * kebab(null); // ""
  * kebab("Hello World!"); // "hello-world"
  * kebab("  Clean THIS_up!! "); // "clean-this-up"
+ * ```
  */
 export function kebab(text: string): string {
   return trim(removePunctuation(lower(text))).replace(/\s+/g, "-");
@@ -122,9 +136,11 @@ export function kebab(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * snake(null); // ""
  * snake("Hello World"); // "hello_world"
  * snake("User-Profile Page"); // "user_profile_page"
+ * ```
  */
 export function snake(text: string): string {
   return kebab(text).replace(/-/g, "_");
@@ -138,9 +154,11 @@ export function snake(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
- * onlyAlphanumeric(null); // ""
- * onlyAlphanumeric("Hello, World!"); // "Hello World"
- * onlyAlphanumeric("123@#Test"); // "123Test"
+ * ```ts
+ * onlyAlpha(null); // ""
+ * onlyAlpha("Hello, World!"); // "Hello World"
+ * onlyAlpha("123@#Test"); // "Test"
+ * ```
  */
 export function onlyAlpha(text: string): string {
   return (text || "").replace(/[^a-z ]/gi, "");
@@ -154,9 +172,11 @@ export function onlyAlpha(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * onlyAlphanumeric(null); // ""
  * onlyAlphanumeric("Hello, World!"); // "Hello World"
  * onlyAlphanumeric("123@#Test"); // "123Test"
+ * ```
  */
 export function onlyAlphanumeric(text: string): string {
   return (text || "").replace(/[^a-z0-9 ]/gi, "");
@@ -169,8 +189,10 @@ export function onlyAlphanumeric(text: string): string {
  * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
  *
  * @example
+ * ```ts
  * onlyNumeric(null); // ""
  * onlyNumeric('(555) 555-5555'); // 5555555555
+ * ```
  */
 export function onlyNumeric(text: string): string {
   return (text || "").replace(/[^\d]/g, "");

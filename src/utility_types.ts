@@ -6,9 +6,13 @@
  * whatever they want. This would come in handy.
  *
  * @example
+ * ```ts
+ * // You will get autocomplete suggestions for 'free', 'paid', and 'admin'.
+ * // but, you can also type anything you want.
  * function setUserRole(role: AutoComplete<'free' | 'paid' | 'admin'>): void {
  *  // omitted
  * }
+ * ```
  */
 export type AutoComplete<T extends string> =
   | T
@@ -20,6 +24,7 @@ export type AutoComplete<T extends string> =
  * If `T` is a type of list, then this behaves the same as `ValuesOf`.
  *
  * @example
+ * ```ts
  * const MyEnum = { foo: 'bar', another: 'baz' } as const;
  * const MyList = ['apple', 'banana', 'orange'] as const;
  *
@@ -30,6 +35,7 @@ export type AutoComplete<T extends string> =
  * function example2(param: KeyOf<typeof MyList): void {
  *   // param would be: "apple" | "banana" | "orange"
  * }
+ * ```
  */
 export type KeyOf<T> = T extends unknown[] ? ValueOf<T> : keyof T;
 
@@ -38,6 +44,7 @@ export type KeyOf<T> = T extends unknown[] ? ValueOf<T> : keyof T;
  * or a list.
  *
  * @example
+ * ```ts
  * const MyEnum = { foo: 'bar', another: 'baz' } as const;
  * const MyList = ['apple', 'banana', 'orange'] as const;
  *
@@ -48,6 +55,7 @@ export type KeyOf<T> = T extends unknown[] ? ValueOf<T> : keyof T;
  * function example2(param: ValueOf<typeof MyList): void {
  *   // param would be: "apple" | "banana" | "orange"
  * }
+ * ```
  */
 export type ValueOf<T> = T extends unknown[] ? T[number] : T[keyof T];
 
@@ -79,7 +87,7 @@ export type NonEmptyList<T> = [T, ...T[]];
 export type Option<T> = T | None;
 
 /**
- * A utility type that takes an nobject type and makes the hover overlay
+ * A utility type that takes an object type and makes the hover overlay
  * more readable for the developer.
  */
 // deno-lint-ignore ban-types
