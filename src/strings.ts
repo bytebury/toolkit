@@ -89,8 +89,8 @@ export function title(text: string): string {
  * lower("Hello WORLD"); // "hello world"
  * ```
  */
-export function lower(text: string): string {
-  return (text || "").toLowerCase();
+export function lower(text: string): Lowercase<string> {
+  return (text || "").toLowerCase() as Lowercase<string>;
 }
 
 /**
@@ -106,8 +106,8 @@ export function lower(text: string): string {
  * upper("Hello world"); // "HELLO WORLD"
  * ```
  */
-export function upper(text: string): string {
-  return (text || "").toUpperCase();
+export function upper(text: string): Uppercase<string> {
+  return (text || "").toUpperCase() as Uppercase<string>;
 }
 
 /**
@@ -124,8 +124,10 @@ export function upper(text: string): string {
  * kebab("  Clean THIS_up!! "); // "clean-this-up"
  * ```
  */
-export function kebab(text: string): string {
-  return trim(removePunctuation(lower(text))).replace(/\s+/g, "-");
+export function kebab(text: string): Lowercase<string> {
+  return trim(removePunctuation(lower(text))).replace(/\s+/g, "-") as Lowercase<
+    string
+  >;
 }
 
 /**
@@ -142,8 +144,8 @@ export function kebab(text: string): string {
  * snake("User-Profile Page"); // "user_profile_page"
  * ```
  */
-export function snake(text: string): string {
-  return kebab(text).replace(/-/g, "_");
+export function snake(text: string): Lowercase<string> {
+  return kebab(text).replace(/-/g, "_") as Lowercase<string>;
 }
 
 /**
@@ -155,12 +157,12 @@ export function snake(text: string): string {
  *
  * @example
  * ```ts
- * onlyAlpha(null); // ""
- * onlyAlpha("Hello, World!"); // "Hello World"
- * onlyAlpha("123@#Test"); // "Test"
+ * keepAlphabetical(null); // ""
+ * keepAlphabetical("Hello, World!"); // "Hello World"
+ * keepAlphabetical("123@#Test"); // "Test"
  * ```
  */
-export function onlyAlpha(text: string): string {
+export function keepAlphabetical(text: string): string {
   return (text || "").replace(/[^a-z ]/gi, "");
 }
 
@@ -173,12 +175,12 @@ export function onlyAlpha(text: string): string {
  *
  * @example
  * ```ts
- * onlyAlphanumeric(null); // ""
- * onlyAlphanumeric("Hello, World!"); // "Hello World"
- * onlyAlphanumeric("123@#Test"); // "123Test"
+ * keepAlphanumeric(null); // ""
+ * keepAlphanumeric("Hello, World!"); // "Hello World"
+ * keepAlphanumeric("123@#Test"); // "123Test"
  * ```
  */
-export function onlyAlphanumeric(text: string): string {
+export function keepAlphanumeric(text: string): string {
   return (text || "").replace(/[^a-z0-9 ]/gi, "");
 }
 
@@ -190,11 +192,11 @@ export function onlyAlphanumeric(text: string): string {
  *
  * @example
  * ```ts
- * onlyNumeric(null); // ""
- * onlyNumeric('(555) 555-5555'); // 5555555555
+ * keepNumeric(null); // ""
+ * keepNumeric('(555) 555-5555'); // 5555555555
  * ```
  */
-export function onlyNumeric(text: string): string {
+export function keepNumeric(text: string): string {
   return (text || "").replace(/[^\d]/g, "");
 }
 

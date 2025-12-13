@@ -3,10 +3,10 @@ import {
   isNotWhitespace,
   isWhitespace,
   kebab,
+  keepAlphabetical,
+  keepAlphanumeric,
+  keepNumeric,
   lower,
-  onlyAlpha,
-  onlyAlphanumeric,
-  onlyNumeric,
   snake,
   title,
   trim,
@@ -68,19 +68,20 @@ Deno.test("snake", () => {
 });
 
 Deno.test("onlyAlpha", () => {
-  assert(onlyAlpha("Hello, World!") === "Hello World");
-  assert(onlyAlpha("123@#Test") === "Test");
-  assert(onlyAlpha("") === "");
+  assert(keepAlphabetical("Hello, World!") === "Hello World");
+  assert(keepAlphabetical("123@#Test") === "Test");
+  assert(keepAlphabetical("") === "");
 });
 
 Deno.test("onlyAlphanumeric", () => {
-  assert(onlyAlphanumeric("Hello, World!") === "Hello World");
-  assert(onlyAlphanumeric("123@#Test") === "123Test");
-  assert(onlyAlphanumeric("") === "");
+  assert(keepAlphanumeric("Hello, World!") === "Hello World");
+  assert(keepAlphanumeric("123@#Test") === "123Test");
+  assert(keepAlphanumeric("") === "");
 });
 
 Deno.test("onlyNumeric", () => {
-  assert(onlyNumeric("Hello, World!") === "");
-  assert(onlyNumeric("123@#Test") === "123");
-  assert(onlyNumeric("") === "");
+  assert(keepNumeric("Hello, World!") === "");
+  assert(keepNumeric("123@#Test") === "123");
+  assert(keepNumeric("") === "");
+  assert(keepNumeric("(555)-457-3456") === "5554573456");
 });

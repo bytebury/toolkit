@@ -1,4 +1,4 @@
-import { Duration } from "./duration.ts";
+import { type Days, Duration } from "./duration.ts";
 
 /**
  * Right now. This is an alias for `new Date()`.
@@ -92,7 +92,7 @@ export function daysBetween(start: Date, end: Date): number {
   return Math.abs(
     Math.floor(
       (new Date(end).getTime() - new Date(start).getTime()) /
-        Duration.fromDays(1).toMilliseconds(),
+        Duration.fromDays(1 as Days).toMilliseconds(),
     ),
   );
 }
