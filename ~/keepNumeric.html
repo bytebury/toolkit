@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>onlyAlpha - 🧋 matcha documentation</title>
+  <title>keepNumeric - 🧋 matcha documentation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="doc-current-file" content=".">
@@ -29,7 +29,7 @@
     fill="currentColor"
   />
 </svg>
-</span><ul><li>onlyAlpha</li></ul></ul>
+</span><ul><li>keepNumeric</li></ul></ul>
 </div>
 
     <div class="flex items-center gap-2">
@@ -93,11 +93,11 @@
     </div>
   </div>
 </nav>
-<div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_onlyAlpha"><article>
+<div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_keepNumeric"><article>
       <div class="symbolTitle">
         <div>
           <div class="text-2xl leading-none break-all">
-            <span class="text-Function">function</span>&nbsp;<span class="font-bold">onlyAlpha</span>
+            <span class="text-Function">function</span>&nbsp;<span class="font-bold">keepNumeric</span>
           </div></div><a
   class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;matcha&#x2F;matcha&#x2F;src&#x2F;strings.ts"><svg
@@ -123,8 +123,8 @@
   />
 </svg>
 </a>
-</div><div><div class="mt-3 space-y-8"><div class="scroll-mt-16" id="function_onlyAlpha_0">
-      <code class="anchorable text-base break-words"><a href="#function_onlyAlpha_0" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+</div><div><div class="mt-3 space-y-8"><div class="scroll-mt-16" id="function_keepNumeric_0">
+      <code class="anchorable text-base break-words"><a href="#function_keepNumeric_0" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -146,9 +146,8 @@
   </defs>
 </svg>
 </a>
-<span class="font-bold">onlyAlpha</span><span class="font-medium">(<span><span>text<span>: <span>string</span></span></span></span>)<span>: <span>string</span></span> </span>
-      </code><div class="space-y-7" id=""><div class="markdown"><p>Returns a copy of the given string with all non-alpha characters removed,
-except for spaces. Letters are preserved regardless of case.</p>
+<span class="font-bold">keepNumeric</span><span class="font-medium">(<span><span>text<span>: <span>string</span></span></span></span>)<span>: <span>string</span></span> </span>
+      </code><div class="space-y-7" id=""><div class="markdown"><p>Removes any non-numeric characters. This includes spaces.</p>
 </div><section class="section"  id="examples"><div>
       <h2 class="anchorable mb-1"><a href="#examples" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
@@ -196,12 +195,10 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 </a>
 <h3 class="example-header"><div class="markdown"><p>Example 1</p>
 </div></h3>
-  <div><div class="markdown"><pre class="highlight"><code class="language-ts">onlyAlpha(null); // &quot;&quot;
-onlyAlpha(&quot;Hello, World!&quot;); // &quot;Hello World&quot;
-onlyAlpha(&quot;123@#Test&quot;); // &quot;Test&quot;
-</code><button class="copyButton" data-copy="onlyAlpha(null); // &quot;&quot;
-onlyAlpha(&quot;Hello, World!&quot;); // &quot;Hello World&quot;
-onlyAlpha(&quot;123@#Test&quot;); // &quot;Test&quot;
+  <div><div class="markdown"><pre class="highlight"><code class="language-ts">keepNumeric(null); // &quot;&quot;
+keepNumeric('(555) 555-5555'); // 5555555555
+</code><button class="copyButton" data-copy="keepNumeric(null); // &quot;&quot;
+keepNumeric('(555) 555-5555'); // 5555555555
 "><svg
   class="copy"
   width="15"
@@ -259,10 +256,10 @@ onlyAlpha(&quot;123@#Test&quot;); // &quot;Test&quot;
   </defs>
 </svg>
 </a>
-Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="function_onlyalpha_0_parameter_text">
+Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="function_keepnumeric_0_parameter_text">
 
   <div class="docEntryHeader">
-    <div><code><a href="#function_onlyalpha_0_parameter_text" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+    <div><code><a href="#function_keepnumeric_0_parameter_text" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -336,7 +333,7 @@ Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function_onlyAlpha_0_return">
+Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function_keepNumeric_0_return">
 
   <div class="docEntryHeader">
     <div><code><span class="font-medium text-stone-500 dark:text-stone-200"><span>string</span></span>
@@ -374,8 +371,8 @@ Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function
     </article></main>
 <div class="toc">
     <div><div class="usageContent">
-    <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { onlyAlpha } from &quot;.&quot;;
-</code><button class="copyButton" data-copy="import { onlyAlpha } from &quot;.&quot;;
+    <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { keepNumeric } from &quot;.&quot;;
+</code><button class="copyButton" data-copy="import { keepNumeric } from &quot;.&quot;;
 "><svg
   class="copy"
   width="15"
@@ -408,7 +405,7 @@ Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function
 </svg>
 </button><code></code></pre>
 </div></div><nav class="documentNavigation">
-          <h3>Document Navigation</h3><ul><li><a href="#examples" title="Examples">Examples</a></li><li><ul><li><a href="#example_0" title="Example 1">Example 1</a></li></ul></li><li><a href="#parameters" title="Parameters">Parameters</a></li><li><ul><li><a href="#function_onlyalpha_0_parameter_text" title="text">text</a></li></ul></li><li><a href="#return-type" title="Return Type">Return Type</a></li></ul></nav></div>
+          <h3>Document Navigation</h3><ul><li><a href="#examples" title="Examples">Examples</a></li><li><ul><li><a href="#example_0" title="Example 1">Example 1</a></li></ul></li><li><a href="#parameters" title="Parameters">Parameters</a></li><li><ul><li><a href="#function_keepnumeric_0_parameter_text" title="text">text</a></li></ul></li><li><a href="#return-type" title="Return Type">Return Type</a></li></ul></nav></div>
   </div></div>
 </div>
 </div>
