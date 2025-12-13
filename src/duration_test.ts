@@ -1,5 +1,5 @@
 import { assert } from "@std/assert";
-import { Duration, duration } from "./duration.ts";
+import { Duration } from "./duration.ts";
 import type {
   Days,
   Hours,
@@ -9,16 +9,6 @@ import type {
   Weeks,
   Years,
 } from "@boba/matcha";
-
-Deno.test("duration should just return the value you pass", () => {
-  assert(duration(1000 as Milliseconds) === 1000);
-  assert(duration(2478 as Seconds) === 2478);
-  assert(duration(1000 as Minutes) === 1000);
-  assert(duration(20 as Hours) === 20);
-  assert(duration(1 as Days) === 1);
-  assert(duration(10.5 as Weeks) === 10.5);
-  assert(duration(10 as Years) === 10);
-});
 
 Deno.test("Duration.milliseconds", () => {
   const duration = Duration.milliseconds(1000 as Milliseconds);

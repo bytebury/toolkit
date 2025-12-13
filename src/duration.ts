@@ -1,6 +1,16 @@
 import type { Brand } from "./utility_types.ts";
 
-/** Represents a duration of time in milliseconds. */
+/**
+ * Represents a duration of time in milliseconds. You should
+ * always use this type when working with durations of time in milliseconds.
+ * It helps ensure that you're working with durations of time in milliseconds,
+ * and not accidentally using a different unit of time.
+ *
+ * @example
+ * ```ts
+ * setTimeout(() => {}, 1_000 as Milliseconds);
+ * ```
+ */
 export type Milliseconds = Brand<number, "milliseconds">;
 /** Represents a duration of time in seconds. */
 export type Seconds = Brand<number, "seconds">;
@@ -14,25 +24,6 @@ export type Days = Brand<number, "days">;
 export type Weeks = Brand<number, "weeks">;
 /** Represents a duration of time in years. */
 export type Years = Brand<number, "years">;
-
-/**
- * Creates a duration of time from a given value and unit.
- *
- * This simply returns the input value as the specified duration
- * type for readability and explicitness.
- *
- * @example
- * ```ts
- * setTimeout(() => {}, duration(1_000 as Milliseconds));
- * ```
- */
-export function duration<
-  T extends Milliseconds | Seconds | Minutes | Hours | Days | Weeks | Years,
->(
-  time: T,
-): T {
-  return time as T;
-}
 
 /**
  * A representation of a duration of time within a codebase.
