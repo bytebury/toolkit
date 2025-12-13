@@ -97,3 +97,24 @@ export type Prettify<T> = { [K in keyof T]: T[K] } & {};
  * Syntactic sugar for `null | undefined`.
  */
 export type None = null | undefined;
+
+/**
+ * Represents a type that is branded with a unique symbol.
+ *
+ * Useful for creating types that are unique to your application.
+ *
+ * @remarks
+ * We use Branded types in our `Duration` class to remove the guess-work
+ * and make the code more readable in regards to time units.
+ *
+ * @example
+ * ```ts
+ * type Seconds = Brand<number, 'Seconds'>;
+ * type Milliseconds = Brand<number, 'Milliseconds'>;
+ *
+ * function secondsToMilliseconds(seconds: Seconds): Milliseconds {
+ *   return seconds * 1000;
+ * }
+ * ```
+ */
+export type Brand<T, B> = T & { __brand: B };

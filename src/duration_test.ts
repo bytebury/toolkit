@@ -1,8 +1,17 @@
 import { assert } from "@std/assert";
 import { Duration } from "./duration.ts";
+import type {
+  Days,
+  Hours,
+  Milliseconds,
+  Minutes,
+  Seconds,
+  Weeks,
+  Years,
+} from "@boba/matcha";
 
 Deno.test("Duration.fromMilliseconds", () => {
-  const duration = Duration.fromMilliseconds(1000);
+  const duration = Duration.fromMilliseconds(1000 as Milliseconds);
 
   assert(duration.toMilliseconds() === 1000);
   assert(duration.toSeconds() === 1);
@@ -14,7 +23,7 @@ Deno.test("Duration.fromMilliseconds", () => {
 });
 
 Deno.test("Duration.fromSeconds", () => {
-  const duration = Duration.fromSeconds(1);
+  const duration = Duration.fromSeconds(1 as Seconds);
 
   assert(duration.toMilliseconds() === 1000);
   assert(duration.toSeconds() === 1);
@@ -26,7 +35,7 @@ Deno.test("Duration.fromSeconds", () => {
 });
 
 Deno.test("Duration.fromMinutes", () => {
-  const duration = Duration.fromMinutes(1);
+  const duration = Duration.fromMinutes(1 as Minutes);
 
   assert(duration.toMilliseconds() === 60_000);
   assert(duration.toSeconds() === 60);
@@ -35,7 +44,7 @@ Deno.test("Duration.fromMinutes", () => {
 });
 
 Deno.test("Duration.fromHours", () => {
-  const duration = Duration.fromHours(1);
+  const duration = Duration.fromHours(1 as Hours);
 
   assert(duration.toMilliseconds() === 3_600_000);
   assert(duration.toSeconds() === 3_600);
@@ -45,7 +54,7 @@ Deno.test("Duration.fromHours", () => {
 });
 
 Deno.test("Duration.fromDays", () => {
-  const duration = Duration.fromDays(1);
+  const duration = Duration.fromDays(1 as Days);
 
   assert(duration.toMilliseconds() === 86_400_000);
   assert(duration.toSeconds() === 86_400);
@@ -57,7 +66,7 @@ Deno.test("Duration.fromDays", () => {
 });
 
 Deno.test("Duration.fromWeeks", () => {
-  const duration = Duration.fromWeeks(1);
+  const duration = Duration.fromWeeks(1 as Weeks);
 
   assert(duration.toMilliseconds() === 604_800_000);
   assert(duration.toSeconds() === 604_800);
@@ -68,7 +77,7 @@ Deno.test("Duration.fromWeeks", () => {
 });
 
 Deno.test("Duration.fromYears", () => {
-  const duration = Duration.fromYears(1);
+  const duration = Duration.fromYears(1 as Years);
 
   assert(duration.toDays() === 365);
   assert(duration.toYears() === 1);
