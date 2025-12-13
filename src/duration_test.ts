@@ -1,5 +1,5 @@
 import { assert } from "@std/assert";
-import { Duration } from "./duration.ts";
+import { Duration, duration } from "./duration.ts";
 import type {
   Days,
   Hours,
@@ -10,8 +10,18 @@ import type {
   Years,
 } from "@boba/matcha";
 
-Deno.test("Duration.fromMilliseconds", () => {
-  const duration = Duration.fromMilliseconds(1000 as Milliseconds);
+Deno.test("duration should just return the value you pass", () => {
+  assert(duration(1000 as Milliseconds) === 1000);
+  assert(duration(2478 as Seconds) === 2478);
+  assert(duration(1000 as Minutes) === 1000);
+  assert(duration(20 as Hours) === 20);
+  assert(duration(1 as Days) === 1);
+  assert(duration(10.5 as Weeks) === 10.5);
+  assert(duration(10 as Years) === 10);
+});
+
+Deno.test("Duration.milliseconds", () => {
+  const duration = Duration.milliseconds(1000 as Milliseconds);
 
   assert(duration.toMilliseconds() === 1000);
   assert(duration.toSeconds() === 1);
@@ -22,8 +32,8 @@ Deno.test("Duration.fromMilliseconds", () => {
   assert(duration.toYears() === 1 / 31_536_000);
 });
 
-Deno.test("Duration.fromSeconds", () => {
-  const duration = Duration.fromSeconds(1 as Seconds);
+Deno.test("Duration.seconds", () => {
+  const duration = Duration.seconds(1 as Seconds);
 
   assert(duration.toMilliseconds() === 1000);
   assert(duration.toSeconds() === 1);
@@ -34,8 +44,8 @@ Deno.test("Duration.fromSeconds", () => {
   assert(duration.toYears() === 1 / 31_536_000);
 });
 
-Deno.test("Duration.fromMinutes", () => {
-  const duration = Duration.fromMinutes(1 as Minutes);
+Deno.test("Duration.minutes", () => {
+  const duration = Duration.minutes(1 as Minutes);
 
   assert(duration.toMilliseconds() === 60_000);
   assert(duration.toSeconds() === 60);
@@ -43,8 +53,8 @@ Deno.test("Duration.fromMinutes", () => {
   assert(duration.toHours() === 1 / 60);
 });
 
-Deno.test("Duration.fromHours", () => {
-  const duration = Duration.fromHours(1 as Hours);
+Deno.test("Duration.hours", () => {
+  const duration = Duration.hours(1 as Hours);
 
   assert(duration.toMilliseconds() === 3_600_000);
   assert(duration.toSeconds() === 3_600);
@@ -53,8 +63,8 @@ Deno.test("Duration.fromHours", () => {
   assert(duration.toDays() === 1 / 24);
 });
 
-Deno.test("Duration.fromDays", () => {
-  const duration = Duration.fromDays(1 as Days);
+Deno.test("Duration.days", () => {
+  const duration = Duration.days(1 as Days);
 
   assert(duration.toMilliseconds() === 86_400_000);
   assert(duration.toSeconds() === 86_400);
@@ -65,8 +75,8 @@ Deno.test("Duration.fromDays", () => {
   assert(duration.toYears() === 1 / 365);
 });
 
-Deno.test("Duration.fromWeeks", () => {
-  const duration = Duration.fromWeeks(1 as Weeks);
+Deno.test("Duration.weeks", () => {
+  const duration = Duration.weeks(1 as Weeks);
 
   assert(duration.toMilliseconds() === 604_800_000);
   assert(duration.toSeconds() === 604_800);
@@ -76,8 +86,8 @@ Deno.test("Duration.fromWeeks", () => {
   assert(duration.toWeeks() === 1);
 });
 
-Deno.test("Duration.fromYears", () => {
-  const duration = Duration.fromYears(1 as Years);
+Deno.test("Duration.years", () => {
+  const duration = Duration.years(1 as Years);
 
   assert(duration.toDays() === 365);
   assert(duration.toYears() === 1);

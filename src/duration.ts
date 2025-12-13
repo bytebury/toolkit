@@ -16,17 +16,39 @@ export type Weeks = Brand<number, "weeks">;
 export type Years = Brand<number, "years">;
 
 /**
+ * Creates a duration of time from a given value and unit.
+ *
+ * This simply returns the input value as the specified duration
+ * type for readability and explicitness.
+ *
+ * @example
+ * ```ts
+ * setTimeout(() => {}, duration(1_000 as Milliseconds));
+ * ```
+ */
+export function duration<
+  T extends Milliseconds | Seconds | Minutes | Hours | Days | Weeks | Years,
+>(
+  time: T,
+): T {
+  return time as T;
+}
+
+/**
  * A representation of a duration of time within a codebase.
  * This class provides a way to work with durations of time in a type-safe manner.
  *
+ * @see milliseconds to quickly create a millisecond duration.
+ *
  * @example Converting seconds to milliseconds
  * ```ts
- * setTimeout(() => {}, Duration.fromSeconds(1 as Seconds).toMilliseconds());
+ * setTimeout(() => {}, Duration.seconds(1 as Seconds).toMilliseconds());
  * ```
  * @example Converting minutes to milliseconds
  * ```ts
- * setTimeout(() => {}, Duration.fromMinutes(1 as Minutes).toMilliseconds());
+ * setTimeout(() => {}, Duration.minutes(1 as Minutes).toMilliseconds());
  * ```
+ * @example Converting to milliseconds
  */
 export class Duration {
   private constructor(private readonly milliseconds: Milliseconds) {}
@@ -34,49 +56,49 @@ export class Duration {
   /**
    * Creates a Duration from milliseconds.
    */
-  static fromMilliseconds(milliseconds: Milliseconds): Duration {
+  static milliseconds(milliseconds: Milliseconds): Duration {
     return new Duration(milliseconds);
   }
 
   /**
    * Creates a Duration from seconds.
    */
-  static fromSeconds(seconds: Seconds): Duration {
+  static seconds(seconds: Seconds): Duration {
     return new Duration(seconds * 1000 as Milliseconds);
   }
 
   /**
    * Creates a Duration from minutes.
    */
-  static fromMinutes(minutes: Minutes): Duration {
+  static minutes(minutes: Minutes): Duration {
     return new Duration(minutes * 60 * 1000 as Milliseconds);
   }
 
   /**
    * Creates a Duration from hours.
    */
-  static fromHours(hours: Hours): Duration {
+  static hours(hours: Hours): Duration {
     return new Duration(hours * 60 * 60 * 1000 as Milliseconds);
   }
 
   /**
    * Creates a Duration from days.
    */
-  static fromDays(days: Days): Duration {
+  static days(days: Days): Duration {
     return new Duration(days * 24 * 60 * 60 * 1000 as Milliseconds);
   }
 
   /**
    * Creates a Duration from weeks.
    */
-  static fromWeeks(weeks: Weeks): Duration {
+  static weeks(weeks: Weeks): Duration {
     return new Duration(weeks * 7 * 24 * 60 * 60 * 1000 as Milliseconds);
   }
 
   /**
    * Creates a Duration from years.
    */
-  static fromYears(years: Years): Duration {
+  static years(years: Years): Duration {
     return new Duration(years * 365 * 24 * 60 * 60 * 1000 as Milliseconds);
   }
 

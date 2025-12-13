@@ -92,7 +92,7 @@ export function daysBetween(start: Date, end: Date): number {
   return Math.abs(
     Math.floor(
       (new Date(end).getTime() - new Date(start).getTime()) /
-        Duration.fromDays(1 as Days).toMilliseconds(),
+        Duration.days(1 as Days).toMilliseconds(),
     ),
   );
 }
