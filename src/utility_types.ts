@@ -37,7 +37,21 @@ export type AutoComplete<T extends string> =
  * }
  * ```
  */
-export type KeyOf<T> = T extends unknown[] ? ValueOf<T> : keyof T;
+export type KeyOf<T> = T extends Readonly<unknown[]> ? ValueOf<T> : keyof T;
+
+/**
+ * This is a utility type that allows you to get the keys from a list.
+ *
+ * @example
+ * ```ts
+ * const MyList = ['apple', 'banana', 'orange'] as const;
+ *
+ * function example2(param: OneOf<typeof MyList>): void {
+ *   // param would be: "apple" | "banana" | "orange"
+ * }
+ * ```
+ */
+export type OneOf<T extends Readonly<unknown[]>> = T[number];
 
 /**
  * This is a utility type that allows you to get the values from an object
@@ -57,11 +71,9 @@ export type KeyOf<T> = T extends unknown[] ? ValueOf<T> : keyof T;
  * }
  * ```
  */
-export type ValueOf<T> = T extends unknown[] ? T[number] : T[keyof T];
+export type ValueOf<T> = T extends Readonly<unknown[]> ? T[number] : T[keyof T];
 
-/**
- * Represents any primitive ECMAScript value.
- */
+/** Represents any primitive ECMAScript value. */
 export type Primitive =
   | string
   | number
