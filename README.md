@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/logo.png" alt="Matcha Logo" width="128" height="128" /><br />
+<img src="./assets/logo.png" alt="Boba Logo" width="128" height="128" /><br />
 
 # matcha
 
@@ -17,13 +17,13 @@ You can install this application from `npm` or `jsr`.
 
 ```sh
 # recommended if using NodeJS
-npx jsr add @boba/matcha
+npx jsr add @bytebury/boba
 
 # old-fashion npm
-npm install @bobatea/matcha --save
+npm install @bytebury/boba --save
 
 # or, if you're using Deno
-deno add jsr:@boba/matcha
+deno add jsr:@bytebury/boba
 ```
 
 ## Sample Usage
