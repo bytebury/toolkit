@@ -16,7 +16,7 @@ await build({
     lib: ["esnext"],
   },
   package: {
-    name: "@bobatea/matcha",
+    name: "@bytebury/matcha",
     version,
     description: "TypeScript utility library to help energize your projects with useful functions for any size project. Save yourself some time and focus on shipping features.",
     license: "MIT",
