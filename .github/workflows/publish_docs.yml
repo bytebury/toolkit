@@ -22,7 +22,7 @@ jobs:
           deno-version: latest
 
       - name: Generate Deno docs
-        run: deno doc --html --name="🧋 matcha" mod.ts
+        run: deno doc --html --name="🧋 boba" mod.ts
 
       - name: Add CNAME
         run: echo "matcha.boba.sh" > ./docs/CNAME

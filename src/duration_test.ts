@@ -8,7 +8,7 @@ import type {
   Seconds,
   Weeks,
   Years,
-} from "@boba/matcha";
+} from "./duration.ts";
 
 Deno.test("Duration.milliseconds", () => {
   const duration = Duration.milliseconds(1000 as Milliseconds);

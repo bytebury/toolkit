@@ -16,14 +16,14 @@ await build({
     lib: ["esnext"],
   },
   package: {
-    name: "@bytebury/matcha",
+    name: "@bytebury/boba",
     version,
     description: "TypeScript utility library to help energize your projects with useful functions for any size project. Save yourself some time and focus on shipping features.",
     license: "MIT",
     private: false,
     repository: {
       type: "git",
-      url: "https://github.com/bytebury/matcha",
+      url: "https://github.com/bytebury/boba",
     },
   },
   postBuild() {
