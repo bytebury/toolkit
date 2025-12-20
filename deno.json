@@ -1,5 +1,5 @@
 {
-	"name": "@bytebury/matcha",
+	"name": "@bytebury/boba",
 	"version": "1.0.0",
 	"exports": "./mod.ts",
 	"tasks": {
