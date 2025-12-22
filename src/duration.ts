@@ -26,6 +26,22 @@ export type Weeks = Brand<number, "weeks">;
 export type Years = Brand<number, "years">;
 
 /**
+ * Sleeps for the given duration of milliseconds.
+ *
+ * @example Using `sleep` directly (for milliseconds).
+ * ```ts
+ * await sleep(1_000 as Milliseconds);
+ * ```
+ * @example Using `Duration.sleep` (for non-milliseconds).
+ * ```ts
+ * await Duration.seconds(1 as Seconds).sleep();
+ * ```
+ */
+export const sleep = async (ms: Milliseconds): Promise<void> => {
+  await Duration.milliseconds(ms).sleep();
+};
+
+/**
  * A representation of a duration of time within a codebase.
  * This class provides a way to work with durations of time in a type-safe manner.
  *
@@ -140,5 +156,18 @@ export class Duration {
    */
   toYears(): Years {
     return this.milliseconds / (365 * 24 * 60 * 60 * 1000) as Years;
+  }
+
+  /**
+   * Sleeps for the current duration.
+   *
+   * @example
+   * ```ts
+   * const duration = Duration.seconds(5);
+   * await duration.sleep();
+   * ```
+   */
+  async sleep(): Promise<void> {
+    await new Promise((resolve) => setTimeout(resolve, this.toMilliseconds()));
   }
 }

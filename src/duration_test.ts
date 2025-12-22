@@ -1,5 +1,6 @@
 import { assert } from "@std/assert";
-import { Duration } from "./duration.ts";
+import { FakeTime } from "@std/testing/time";
+
 import type {
   Days,
   Hours,
@@ -9,6 +10,7 @@ import type {
   Weeks,
   Years,
 } from "./duration.ts";
+import { Duration, sleep } from "./duration.ts";
 
 Deno.test("Duration.milliseconds", () => {
   const duration = Duration.milliseconds(1000 as Milliseconds);
@@ -81,4 +83,36 @@ Deno.test("Duration.years", () => {
 
   assert(duration.toDays() === 365);
   assert(duration.toYears() === 1);
+});
+
+Deno.test("Duration.sleep", () => {
+  const time = new FakeTime();
+  const duration = Duration.seconds(1 as Seconds);
+
+  let done = false;
+  const promise = duration.sleep().then(() => {
+    done = true;
+  });
+
+  assert(!done);
+  time.tick(duration.toMilliseconds());
+
+  time.restore();
+  return promise;
+});
+
+Deno.test("sleep", () => {
+  const time = new FakeTime();
+  const duration = 1_000 as Milliseconds;
+
+  let done = false;
+  const promise = sleep(duration).then(() => {
+    done = true;
+  });
+
+  assert(!done);
+  time.tick(duration);
+
+  time.restore();
+  return promise;
 });

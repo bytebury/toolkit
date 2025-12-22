@@ -275,7 +275,7 @@ export function distinct<T>(list: T[]): T[] {
  * ```
  */
 export function sample<T>(list: NonEmptyList<T>): T {
-  return list[Math.floor(Math.random() * list.length)];
+  return list[random(0, list.length)];
 }
 
 /**
@@ -289,7 +289,7 @@ export function sample<T>(list: NonEmptyList<T>): T {
  * rand(3, 7); // 3 -> 6
  * ```
  */
-export function rand(start: number, end: number): number {
+export function random(start: number, end: number): number {
   return Math.floor(Math.random() * (end - start)) + start;
 }
 
@@ -352,51 +352,46 @@ export function isNone(thing: unknown): boolean {
 }
 
 /**
- * Sums the elements in the given list. If you pass a list of numbers, it sums
- * them directly. If you pass a list of objects, provide the key to sum.
+ * Returns a function that does nothing.
  *
  * @example
  * ```ts
- * sum([1, 2, 3]); // 6
- * sum([{ x: 1 }, { x: 2 }], "x"); // 3
+ * const doNothing = noop();
+ * doNothing(); // does nothing
  * ```
  */
-export function sum(list: number[]): number;
-export function sum<T extends Record<PropertyKey, number>>(
-  list: T[],
-  key: keyof T,
-): number;
-// deno-lint-ignore no-explicit-any
-export function sum(list: any[], key?: PropertyKey): number {
-  if (list.length === 0) return 0;
-  if (typeof list[0] === "number") {
-    return (list as number[]).reduce((a, v) => a + v, 0);
-  }
-  return (list as Record<PropertyKey, number>[]).reduce(
-    // deno-lint-ignore no-explicit-any
-    (a, v) => a + (v as any)[key!],
-    0,
-  );
+export function noop(): void {
+  // Do nothing
 }
 
 /**
- * Calculates the average of the elements in the given list.
- * If you pass a list of numbers, it calculates the average directly.
- * If you pass a list of objects, provide the key to calculate the average.
+ * Returns true if the given value is within the given range.
  *
  * @example
  * ```ts
- * average([1, 2, 3]); // 2
- * average([{ x: 1 }, { x: 2 }], "x"); // 1.5
- * average([]); // 0
+ * inRange(5, 0, 10); // true
+ * inRange(0, 0, 10); // true
+ * inRange(10, 0, 10); // true
+ * inRange(11, 0, 10); // false
  * ```
  */
-export function average(list: number[]): number;
-export function average<T extends Record<PropertyKey, number>>(
-  list: T[],
-  key: keyof T,
-): number;
-// deno-lint-ignore no-explicit-any
-export function average(list: any[], key?: PropertyKey): number {
-  return (sum(list, key as PropertyKey) / list.length) || 0;
+export function inRange(value: number, min: number, max: number): boolean {
+  return value >= min && value <= max;
+}
+
+/**
+ * Splits an array into chunks of a fixed size.
+ *
+ * @example
+ * chunk([1,2,3,4,5,6,7], 3); // [[1,2,3],[4,5,6],[7]]
+ * chunk(['a','b','c','d'], 2); // [['a','b'], ['c','d']]
+ */
+export function chunk<T>(arr: T[], size: number): T[][] {
+  if (size <= 0) throw new Error("chunk size must be > 0");
+
+  const result: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
 }
