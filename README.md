@@ -1,15 +1,16 @@
 <div align="center">
 
-<img src="./assets/logo.png" alt="Boba Logo" width="256" height="256" /><br />
+<img src="./assets/logo.png" alt="Toolkit Logo" width="256" height="256" /><br />
 
-# boba
+# toolkit
 
-Deliciously energize your projects with boba, a TypeScript utility
-library<br /> to help speed up your development cycle with a focus on
-correctness.
+toolkit is a developer-friendly TypeScript utility library with small, <br />
+well-typed helpers for common tasks. It’s designed to reduce boilerplate, <br />
+stay out of your way, and feel natural to use in everyday projects.
+
+<hr />
 
 </div>
-<hr />
 
 ## Getting Started
 
@@ -17,13 +18,13 @@ You can install this application from `npm` or `jsr`.
 
 ```sh
 # recommended if using NodeJS
-npx jsr add @bytebury/boba
+npx jsr add @bytebury/toolkit
 
-# old-fashion npm
-npm install @bytebury/boba --save
+# good, old-fashion npm
+npm install @bytebury/toolkit --save
 
 # or, if you're using Deno
-deno add jsr:@bytebury/boba
+deno add jsr:@bytebury/toolkit
 ```
 
 ## Sample Usage

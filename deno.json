@@ -1,5 +1,5 @@
 {
-	"name": "@bytebury/boba",
+	"name": "@bytebury/toolkit",
 	"version": "1.0.0",
 	"exports": "./mod.ts",
 	"tasks": {
