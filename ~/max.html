@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>sum - 🧋 boba documentation</title>
+  <title>max - 🧋 boba documentation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="doc-current-file" content=".">
@@ -29,7 +29,7 @@
     fill="currentColor"
   />
 </svg>
-</span><ul><li>sum</li></ul></ul>
+</span><ul><li>max</li></ul></ul>
 </div>
 
     <div class="flex items-center gap-2">
@@ -93,11 +93,11 @@
     </div>
   </div>
 </nav>
-<div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_sum"><article>
+<div id="searchResults"></div><div id="content"><main class="symbolGroup" id="symbol_max"><article>
       <div class="symbolTitle">
         <div>
           <div class="text-2xl leading-none break-all">
-            <span class="text-Function">function</span>&nbsp;<span class="font-bold">sum</span>
+            <span class="text-Function">function</span>&nbsp;<span class="font-bold">max</span>
           </div></div><a
   class="sourceButton"
   href="file:&#x2F;&#x2F;&#x2F;home&#x2F;runner&#x2F;work&#x2F;toolkit&#x2F;toolkit&#x2F;src&#x2F;numbers.ts"><svg
@@ -123,8 +123,8 @@
   />
 </svg>
 </a>
-</div><div><div class="mt-3 space-y-8"><div class="scroll-mt-16" id="function_sum_0">
-      <code class="anchorable text-base break-words"><a href="#function_sum_0" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+</div><div><div class="mt-3 space-y-8"><div class="scroll-mt-16" id="function_max_0">
+      <code class="anchorable text-base break-words"><a href="#function_max_0" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -146,8 +146,8 @@
   </defs>
 </svg>
 </a>
-<span class="font-bold">sum</span><span class="font-medium">(<span><span>nums<span>: <span>number</span>[]</span></span></span>)<span>: <span>number</span></span> </span>
-      </code><div class="space-y-7" id=""><div class="markdown"><p>Returns the sum of a list of numbers.</p>
+<span class="font-bold">max</span><span class="font-medium">(<span><span>nums<span>: <span>number</span>[]</span></span></span>)<span>: <span>number</span></span> </span>
+      </code><div class="space-y-7" id=""><div class="markdown"><p>Returns the maximum number from a list of numbers.</p>
 </div><section class="section"  id="examples"><div>
       <h2 class="anchorable mb-1"><a href="#examples" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
@@ -195,14 +195,16 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
 </a>
 <h3 class="example-header"><div class="markdown"><p>Example 1</p>
 </div></h3>
-  <div><div class="markdown"><pre class="highlight"><code class="language-ts">sum([1]); // 1
-sum([2, 3]); // 5
-sum([4, 5, 6]); // 15
-sum([11, 21, 112]); // 144
-</code><button class="copyButton" data-copy="sum([1]); // 1
-sum([2, 3]); // 5
-sum([4, 5, 6]); // 15
-sum([11, 21, 112]); // 144
+  <div><div class="markdown"><pre class="highlight"><code class="language-ts">max([]); // 0
+max([1]); // 1
+max([2, 3]); // 3
+max([4, 5, 6]); // 6
+max([11, 21, 112]); // 112
+</code><button class="copyButton" data-copy="max([]); // 0
+max([1]); // 1
+max([2, 3]); // 3
+max([4, 5, 6]); // 6
+max([11, 21, 112]); // 112
 "><svg
   class="copy"
   width="15"
@@ -260,10 +262,10 @@ sum([11, 21, 112]); // 144
   </defs>
 </svg>
 </a>
-Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="function_sum_0_parameter_nums">
+Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id="function_max_0_parameter_nums">
 
   <div class="docEntryHeader">
-    <div><code><a href="#function_sum_0_parameter_nums" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+    <div><code><a href="#function_max_0_parameter_nums" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -337,7 +339,7 @@ Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function_sum_0_return">
+Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function_max_0_return">
 
   <div class="docEntryHeader">
     <div><code><span class="font-medium text-stone-500 dark:text-stone-200"><span>number</span></span>
@@ -375,8 +377,8 @@ Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function
     </article></main>
 <div class="toc">
     <div><div class="usageContent">
-    <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { sum } from &quot;.&quot;;
-</code><button class="copyButton" data-copy="import { sum } from &quot;.&quot;;
+    <h3>Usage</h3><div class="markdown"><pre class="highlight"><code class="language-typescript">import { max } from &quot;.&quot;;
+</code><button class="copyButton" data-copy="import { max } from &quot;.&quot;;
 "><svg
   class="copy"
   width="15"
@@ -409,7 +411,7 @@ Return Type</h2></div><div class="space-y-8"><div class=" docEntry" id="function
 </svg>
 </button><code></code></pre>
 </div></div><nav class="documentNavigation">
-          <h3>Document Navigation</h3><ul><li><a href="#examples" title="Examples">Examples</a></li><li><ul><li><a href="#example_0" title="Example 1">Example 1</a></li></ul></li><li><a href="#parameters" title="Parameters">Parameters</a></li><li><ul><li><a href="#function_sum_0_parameter_nums" title="nums">nums</a></li></ul></li><li><a href="#return-type" title="Return Type">Return Type</a></li></ul></nav></div>
+          <h3>Document Navigation</h3><ul><li><a href="#examples" title="Examples">Examples</a></li><li><ul><li><a href="#example_0" title="Example 1">Example 1</a></li></ul></li><li><a href="#parameters" title="Parameters">Parameters</a></li><li><ul><li><a href="#function_max_0_parameter_nums" title="nums">nums</a></li></ul></li><li><a href="#return-type" title="Return Type">Return Type</a></li></ul></nav></div>
   </div></div>
 </div>
 </div>
