@@ -37,7 +37,7 @@ export type Years = Brand<number, "years">;
  * await Duration.seconds(1 as Seconds).sleep();
  * ```
  */
-export const sleep = async (ms: Milliseconds) => {
+export const sleep = async (ms: Milliseconds): Promise<void> => {
   await Duration.milliseconds(ms).sleep();
 };
 
