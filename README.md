@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/logo.png" alt="Toolkit Logo" width="312" height="256" /><br />
+<img src="./assets/logo.png" alt="Toolkit Logo" width="348" height="256" /><br />
 
 # toolkit
 
