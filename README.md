@@ -44,6 +44,6 @@ function getAverageAge(): number {
     { name: "Carly", age: 8 },
     { name: "Jenny", age: 5 }
   ];
-  return average(people, "age"); // 5
+  return average(people.map(({ age }) => age)); // 5
 }
 ```
