@@ -9,12 +9,12 @@ await build({
   entryPoints: ["./mod.ts"],
   outDir: "./npm",
   shims: {
-    deno: true,
-    timers: true,
+    deno: "dev",
+    timers: "dev",
   },
   compilerOptions: {
     target: "ES2020",
-    lib: ["esnext"],
+    lib: ["esnext", "dom", "dom.iterable"],
   },
   package: {
     name: "@bytebury/toolkit",
