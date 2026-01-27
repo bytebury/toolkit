@@ -152,8 +152,7 @@
 <ul>
 <li>They are <code>None</code></li>
 <li>They are empty strings</li>
-<li>They are strings of only whitespace</li>
-<li>They have length or size</li>
+<li>They have no length or size</li>
 </ul>
 </div><section class="section"  id="examples"><div>
       <h2 class="anchorable mb-1"><a href="#examples" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
@@ -205,14 +204,14 @@ Examples</h2></div><div class="space-y-8"><div class="anchorable"><a href="#exam
   <div><div class="markdown"><pre class="highlight"><code class="language-ts">isEmpty([]); // true
 isEmpty([0]); // false
 isEmpty(&quot;&quot;); // true
-isEmpty(&quot; &quot;); // true
+isEmpty(&quot; &quot;); // false
 isEmpty(new Set()); // true
 isEmpty({}); // true
 isEmpty(new Map()); // true
 </code><button class="copyButton" data-copy="isEmpty([]); // true
 isEmpty([0]); // false
 isEmpty(&quot;&quot;); // true
-isEmpty(&quot; &quot;); // true
+isEmpty(&quot; &quot;); // false
 isEmpty(new Set()); // true
 isEmpty({}); // true
 isEmpty(new Map()); // true
