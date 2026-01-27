@@ -1,4 +1,4 @@
-import { isWhitespace, lower } from "./strings.ts";
+import { lower } from "./strings.ts";
 import type { NonEmptyList, OneOrMany } from "./utility_types.ts";
 
 /**
@@ -182,15 +182,14 @@ export function reverse<T>(
  * Things are empty when:
  *   * They are `None`
  *   * They are empty strings
- *   * They are strings of only whitespace
- *   * They have length or size
+ *   * They have no length or size
  *
  * @example
  * ```ts
  * isEmpty([]); // true
  * isEmpty([0]); // false
  * isEmpty(""); // true
- * isEmpty(" "); // true
+ * isEmpty(" "); // false
  * isEmpty(new Set()); // true
  * isEmpty({}); // true
  * isEmpty(new Map()); // true
@@ -200,7 +199,7 @@ export function isEmpty(thing: unknown[]): boolean;
 export function isEmpty(thing: unknown): boolean;
 export function isEmpty(thing: string | OneOrMany<unknown>): boolean {
   if (isNone(thing)) return true;
-  if (typeof thing === "string") return isWhitespace(thing);
+  if (typeof thing === "string") return thing === "";
   if (Array.isArray(thing)) return thing.length === 0;
   if (thing instanceof Map || thing instanceof Set) return thing.size === 0;
   if (typeof thing === "object") return Object.keys(thing!).length === 0;

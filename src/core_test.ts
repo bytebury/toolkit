@@ -150,8 +150,8 @@ Deno.test("isEmpty base cases", () => {
 
 Deno.test("isEmpty strings", () => {
   assert(isEmpty(""));
-  assert(isEmpty("   "));
-  assert(isEmpty("\n\t"));
+  assertFalse(isEmpty("\n\t"));
+  assertFalse(isEmpty("   "));
   assertFalse(isEmpty("Hello"));
 });
 

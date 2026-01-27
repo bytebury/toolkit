@@ -2,11 +2,13 @@
  * Determines if the given text is only comprised of whitespace.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `true`.
+ * This is `None` safe. If you pass `null | undefined` then this will return `true`.
  *
  * @example
  * ```ts
  * isWhitespace(null); // true
+ * isWhitespace(undefined); // true
+ * isWhitespace(""); // true
  * isWhitespace("   "); // true
  * isWhitespace("\n\t"); // true
  * isWhitespace("Hello"); // false
@@ -20,7 +22,7 @@ export function isWhitespace(text: string): boolean {
  * Determines if the given text contains any non-whitespace characters.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `false`.
+ * This is `None` safe. If you pass `null | undefined` then this will return `false`.
  *
  * @example
  * ```ts
@@ -38,7 +40,7 @@ export function isNotWhitespace(text: string): boolean {
  * alias for `.trim()`. Useful for when you're mapping over lists.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -57,7 +59,7 @@ export function trim(text: string): string {
  * are considered spaces. Hyphens are respected.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -81,7 +83,7 @@ export function title(text: string): string {
  * An alias for `toLowerCase()`.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -98,7 +100,7 @@ export function lower(text: string): Lowercase<string> {
  * An alias for `toUpperCase()`.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -115,7 +117,7 @@ export function upper(text: string): Uppercase<string> {
  * trimming extra spaces, converting to lowercase, and joining words with hyphens.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -135,7 +137,7 @@ export function kebab(text: string): Lowercase<string> {
  * Uses `kebab()` internally, replacing hyphens with underscores.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -153,7 +155,7 @@ export function snake(text: string): Lowercase<string> {
  * except for spaces. Letters are preserved regardless of case.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -171,7 +173,7 @@ export function keepAlphabetical(text: string): string {
  * except for spaces. Letters and digits are preserved regardless of case.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts
@@ -188,7 +190,7 @@ export function keepAlphanumeric(text: string): string {
  * Removes any non-numeric characters. This includes spaces.
  *
  * @remarks
- * This is `null | undefined` safe. If you pass `null | undefined` then this will return `""`.
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
  *
  * @example
  * ```ts

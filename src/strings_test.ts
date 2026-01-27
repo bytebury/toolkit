@@ -15,6 +15,9 @@ import {
 
 Deno.test("isWhitespace", () => {
   assert(isWhitespace(" "));
+  assert(isWhitespace(null as unknown as string));
+  assert(isWhitespace(undefined as unknown as string));
+  assert(isWhitespace(""));
   assert(isWhitespace("\t"));
   assert(isWhitespace("\n"));
   assert(!isWhitespace("Hello"));
