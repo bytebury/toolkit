@@ -382,8 +382,10 @@ export function inRange(value: number, min: number, max: number): boolean {
  * Splits an array into chunks of a fixed size.
  *
  * @example
+ * ```ts
  * chunk([1,2,3,4,5,6,7], 3); // [[1,2,3],[4,5,6],[7]]
  * chunk(['a','b','c','d'], 2); // [['a','b'], ['c','d']]
+ * ```
  */
 export function chunk<T>(arr: T[], size: number): T[][] {
   if (size <= 0) throw new Error("chunk size must be > 0");
@@ -393,4 +395,54 @@ export function chunk<T>(arr: T[], size: number): T[][] {
     result.push(arr.slice(i, i + size));
   }
   return result;
+}
+
+/**
+ * Returns the union of multiple arrays.
+ *
+ * @example
+ * ```ts
+ * union([1,2,3], [2,3,4]); // [1,2,3,4]
+ * union(['a','b','c'], ['b','c','d']); // ['a','b','c','d']
+ * ```
+ */
+export function union<T>(...lists: T[][]): T[] {
+  return [...new Set(lists.flat())];
+}
+
+/**
+ * Returns the difference of multiple arrays.
+ *
+ * @example
+ * ```ts
+ * difference([1,2,3], [2,3,4]); // [1]
+ * difference(['a','b','c'], ['b','c','d']); // ['a']
+ * ```
+ */
+export function difference<T>(...lists: T[][]): T[] {
+  const set = new Set(lists[0]);
+  for (const list of lists.slice(1)) {
+    for (const item of list) {
+      set.delete(item);
+    }
+  }
+  return Array.from(set);
+}
+
+/**
+ * Returns the intersection of multiple arrays.
+ *
+ * @example
+ * ```ts
+ * intersection([1,2,3], [2,3,4]); // [2,3]
+ * intersection(['a','b','c'], ['b','c','d']); // ['b','c']
+ * ```
+ */
+export function intersection<T>(...lists: T[][]): T[] {
+  if (lists.length === 0) return [];
+
+  return lists.reduce((acc, current) => {
+    const currentSet = new Set(current);
+    return acc.filter((item) => currentSet.has(item));
+  });
 }

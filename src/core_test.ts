@@ -9,10 +9,12 @@ import {
 import {
   chunk,
   clone,
+  difference,
   distinct,
   falsy,
   first,
   inRange,
+  intersection,
   isEmpty,
   isEqual,
   isEqualIgnoreCase,
@@ -28,6 +30,7 @@ import {
   sample,
   stringify,
   truthy,
+  union,
   unique,
 } from "../src/core.ts";
 import type { NonEmptyList } from "./utility_types.ts";
@@ -307,4 +310,19 @@ Deno.test("chunk", () => {
   assertStrictEquals(chunk([1, 2, 3], 2).length, 2);
   assertStrictEquals(chunk([1, 2, 3], 2)[0].length, 2);
   assertStrictEquals(chunk([1, 2, 3], 2)[1].length, 1);
+});
+
+Deno.test("difference", () => {
+  assertStrictEquals(difference([1, 2, 3], [2, 3, 4]).length, 1);
+  assertStrictEquals(difference(["a", "b", "c"], ["b", "c", "d"]).length, 1);
+});
+
+Deno.test("intersection", () => {
+  assertStrictEquals(intersection([1, 2, 3], [2, 3, 4]).length, 2);
+  assertStrictEquals(intersection(["a", "b", "c"], ["b", "c", "d"]).length, 2);
+});
+
+Deno.test("union", () => {
+  assertStrictEquals(union([1, 2, 3], [2, 3, 4]).length, 4);
+  assertStrictEquals(union(["a", "b", "c"], ["b", "c", "d"]).length, 4);
 });
