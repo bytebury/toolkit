@@ -2,13 +2,13 @@ import { assert } from "@std/assert";
 
 import {
   days,
-  Days, hours,
-  Hours, milliseconds,
-  Milliseconds, minutes,
-  Minutes, seconds,
-  Seconds, weeks,
-  Weeks, years,
-  Years,
+  type Days, hours,
+  type Hours, milliseconds,
+  type Milliseconds, minutes,
+  type Minutes, seconds,
+  type Seconds, weeks,
+  type Weeks, years,
+  type Years,
 } from "./duration.ts";
 import { Duration, sleep } from "./duration.ts";
 
