@@ -1,12 +1,13 @@
 import { assert } from "@std/assert";
 
-import type {
-  Days,
-  Hours,
-  Milliseconds,
-  Minutes,
-  Seconds,
-  Weeks,
+import {
+  days,
+  Days, hours,
+  Hours, milliseconds,
+  Milliseconds, minutes,
+  Minutes, seconds,
+  Seconds, weeks,
+  Weeks, years,
   Years,
 } from "./duration.ts";
 import { Duration, sleep } from "./duration.ts";
@@ -112,4 +113,39 @@ Deno.test("sleep", async () => {
   assert(!done);
   await promise;
   assert(done);
+});
+
+Deno.test("milliseconds", () => {
+  assert(milliseconds(100 as Milliseconds) === 100);
+  assert(milliseconds(500) === Duration.milliseconds(500 as Milliseconds).toMilliseconds())
+});
+
+Deno.test("seconds", () => {
+  assert(seconds(1) === 1000);
+  assert(seconds(500) === Duration.seconds(500 as Seconds).toMilliseconds())
+});
+
+Deno.test("minutes", () => {
+  assert(minutes(1) === 60000);
+  assert(minutes(500) === Duration.minutes(500 as Minutes).toMilliseconds())
+});
+
+Deno.test("hours", () => {
+  assert(hours(1) === 3600000);
+  assert(hours(500) === Duration.hours(500 as Hours).toMilliseconds())
+});
+
+Deno.test("days", () => {
+  assert(days(1) === 86400000);
+  assert(days(500) === Duration.days(500 as Days).toMilliseconds())
+});
+
+Deno.test("weeks", () => {
+  assert(weeks(1) === 604800000);
+  assert(weeks(52) === Duration.weeks(52 as Weeks).toMilliseconds())
+});
+
+Deno.test("years", () => {
+  assert(years(1) === 31536000000);
+  assert(years(5) === Duration.years(5 as Years).toMilliseconds())
 });

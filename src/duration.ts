@@ -171,3 +171,118 @@ export class Duration {
     await new Promise((resolve) => setTimeout(resolve, this.toMilliseconds()));
   }
 }
+
+/**
+ * Converts milliseconds to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.milliseconds(milliseconds as Milliseconds).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * milliseconds(1000);
+ * ```
+ */
+export function milliseconds(milliseconds: number): Milliseconds {
+  return Duration.milliseconds(milliseconds as Milliseconds).toMilliseconds();
+}
+
+
+/**
+ * Converts seconds to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.seconds(seconds as Seconds).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * seconds(60);
+ * ```
+ */
+export function seconds(seconds: number): Milliseconds {
+  return Duration.seconds(seconds as Seconds).toMilliseconds()
+}
+
+/**
+ * Converts minutes to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.minutes(minutes as Minutes).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * minutes(1);
+ * ```
+ */
+export function minutes(minutes: number): Milliseconds {
+  return Duration.minutes(minutes as Minutes).toMilliseconds()
+}
+
+/**
+ * Converts hours to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.hours(hours as Hours).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * hours(1);
+ * ```
+ */
+export function hours(hours: number): Milliseconds {
+  return Duration.hours(hours as Hours).toMilliseconds()
+}
+
+/**
+ * Converts days to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.days(days as Days).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * days(1);
+ * ```
+ */
+export function days(days: number): Milliseconds {
+  return Duration.days(days as Days).toMilliseconds()
+}
+
+
+/**
+ * Converts weeks to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.weeks(weeks as Weeks).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * weeks(1);
+ * ```
+ */
+export function weeks(weeks: number): Milliseconds {
+  return Duration.weeks(weeks as Weeks).toMilliseconds()
+}
+
+
+/**
+ * Converts years to milliseconds. This is shorthand for the following:
+ *
+ * ```ts
+ * Duration.years(years as Years).toMilliseconds();
+ * ```
+ *
+ * @example
+ * ```ts
+ * years(1);
+ * ```
+ */
+export function years(years: number): Milliseconds {
+  return Duration.years(years as Years).toMilliseconds()
+}
