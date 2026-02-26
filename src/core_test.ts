@@ -24,11 +24,11 @@ import {
   isNotEqualIgnoreCase,
   isSome,
   last,
-  noop,
+  noop, parse,
   random,
   reverse,
   sample,
-  stringify,
+  stringify, todo,
   truthy,
   union,
   unique,
@@ -118,6 +118,24 @@ Deno.test("stringify converts values to strings", () => {
   assertStrictEquals(stringify([1, 2, 3]), "[1,2,3]");
   assertStrictEquals(stringify(42), "42");
   assertStrictEquals(stringify("hello"), "hello");
+});
+
+Deno.test("parse strings to strings", () => {
+  assertStrictEquals(parse("thing"), "thing");
+  assertStrictEquals(parse("another string"), "another string");
+});
+
+
+Deno.test("parse objects to objects", () => {
+  assertEquals(parse(stringify({ foo: "bar" })), { foo: "bar" });
+});
+
+Deno.test("parse lists to lists", () => {
+  assertEquals(parse<number[]>("[0, 1, 2]"), [0, 1, 2]);
+});
+
+Deno.test("parse null to null", () => {
+  assertEquals(parse("null"), null);
 });
 
 Deno.test("clone deep copies", () => {
@@ -297,6 +315,12 @@ Deno.test("isNone", () => {
 
 Deno.test("noop behavior", () => {
   noop();
+});
+
+
+Deno.test("todo behavior", () => {
+  todo();
+  todo("Example usage");
 });
 
 Deno.test("inRange", () => {

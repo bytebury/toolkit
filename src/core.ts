@@ -151,6 +151,25 @@ export function stringify(thing: unknown): string {
 }
 
 /**
+ * Safely parses a string to JSON or returns the string itself. This will
+ * never throw an error and internally called `JSON.parse(thing)`
+ *
+ * @example
+ * ```ts
+ * parse("Hello world!"); // "Hello world!"
+ * parse<number>("0"); // 0
+ * parse<User>("{\"name\":\"Bob\"}"); // { name: "Bob" } as User
+ * ```
+ */
+export function parse<T>(thing: string): T | string {
+  try {
+    return JSON.parse(thing) as T;
+  } catch {
+    return thing;
+  }
+}
+
+/**
  * Reverses the given string or list.
  *
  * If the thing provided is a string, then it will return the string in reverse
@@ -361,6 +380,23 @@ export function isNone(thing: unknown): boolean {
  */
 export function noop(): void {
   // Do nothing
+}
+
+/**
+ * Returns a function that does nothing. Similar to `noop`, however
+ * this allows you to put in an optional message regarding todos.
+ *
+ * @example
+ * ```ts
+ * function doLater(): void {
+ *   todo();
+ *   todo("We'll do this thing later");
+ * }
+ * ```
+ */
+// deno-lint-ignore no-unused-vars -- intentional unused variable for demonstration
+export function todo(message?: string): void {
+  noop();
 }
 
 /**
