@@ -482,3 +482,63 @@ export function intersection<T>(...lists: T[][]): T[] {
     return acc.filter((item) => currentSet.has(item));
   });
 }
+
+/**
+ * Determines if `searchIn` contains the given `searchFor` term(s).
+ *
+ * When `searchIn` is a string, this performs a substring check.
+ * When `searchIn` is a list, this performs an element check.
+ * When `searchFor` is a list, every item must be found.
+ *
+ * @remarks
+ * If `searchFor` is an empty list, this returns `true` (vacuously, since
+ * every item in an empty list is found).
+ *
+ * @example
+ * ```ts
+ * includes("hello world", "hello"); // true
+ * includes("hello world", ["hello", "world"]); // true
+ * includes("hello world", ["hello", "moon"]); // false
+ * includes(["a", "b", "c"], "a"); // true
+ * includes(["a", "b", "c"], ["a", "b"]); // true
+ * includes(["a", "b", "c"], ["a", "d"]); // false
+ * includes("hello world", []); // true
+ * ```
+ */
+export function includes(
+  searchIn: string | string[],
+  searchFor: string | string[],
+): boolean {
+  const terms = Array.isArray(searchFor) ? searchFor : [searchFor];
+  return terms.every((term) => searchIn.includes(term));
+}
+
+/**
+ * Determines if `searchIn` contains any of the given `searchFor` term(s).
+ *
+ * When `searchIn` is a string, this performs a substring check.
+ * When `searchIn` is a list, this performs an element check.
+ * When `searchFor` is a list, at least one item must be found.
+ *
+ * @remarks
+ * If `searchFor` is an empty list, this returns `false` (there is no term
+ * to match).
+ *
+ * @example
+ * ```ts
+ * includesAny("hello world", "hello"); // true
+ * includesAny("hello world", ["hello", "moon"]); // true
+ * includesAny("hello world", ["sun", "moon"]); // false
+ * includesAny(["a", "b", "c"], "a"); // true
+ * includesAny(["a", "b", "c"], ["a", "d"]); // true
+ * includesAny(["a", "b", "c"], ["d", "e"]); // false
+ * includesAny("hello world", []); // false
+ * ```
+ */
+export function includesAny(
+  searchIn: string | string[],
+  searchFor: string | string[],
+): boolean {
+  const terms = Array.isArray(searchFor) ? searchFor : [searchFor];
+  return terms.some((term) => searchIn.includes(term));
+}
