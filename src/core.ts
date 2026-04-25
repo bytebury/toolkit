@@ -1,5 +1,4 @@
 import { lower } from "./strings.ts";
-import type { NonEmptyList, OneOrMany } from "./utility_types.ts";
 
 /**
  * Clone an object using structuredClone.
@@ -31,19 +30,18 @@ export function isEqual(thing1: unknown, thing2: unknown): boolean {
  * is a string, then it will return the first character.
  *
  * @remarks
- * If an empty list is passed then this will return undefined.
+ * If an empty list or string is passed then this will return undefined.
  *
  * @example
  * ```ts
  * first("hello"); // "h"
  * first([1, 2, 3]); // 1
+ * first([]); // undefined
  * ```
  */
-export function first<T>(list: NonEmptyList<T>): T;
-export function first(value: string): string;
-export function first<T>(
-  value: string | NonEmptyList<T>,
-): T | string | undefined {
+export function first(value: string): string | undefined;
+export function first<T>(list: T[]): T | undefined;
+export function first<T>(value: string | T[]): T | string | undefined {
   return value[0];
 }
 
@@ -52,19 +50,18 @@ export function first<T>(
  * is a string, then it will return the last character.
  *
  * @remarks
- * If an empty list is passed then this will return undefined.
+ * If an empty list or string is passed then this will return undefined.
  *
  * @example
  * ```ts
  * last("hello"); // "o"
  * last([1, 2, 3]); // 3
+ * last([]); // undefined
  * ```
  */
-export function last<T>(list: NonEmptyList<T>): T;
-export function last(value: string): string;
-export function last<T>(
-  value: string | NonEmptyList<T>,
-): T | string | undefined {
+export function last(value: string): string | undefined;
+export function last<T>(list: T[]): T | undefined;
+export function last<T>(value: string | T[]): T | string | undefined {
   return value[value.length - 1];
 }
 
@@ -214,9 +211,7 @@ export function reverse<T>(
  * isEmpty(new Map()); // true
  * ```
  */
-export function isEmpty(thing: unknown[]): boolean;
-export function isEmpty(thing: unknown): boolean;
-export function isEmpty(thing: string | OneOrMany<unknown>): boolean {
+export function isEmpty(thing: unknown): boolean {
   if (isNone(thing)) return true;
   if (typeof thing === "string") return thing === "";
   if (Array.isArray(thing)) return thing.length === 0;
@@ -241,9 +236,7 @@ export function isEmpty(thing: string | OneOrMany<unknown>): boolean {
  * isNotEmpty(new Map()); // false
  * ```
  */
-export function isNotEmpty(thing: unknown[]): boolean;
-export function isNotEmpty(thing: unknown): boolean;
-export function isNotEmpty(thing: string | OneOrMany<unknown>): boolean {
+export function isNotEmpty(thing: unknown): boolean {
   return !isEmpty(thing);
 }
 
@@ -292,7 +285,7 @@ export function distinct<T>(list: T[]): T[] {
  * console.log(sample([])); // undefined
  * ```
  */
-export function sample<T>(list: NonEmptyList<T>): T {
+export function sample<T>(list: T[]): T | undefined {
   return list[random(0, list.length)];
 }
 

@@ -35,7 +35,6 @@ import {
   union,
   unique,
 } from "../src/core.ts";
-import type { NonEmptyList } from "./utility_types.ts";
 
 if (!Set.prototype.symmetricDifference) {
   Set.prototype.symmetricDifference = function <T>(other: Set<T>) {
@@ -219,11 +218,11 @@ Deno.test("distinct is alias for unique", () => {
 });
 
 Deno.test("sample empty array", () => {
-  assertStrictEquals(sample([] as unknown as NonEmptyList<unknown>), undefined);
+  assertStrictEquals(sample([]), undefined);
 });
 
 Deno.test("sample non-empty", () => {
-  const list: NonEmptyList<number> = [1, 2, 3, 4, 5];
+  const list = [1, 2, 3, 4, 5];
   const result = sample(list);
   assert(list.includes(result as number));
 });
@@ -270,6 +269,18 @@ Deno.test("first string", () => {
 Deno.test("first array", () => {
   assertStrictEquals(first([1]), 1);
   assertStrictEquals(first([1, 2, 3]), 1);
+});
+
+Deno.test("first/last/sample accept plain T[] and empty arrays", () => {
+  const nums: number[] = [1, 2, 3];
+  assertStrictEquals(first(nums), 1);
+  assertStrictEquals(last(nums), 3);
+  assert(nums.includes(sample(nums) as number));
+
+  assertStrictEquals(first([]), undefined);
+  assertStrictEquals(last([]), undefined);
+  assertStrictEquals(first(""), undefined);
+  assertStrictEquals(last(""), undefined);
 });
 
 // rand
