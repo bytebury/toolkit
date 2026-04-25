@@ -15,7 +15,10 @@
 <div class="ddoc">
 <div><nav id="topnav">
   <div class="h-full">
-    <div class="flex items-center"><ul class="breadcrumbs"><li><a href=".&#x2F;" class="contextLink">🧋 boba</a></li><span class="text-black dark:text-white"><svg
+    <div class="flex items-center"><ul class="breadcrumbs">
+  <li>
+    <a href=".&#x2F;" class="contextLink">🧋 boba</a>
+  </li><span class="text-black dark:text-white"><svg
   width="16"
   height="16"
   viewBox="0 0 16 16"
@@ -29,7 +32,7 @@
     fill="currentColor"
   />
 </svg>
-</span><li>all symbols</li></ul>
+</span>all symbols</ul>
 </div>
 
     <div class="flex items-center gap-2">
@@ -94,8 +97,13 @@
   </div>
 </nav>
 <div id="searchResults"></div><div id="content">
-    <main><div class="space-y-7" id=""><section class="section"  id="default"><div>
-      <h2 class="anchorable mb-1"><a href="#default" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+    <main><div class="space-y-6 max-w-prose">
+    <div>
+      <a href=".&#x2F;" class="link text-xl font-bold">default</a>
+
+      <div class="ml-4 mt-2"><section>
+  <div class="space-y-2 flex-1"><div class="space-y-7" id="module_doc"><section class="section"  id="default_classes"><div>
+      <h2 class="anchorable mb-1"><a href="#default_classes" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
   width="16"
   height="16"
   viewBox="0 0 14 14"
@@ -117,624 +125,636 @@
   </defs>
 </svg>
 </a>
-<a href=".&#x2F;" class="contextLink">default</a></h2></div><div class="namespaceSection"><div id="namespace_adddays" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+Classes</h2></div><div class="namespaceSection"><div id="namespace_duration" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;addDays.html" title="addDays">addDays</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Adds the given amount of days to the specified date.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html" title="Duration">
+			    <span>Duration</span><span>(<span><span>milliseconds<span>: <span class="td-ref">Milliseconds</span></span></span></span>)</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A representation of a duration of time within a codebase.
+This class provides a way to work with durations of time in a type-safe manner.</p>
+</div></div><ul class="namespaceItemContentSubItems"><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_days_0">
+                  <span>days</span><span>(<span><span>days<span>: <span class="td-ref">Days</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from days.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_hours_0">
+                  <span>hours</span><span>(<span><span>hours<span>: <span class="td-ref">Hours</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from hours.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_milliseconds_0">
+                  <span>milliseconds</span><span>(<span><span>milliseconds<span>: <span class="td-ref">Milliseconds</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from milliseconds.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_minutes_0">
+                  <span>minutes</span><span>(<span><span>minutes<span>: <span class="td-ref">Minutes</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from minutes.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_seconds_0">
+                  <span>seconds</span><span>(<span><span>seconds<span>: <span class="td-ref">Seconds</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from seconds.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_sleep_0">
+                  <span>sleep</span><span>()<span>: <span class="td-ref">Promise</span>&lt;<span class="td-kw">void</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Sleeps for the current duration.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_todays_0">
+                  <span>toDays</span><span>()<span>: <span class="td-ref">Days</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to days.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_tohours_0">
+                  <span>toHours</span><span>()<span>: <span class="td-ref">Hours</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to hours.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_tomilliseconds_0">
+                  <span>toMilliseconds</span><span>()<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to milliseconds.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_tominutes_0">
+                  <span>toMinutes</span><span>()<span>: <span class="td-ref">Minutes</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to minutes.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_toseconds_0">
+                  <span>toSeconds</span><span>()<span>: <span class="td-ref">Seconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to seconds.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_toweeks_0">
+                  <span>toWeeks</span><span>()<span>: <span class="td-ref">Weeks</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to weeks.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_toyears_0">
+                  <span>toYears</span><span>()<span>: <span class="td-ref">Years</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the duration to years.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_weeks_0">
+                  <span>weeks</span><span>(<span><span>weeks<span>: <span class="td-ref">Weeks</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from weeks.</p>
+</div></div></li><li>
+                <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_years_0">
+                  <span>years</span><span>(<span><span>years<span>: <span class="td-ref">Years</span></span></span></span>)<span>: <span class="td-ref">Duration</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Creates a Duration from years.</p>
+</div></div></li></ul></div>
+    </div></div>
+</section>
+<section class="section"  id="default_functions"><div>
+      <h2 class="anchorable mb-1"><a href="#default_functions" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+Functions</h2></div><div class="namespaceSection"><div id="namespace_adddays" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;addDays.html" title="addDays">
+			    <span>addDays</span><span>(<div class="ml-4"><div><span>date<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>days<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Adds the given amount of days to the specified date.</p>
 </div></div></div>
     </div><div id="namespace_addmonths" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;addMonths.html" title="addMonths">addMonths</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Adds the given amount of months to the specified date.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;addMonths.html" title="addMonths">
+			    <span>addMonths</span><span>(<div class="ml-4"><div><span>date<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>months<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Adds the given amount of months to the specified date.</p>
 </div></div></div>
     </div><div id="namespace_addyears" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;addYears.html" title="addYears">addYears</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Adds the given amount of years to the specified date.</p>
-</div></div></div>
-    </div><div id="namespace_autocomplete" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;AutoComplete.html" title="AutoComplete">AutoComplete</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to Autocomplete a string.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;addYears.html" title="addYears">
+			    <span>addYears</span><span>(<div class="ml-4"><div><span>date<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>years<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Adds the given amount of years to the specified date.</p>
 </div></div></div>
     </div><div id="namespace_average" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;average.html" title="average">average</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the average number from a list of numbers.</p>
-</div></div></div>
-    </div><div id="namespace_brand" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Brand.html" title="Brand">Brand</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a type that is branded with a unique symbol.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;average.html" title="average">
+			    <span>average</span><span>(<span><span>nums<span>: <span class="td-kw">number</span>[]</span></span></span>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the average number from a list of numbers.</p>
 </div></div></div>
     </div><div id="namespace_chunk" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;chunk.html" title="chunk">chunk</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Splits an array into chunks of a fixed size.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;chunk.html" title="chunk">
+			    <span>chunk</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<div class="ml-4"><div><span>arr<span>: <span class="td-ref">T</span>[]</span></span>,</div><div><span>size<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">T</span>[][]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Splits an array into chunks of a fixed size.</p>
 </div></div></div>
     </div><div id="namespace_clone" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;clone.html" title="clone">clone</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Clone an object using structuredClone.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;clone.html" title="clone">
+			    <span>clone</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>obj<span>: <span class="td-ref">T</span></span></span></span>)<span>: <span class="td-ref">T</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Clone an object using structuredClone.</p>
 </div></div></div>
-    </div><div id="namespace_days" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_days" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Days.html" title="Days">Days</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in days.</p>
-</div></div></div>
-    </div><div id="namespace_days-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;days.html" title="days">days</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts days to milliseconds. This is shorthand for the following:</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;days.html" title="days">
+			    <span>days</span><span>(<span><span>days<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts days to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
     </div><div id="namespace_daysbetween" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;daysBetween.html" title="daysBetween">daysBetween</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Calculates the days between two dates.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;daysBetween.html" title="daysBetween">
+			    <span>daysBetween</span><span>(<div class="ml-4"><div><span>start<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>end<span>: <span class="td-ref">Date</span></span></span></div></div>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Calculates the days between two dates.</p>
 </div></div></div>
     </div><div id="namespace_difference" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;difference.html" title="difference">difference</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the difference of multiple arrays.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;difference.html" title="difference">
+			    <span>difference</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span><span>...lists</span><span>: <span class="td-ref">T</span>[][]</span></span></span>)<span>: <span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the difference of multiple arrays.</p>
 </div></div></div>
     </div><div id="namespace_distinct" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;distinct.html" title="distinct">distinct</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the distinct values from a list.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;distinct.html" title="distinct">
+			    <span>distinct</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>list<span>: <span class="td-ref">T</span>[]</span></span></span>)<span>: <span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the distinct values from a list.</p>
 </div></div></div>
-    </div><div id="namespace_duration" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Class bg-Class/15 dark:text-ClassDark dark:bg-ClassDark/15" title="Class">c</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html" title="Duration">Duration</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A representation of a duration of time within a codebase.
-This class provides a way to work with durations of time in a type-safe manner.</p>
-</div></div><ul class="namespaceItemContentSubItems"><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_days_0">days</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_hours_0">hours</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_milliseconds_0">milliseconds</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_minutes_0">minutes</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_seconds_0">seconds</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_sleep_0">sleep</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_todays_0">toDays</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_tohours_0">toHours</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_tomilliseconds_0">toMilliseconds</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_tominutes_0">toMinutes</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_toseconds_0">toSeconds</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_toweeks_0">toWeeks</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_toyears_0">toYears</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_weeks_0">weeks</a></li><li><a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Duration.html#method_years_0">years</a></li></ul></div>
     </div><div id="namespace_falsy" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;falsy.html" title="falsy">falsy</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given value is falsy.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;falsy.html" title="falsy">
+			    <span>falsy</span><span>(<span><span>thing<span>: <span class="td-kw">unknown</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given value is falsy.</p>
 </div></div></div>
     </div><div id="namespace_first" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;first.html" title="first">first</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the first thing in a list. If the value
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;first.html" title="first">
+			    <span>first</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>value<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-ref">NonEmptyList</span>&lt;<span class="td-ref">T</span>&gt;</span></span></span></span>)<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span><div class="namespaceItemContentTypeInfo">2 overloads</div></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the first thing in a list. If the value
 is a string, then it will return the first character.</p>
 </div></div></div>
-    </div><div id="namespace_hours" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_hours" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Hours.html" title="Hours">Hours</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in hours.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;hours.html" title="hours">
+			    <span>hours</span><span>(<span><span>hours<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts hours to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
-    </div><div id="namespace_hours-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+    </div><div id="namespace_includes" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;hours.html" title="hours">hours</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts hours to milliseconds. This is shorthand for the following:</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;includes.html" title="includes">
+			    <span>includes</span><span>(<div class="ml-4"><div><span>searchIn<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span>,</div><div><span>searchFor<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if <code>searchIn</code> contains the given <code>searchFor</code> term(s).</p>
+</div></div></div>
+    </div><div id="namespace_includesany" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;includesAny.html" title="includesAny">
+			    <span>includesAny</span><span>(<div class="ml-4"><div><span>searchIn<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span>,</div><div><span>searchFor<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if <code>searchIn</code> contains any of the given <code>searchFor</code> term(s).</p>
 </div></div></div>
     </div><div id="namespace_inrange" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;inRange.html" title="inRange">inRange</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns true if the given value is within the given range.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;inRange.html" title="inRange">
+			    <span>inRange</span><span>(<div class="ml-4"><div><span>value<span>: <span class="td-kw">number</span></span></span>,</div><div><span>min<span>: <span class="td-kw">number</span></span></span>,</div><div><span>max<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns true if the given value is within the given range.</p>
 </div></div></div>
     </div><div id="namespace_intersection" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;intersection.html" title="intersection">intersection</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the intersection of multiple arrays.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;intersection.html" title="intersection">
+			    <span>intersection</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span><span>...lists</span><span>: <span class="td-ref">T</span>[][]</span></span></span>)<span>: <span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the intersection of multiple arrays.</p>
 </div></div></div>
     </div><div id="namespace_isempty" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEmpty.html" title="isEmpty">isEmpty</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given thing is empty.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEmpty.html" title="isEmpty">
+			    <span>isEmpty</span><span>(<span><span>thing<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-ref">OneOrMany</span>&lt;<span class="td-kw">unknown</span>&gt;</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span><div class="namespaceItemContentTypeInfo">2 overloads</div></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given thing is empty.</p>
 </div></div></div>
     </div><div id="namespace_isequal" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEqual.html" title="isEqual">isEqual</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings,
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEqual.html" title="isEqual">
+			    <span>isEqual</span><span>(<div class="ml-4"><div><span>thing1<span>: <span class="td-kw">unknown</span></span></span>,</div><div><span>thing2<span>: <span class="td-kw">unknown</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings,
 and comparing them by their string value.</p>
 </div></div></div>
     </div><div id="namespace_isequalignorecase" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEqualIgnoreCase.html" title="isEqualIgnoreCase">isEqualIgnoreCase</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings and lowercasing
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEqualIgnoreCase.html" title="isEqualIgnoreCase">
+			    <span>isEqualIgnoreCase</span><span>(<div class="ml-4"><div><span>thing1<span>: <span class="td-kw">unknown</span></span></span>,</div><div><span>thing2<span>: <span class="td-kw">unknown</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings and lowercasing
 them, and comparing the string values. Works exactly like <code>isEqual</code> except
 will lowercase both things before comparing.</p>
 </div></div></div>
     </div><div id="namespace_iseven" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEven.html" title="isEven">isEven</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if a number is even.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isEven.html" title="isEven">
+			    <span>isEven</span><span>(<span><span>num<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if a number is even.</p>
 </div></div></div>
     </div><div id="namespace_isfriday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isFriday.html" title="isFriday">isFriday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Friday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isFriday.html" title="isFriday">
+			    <span>isFriday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Friday.</p>
 </div></div></div>
     </div><div id="namespace_isinfuture" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isInFuture.html" title="isInFuture">isInFuture</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the date is in the future.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isInFuture.html" title="isInFuture">
+			    <span>isInFuture</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the date is in the future.</p>
 </div></div></div>
     </div><div id="namespace_isinpast" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isInPast.html" title="isInPast">isInPast</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the date is in the past.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isInPast.html" title="isInPast">
+			    <span>isInPast</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the date is in the past.</p>
 </div></div></div>
     </div><div id="namespace_ismonday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isMonday.html" title="isMonday">isMonday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Monday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isMonday.html" title="isMonday">
+			    <span>isMonday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Monday.</p>
 </div></div></div>
     </div><div id="namespace_isnone" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNone.html" title="isNone">isNone</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns true if the given value is null or undefined.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNone.html" title="isNone">
+			    <span>isNone</span><span>(<span><span>thing<span>: <span class="td-kw">unknown</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns true if the given value is null or undefined.</p>
 </div></div></div>
     </div><div id="namespace_isnotempty" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotEmpty.html" title="isNotEmpty">isNotEmpty</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given thing is not empty.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotEmpty.html" title="isNotEmpty">
+			    <span>isNotEmpty</span><span>(<span><span>thing<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-ref">OneOrMany</span>&lt;<span class="td-kw">unknown</span>&gt;</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span><div class="namespaceItemContentTypeInfo">2 overloads</div></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given thing is not empty.</p>
 </div></div></div>
     </div><div id="namespace_isnotequal" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotEqual.html" title="isNotEqual">isNotEqual</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings,
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotEqual.html" title="isNotEqual">
+			    <span>isNotEqual</span><span>(<div class="ml-4"><div><span>thing1<span>: <span class="td-kw">unknown</span></span></span>,</div><div><span>thing2<span>: <span class="td-kw">unknown</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings,
 and comparing them by their string value.</p>
 </div></div></div>
     </div><div id="namespace_isnotequalignorecase" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotEqualIgnoreCase.html" title="isNotEqualIgnoreCase">isNotEqualIgnoreCase</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings, trimming and lowercasing
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotEqualIgnoreCase.html" title="isNotEqualIgnoreCase">
+			    <span>isNotEqualIgnoreCase</span><span>(<div class="ml-4"><div><span>thing1<span>: <span class="td-kw">unknown</span></span></span>,</div><div><span>thing2<span>: <span class="td-kw">unknown</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Compares two things by turning them into strings, trimming and lowercasing
 them, and comparing the string values. Works exactly like <code>isEqual</code> except
 will lowercase both things before comparing.</p>
 </div></div></div>
     </div><div id="namespace_isnotwhitespace" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotWhitespace.html" title="isNotWhitespace">isNotWhitespace</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given text contains any non-whitespace characters.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isNotWhitespace.html" title="isNotWhitespace">
+			    <span>isNotWhitespace</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given text contains any non-whitespace characters.</p>
 </div></div></div>
     </div><div id="namespace_isodd" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isOdd.html" title="isOdd">isOdd</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if a number is odd.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isOdd.html" title="isOdd">
+			    <span>isOdd</span><span>(<span><span>num<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if a number is odd.</p>
 </div></div></div>
     </div><div id="namespace_issaturday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isSaturday.html" title="isSaturday">isSaturday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Saturday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isSaturday.html" title="isSaturday">
+			    <span>isSaturday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Saturday.</p>
 </div></div></div>
     </div><div id="namespace_issome" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isSome.html" title="isSome">isSome</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns true if the given value is not null or undefined.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isSome.html" title="isSome">
+			    <span>isSome</span><span>(<span><span>thing<span>: <span class="td-kw">unknown</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns true if the given value is not null or undefined.</p>
 </div></div></div>
     </div><div id="namespace_issunday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isSunday.html" title="isSunday">isSunday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Sunday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isSunday.html" title="isSunday">
+			    <span>isSunday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Sunday.</p>
 </div></div></div>
     </div><div id="namespace_isthursday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isThursday.html" title="isThursday">isThursday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Thursday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isThursday.html" title="isThursday">
+			    <span>isThursday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Thursday.</p>
 </div></div></div>
     </div><div id="namespace_istoday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isToday.html" title="isToday">isToday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the date is today.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isToday.html" title="isToday">
+			    <span>isToday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the date is today.</p>
 </div></div></div>
     </div><div id="namespace_istuesday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isTuesday.html" title="isTuesday">isTuesday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Tuesday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isTuesday.html" title="isTuesday">
+			    <span>isTuesday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Tuesday.</p>
 </div></div></div>
     </div><div id="namespace_iswednesday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWednesday.html" title="isWednesday">isWednesday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Wednesday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWednesday.html" title="isWednesday">
+			    <span>isWednesday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a Wednesday.</p>
 </div></div></div>
     </div><div id="namespace_isweekday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWeekday.html" title="isWeekday">isWeekday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a weekday.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWeekday.html" title="isWeekday">
+			    <span>isWeekday</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a weekday.</p>
 </div></div></div>
     </div><div id="namespace_isweekend" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWeekend.html" title="isWeekend">isWeekend</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a weekend.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWeekend.html" title="isWeekend">
+			    <span>isWeekend</span><span>(<span><span>date<span>: <span class="td-ref">Date</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Checks if a date is a weekend.</p>
 </div></div></div>
     </div><div id="namespace_iswhitespace" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWhitespace.html" title="isWhitespace">isWhitespace</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given text is only comprised of whitespace.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;isWhitespace.html" title="isWhitespace">
+			    <span>isWhitespace</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given text is only comprised of whitespace.</p>
 </div></div></div>
     </div><div id="namespace_kebab" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;kebab.html" title="kebab">kebab</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to <code>kebab-case</code> by removing punctuation,
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;kebab.html" title="kebab">
+			    <span>kebab</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-ref">Lowercase</span>&lt;<span class="td-kw">string</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to <code>kebab-case</code> by removing punctuation,
 trimming extra spaces, converting to lowercase, and joining words with hyphens.</p>
 </div></div></div>
     </div><div id="namespace_keepalphabetical" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepAlphabetical.html" title="keepAlphabetical">keepAlphabetical</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a copy of the given string with all non-alpha characters removed,
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepAlphabetical.html" title="keepAlphabetical">
+			    <span>keepAlphabetical</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a copy of the given string with all non-alpha characters removed,
 except for spaces. Letters are preserved regardless of case.</p>
 </div></div></div>
     </div><div id="namespace_keepalphanumeric" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepAlphanumeric.html" title="keepAlphanumeric">keepAlphanumeric</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a copy of the given string with all non-alphanumeric characters removed,
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepAlphanumeric.html" title="keepAlphanumeric">
+			    <span>keepAlphanumeric</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a copy of the given string with all non-alphanumeric characters removed,
 except for spaces. Letters and digits are preserved regardless of case.</p>
 </div></div></div>
     </div><div id="namespace_keepnumeric" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepNumeric.html" title="keepNumeric">keepNumeric</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Removes any non-numeric characters. This includes spaces.</p>
-</div></div></div>
-    </div><div id="namespace_keyof" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;KeyOf.html" title="KeyOf">KeyOf</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to get the keys from an object or list.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepNumeric.html" title="keepNumeric">
+			    <span>keepNumeric</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Removes any non-numeric characters. This includes spaces.</p>
 </div></div></div>
     </div><div id="namespace_last" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;last.html" title="last">last</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the last thing in a list. If the value
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;last.html" title="last">
+			    <span>last</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>value<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-ref">NonEmptyList</span>&lt;<span class="td-ref">T</span>&gt;</span></span></span></span>)<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span><div class="namespaceItemContentTypeInfo">2 overloads</div></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the last thing in a list. If the value
 is a string, then it will return the last character.</p>
 </div></div></div>
     </div><div id="namespace_lower" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;lower.html" title="lower">lower</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to lowercase.
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;lower.html" title="lower">
+			    <span>lower</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-ref">Lowercase</span>&lt;<span class="td-kw">string</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to lowercase.
 An alias for <code>toLowerCase()</code>.</p>
 </div></div></div>
     </div><div id="namespace_max" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;max.html" title="max">max</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the maximum number from a list of numbers.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;max.html" title="max">
+			    <span>max</span><span>(<span><span>nums<span>: <span class="td-kw">number</span>[]</span></span></span>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the maximum number from a list of numbers.</p>
 </div></div></div>
-    </div><div id="namespace_milliseconds" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_milliseconds" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Milliseconds.html" title="Milliseconds">Milliseconds</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in milliseconds. You should
-always use this type when working with durations of time in milliseconds.
-It helps ensure that you're working with durations of time in milliseconds,
-and not accidentally using a different unit of time.</p>
-</div></div></div>
-    </div><div id="namespace_milliseconds-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;milliseconds.html" title="milliseconds">milliseconds</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts milliseconds to milliseconds. This is shorthand for the following:</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;milliseconds.html" title="milliseconds">
+			    <span>milliseconds</span><span>(<span><span>milliseconds<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts milliseconds to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
     </div><div id="namespace_min" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;min.html" title="min">min</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the minimum number from a list of numbers.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;min.html" title="min">
+			    <span>min</span><span>(<span><span>nums<span>: <span class="td-kw">number</span>[]</span></span></span>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the minimum number from a list of numbers.</p>
 </div></div></div>
-    </div><div id="namespace_minutes" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_minutes" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Minutes.html" title="Minutes">Minutes</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in minutes.</p>
-</div></div></div>
-    </div><div id="namespace_minutes-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;minutes.html" title="minutes">minutes</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts minutes to milliseconds. This is shorthand for the following:</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;minutes.html" title="minutes">
+			    <span>minutes</span><span>(<span><span>minutes<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts minutes to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
     </div><div id="namespace_monthsbetween" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;monthsBetween.html" title="monthsBetween">monthsBetween</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Calculates the months between two dates.</p>
-</div></div></div>
-    </div><div id="namespace_none" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;None.html" title="None">None</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Syntactic sugar for <code>null | undefined</code>.</p>
-</div></div></div>
-    </div><div id="namespace_nonemptylist" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;NonEmptyList.html" title="NonEmptyList">NonEmptyList</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a non-empty list.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;monthsBetween.html" title="monthsBetween">
+			    <span>monthsBetween</span><span>(<div class="ml-4"><div><span>start<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>end<span>: <span class="td-ref">Date</span></span></span></div></div>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Calculates the months between two dates.</p>
 </div></div></div>
     </div><div id="namespace_noop" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;noop.html" title="noop">noop</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a function that does nothing.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;noop.html" title="noop">
+			    <span>noop</span><span>()<span>: <span class="td-kw">void</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a function that does nothing.</p>
 </div></div></div>
     </div><div id="namespace_now" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;now.html" title="now">now</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Right now. This is an alias for <code>new Date()</code>.</p>
-</div></div></div>
-    </div><div id="namespace_oneof" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;OneOf.html" title="OneOf">OneOf</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to get the keys from a list.</p>
-</div></div></div>
-    </div><div id="namespace_oneormany" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;OneOrMany.html" title="OneOrMany">OneOrMany</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents when there can be one or many of someting</p>
-</div></div></div>
-    </div><div id="namespace_option" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Option.html" title="Option">Option</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a thing that might be <code>None</code> (null or undefined).</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;now.html" title="now">
+			    <span>now</span><span>()<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Right now. This is an alias for <code>new Date()</code>.</p>
 </div></div></div>
     </div><div id="namespace_ordinalize" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;ordinalize.html" title="ordinalize">ordinalize</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts a number to &quot;1st&quot;, &quot;2nd&quot;, &quot;3rd&quot;, etc.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;ordinalize.html" title="ordinalize">
+			    <span>ordinalize</span><span>(<span><span>num<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts a number to &quot;1st&quot;, &quot;2nd&quot;, &quot;3rd&quot;, etc.</p>
 </div></div></div>
     </div><div id="namespace_parse" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;parse.html" title="parse">parse</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Safely parses a string to JSON or returns the string itself. This will
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;parse.html" title="parse">
+			    <span>parse</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>thing<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-kw">string</span></span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Safely parses a string to JSON or returns the string itself. This will
 never throw an error and internally called <code>JSON.parse(thing)</code></p>
-</div></div></div>
-    </div><div id="namespace_prettify" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Prettify.html" title="Prettify">Prettify</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A utility type that takes an object type and makes the hover overlay
-more readable for the developer.</p>
-</div></div></div>
-    </div><div id="namespace_primitive" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Primitive.html" title="Primitive">Primitive</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents any primitive ECMAScript value.</p>
 </div></div></div>
     </div><div id="namespace_random" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;random.html" title="random">random</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Gives a random number in the given range. The first parameter is inclusive
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;random.html" title="random">
+			    <span>random</span><span>(<div class="ml-4"><div><span>start<span>: <span class="td-kw">number</span></span></span>,</div><div><span>end<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Gives a random number in the given range. The first parameter is inclusive
 and the second one is exclusive. Therefore, it will work with lists out of
 the box.</p>
 </div></div></div>
     </div><div id="namespace_reverse" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;reverse.html" title="reverse">reverse</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Reverses the given string or list.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;reverse.html" title="reverse">
+			    <span>reverse</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>thing<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-ref">Set</span>&lt;<span class="td-ref">T</span>&gt;<span class="td-op"> | </span><span class="td-ref">T</span>[]</span></span></span></span>)<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-ref">Set</span>&lt;<span class="td-ref">T</span>&gt;<span class="td-op"> | </span><span class="td-ref">T</span>[]</span></span></span><div class="namespaceItemContentTypeInfo">3 overloads</div></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Reverses the given string or list.</p>
 </div></div></div>
     </div><div id="namespace_round" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;round.html" title="round">round</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Rounds a number to the nearest integer.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;round.html" title="round">
+			    <span>round</span><span>(<span><span>num<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Rounds a number to the nearest integer.</p>
 </div></div></div>
     </div><div id="namespace_sample" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;sample.html" title="sample">sample</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Pick a random item from an array.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;sample.html" title="sample">
+			    <span>sample</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>list<span>: <span class="td-ref">NonEmptyList</span>&lt;<span class="td-ref">T</span>&gt;</span></span></span>)<span>: <span class="td-ref">T</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Pick a random item from an array.</p>
 </div></div></div>
-    </div><div id="namespace_seconds" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_seconds" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Seconds.html" title="Seconds">Seconds</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in seconds.</p>
-</div></div></div>
-    </div><div id="namespace_seconds-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;seconds.html" title="seconds">seconds</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts seconds to milliseconds. This is shorthand for the following:</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;seconds.html" title="seconds">
+			    <span>seconds</span><span>(<span><span>seconds<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts seconds to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
     </div><div id="namespace_sleep" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;sleep.html" title="sleep">sleep</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Sleeps for the given duration of milliseconds.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;sleep.html" title="sleep">
+			    <span>sleep</span><span>(<span><span>ms<span>: <span class="td-ref">Milliseconds</span></span></span></span>)<span>: <span class="td-ref">Promise</span>&lt;<span class="td-kw">void</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Sleeps for the given duration of milliseconds.</p>
 </div></div></div>
     </div><div id="namespace_snake" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;snake.html" title="snake">snake</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts a string to <code>snake_case</code> by replacing spaces and punctuation with underscores.
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;snake.html" title="snake">
+			    <span>snake</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-ref">Lowercase</span>&lt;<span class="td-kw">string</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts a string to <code>snake_case</code> by replacing spaces and punctuation with underscores.
 Uses <code>kebab()</code> internally, replacing hyphens with underscores.</p>
 </div></div></div>
     </div><div id="namespace_stringify" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;stringify.html" title="stringify">stringify</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the given parameter into the string equivalent.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;stringify.html" title="stringify">
+			    <span>stringify</span><span>(<span><span>thing<span>: <span class="td-kw">unknown</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the given parameter into the string equivalent.</p>
 </div></div></div>
     </div><div id="namespace_subtractdays" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;subtractDays.html" title="subtractDays">subtractDays</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Subtracts the given amount of days from the specified date.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;subtractDays.html" title="subtractDays">
+			    <span>subtractDays</span><span>(<div class="ml-4"><div><span>date<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>days<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Subtracts the given amount of days from the specified date.</p>
 </div></div></div>
     </div><div id="namespace_subtractmonths" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;subtractMonths.html" title="subtractMonths">subtractMonths</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Subtracts the given amount of months from the specified date.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;subtractMonths.html" title="subtractMonths">
+			    <span>subtractMonths</span><span>(<div class="ml-4"><div><span>date<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>months<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Subtracts the given amount of months from the specified date.</p>
 </div></div></div>
     </div><div id="namespace_subtractyears" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;subtractYears.html" title="subtractYears">subtractYears</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Subtracts the given amount of yers from the specified date.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;subtractYears.html" title="subtractYears">
+			    <span>subtractYears</span><span>(<div class="ml-4"><div><span>date<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>years<span>: <span class="td-kw">number</span></span></span></div></div>)<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Subtracts the given amount of yers from the specified date.</p>
 </div></div></div>
     </div><div id="namespace_sum" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;sum.html" title="sum">sum</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the sum of a list of numbers.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;sum.html" title="sum">
+			    <span>sum</span><span>(<span><span>nums<span>: <span class="td-kw">number</span>[]</span></span></span>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the sum of a list of numbers.</p>
 </div></div></div>
     </div><div id="namespace_title" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;title.html" title="title">title</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to Title Case. This will capitalize
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;title.html" title="title">
+			    <span>title</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to Title Case. This will capitalize
 the letter of each word that is separated by a space. Underscores
 are considered spaces. Hyphens are respected.</p>
 </div></div></div>
     </div><div id="namespace_today" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;today.html" title="today">today</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Today's date at midnight.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;today.html" title="today">
+			    <span>today</span><span>()<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Today's date at midnight.</p>
 </div></div></div>
     </div><div id="namespace_todo" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;todo.html" title="todo">todo</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a function that does nothing. Similar to <code>noop</code>, however
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;todo.html" title="todo">
+			    <span>todo</span><span>(<span><span>message<span class="td-op">?</span><span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">void</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a function that does nothing. Similar to <code>noop</code>, however
 this allows you to put in an optional message regarding todos.</p>
 </div></div></div>
     </div><div id="namespace_tomorrow" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;tomorrow.html" title="tomorrow">tomorrow</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Tomorrow's date at midnight.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;tomorrow.html" title="tomorrow">
+			    <span>tomorrow</span><span>()<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Tomorrow's date at midnight.</p>
 </div></div></div>
     </div><div id="namespace_trim" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;trim.html" title="trim">trim</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Trims the whitespace from the beginning and the end. This is an
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;trim.html" title="trim">
+			    <span>trim</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Trims the whitespace from the beginning and the end. This is an
 alias for <code>.trim()</code>. Useful for when you're mapping over lists.</p>
 </div></div></div>
     </div><div id="namespace_truthy" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;truthy.html" title="truthy">truthy</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given value is truthy.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;truthy.html" title="truthy">
+			    <span>truthy</span><span>(<span><span>thing<span>: <span class="td-kw">unknown</span></span></span></span>)<span>: <span class="td-kw">boolean</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Determines if the given value is truthy.</p>
 </div></div></div>
     </div><div id="namespace_union" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;union.html" title="union">union</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the union of multiple arrays.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;union.html" title="union">
+			    <span>union</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span><span>...lists</span><span>: <span class="td-ref">T</span>[][]</span></span></span>)<span>: <span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the union of multiple arrays.</p>
 </div></div></div>
     </div><div id="namespace_unique" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;unique.html" title="unique">unique</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the distinct values from a list.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;unique.html" title="unique">
+			    <span>unique</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>list<span>: <span class="td-ref">T</span>[]</span></span></span>)<span>: <span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the distinct values from a list.</p>
 </div></div></div>
     </div><div id="namespace_upper" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;upper.html" title="upper">upper</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to uppercase.
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;upper.html" title="upper">
+			    <span>upper</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-ref">Uppercase</span>&lt;<span class="td-kw">string</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to uppercase.
 An alias for <code>toUpperCase()</code>.</p>
 </div></div></div>
-    </div><div id="namespace_valueof" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_weeks" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;ValueOf.html" title="ValueOf">ValueOf</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to get the values from an object
-or a list.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;weeks.html" title="weeks">
+			    <span>weeks</span><span>(<span><span>weeks<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts weeks to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
-    </div><div id="namespace_weeks" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+    </div><div id="namespace_years" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Weeks.html" title="Weeks">Weeks</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in weeks.</p>
-</div></div></div>
-    </div><div id="namespace_weeks-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;weeks.html" title="weeks">weeks</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts weeks to milliseconds. This is shorthand for the following:</p>
-</div></div></div>
-    </div><div id="namespace_years" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Years.html" title="Years">Years</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in years.</p>
-</div></div></div>
-    </div><div id="namespace_years-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
-<div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;years.html" title="years">years</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts years to milliseconds. This is shorthand for the following:</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;years.html" title="years">
+			    <span>years</span><span>(<span><span>years<span>: <span class="td-kw">number</span></span></span></span>)<span>: <span class="td-ref">Milliseconds</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts years to milliseconds. This is shorthand for the following:</p>
 </div></div></div>
     </div><div id="namespace_yearsbetween" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;yearsBetween.html" title="yearsBetween">yearsBetween</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Calculates the years between two dates.
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;yearsBetween.html" title="yearsBetween">
+			    <span>yearsBetween</span><span>(<div class="ml-4"><div><span>start<span>: <span class="td-ref">Date</span></span></span>,</div><div><span>end<span>: <span class="td-ref">Date</span></span></span></div></div>)<span>: <span class="td-kw">number</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Calculates the years between two dates.
 The date must be equal or past for it to count as a full year.</p>
 </div></div></div>
     </div><div id="namespace_yesterday" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
-		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;yesterday.html" title="yesterday">yesterday</a>
-
-	      <div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Yesterday's date at midnight.</p>
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;yesterday.html" title="yesterday">
+			    <span>yesterday</span><span>()<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Yesterday's date at midnight.</p>
 </div></div></div>
     </div></div>
 </section>
+<section class="section"  id="default_type-aliases"><div>
+      <h2 class="anchorable mb-1"><a href="#default_type-aliases" class="anchor" aria-label="Anchor" tabIndex="-1"><svg
+  width="16"
+  height="16"
+  viewBox="0 0 14 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g clip-path="url(#clip0_1081_1237)">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.80328 2.8656C6.68736 2.99 6.62425 3.15454 6.62725 3.32456C6.63025 3.49457 6.69913 3.65678 6.81936 3.77702C6.9396 3.89725 7.10181 3.96613 7.27182 3.96913C7.44184 3.97213 7.60638 3.90902 7.73078 3.7931L8.82453 2.69935C8.98712 2.53676 9.18015 2.40778 9.39259 2.31978C9.60503 2.23179 9.83272 2.1865 10.0627 2.1865C10.2926 2.1865 10.5203 2.23179 10.7327 2.31978C10.9452 2.40778 11.1382 2.53676 11.3008 2.69935C11.4634 2.86194 11.5923 3.05497 11.6803 3.2674C11.7683 3.47984 11.8136 3.70753 11.8136 3.93747C11.8136 4.16741 11.7683 4.3951 11.6803 4.60754C11.5923 4.81998 11.4634 5.013 11.3008 5.1756L9.11328 7.3631C8.95075 7.52581 8.75775 7.65488 8.5453 7.74295C8.33285 7.83102 8.10513 7.87635 7.87516 7.87635C7.64518 7.87635 7.41746 7.83102 7.20501 7.74295C6.99256 7.65488 6.79956 7.52581 6.63703 7.3631C6.51263 7.24718 6.34809 7.18407 6.17807 7.18707C6.00806 7.19007 5.84585 7.25894 5.72561 7.37918C5.60538 7.49942 5.5365 7.66163 5.5335 7.83164C5.5305 8.00165 5.59361 8.1662 5.70953 8.2906C5.99391 8.57501 6.33154 8.80062 6.70312 8.95455C7.0747 9.10847 7.47296 9.18769 7.87516 9.18769C8.27736 9.18769 8.67562 9.10847 9.0472 8.95455C9.41878 8.80062 9.7564 8.57501 10.0408 8.2906L12.2283 6.1031C12.8026 5.52874 13.1253 4.74974 13.1253 3.93747C13.1253 3.12521 12.8026 2.34621 12.2283 1.77185C11.6539 1.19749 10.8749 0.874817 10.0627 0.874817C9.25039 0.874817 8.47139 1.19749 7.89703 1.77185L6.80328 2.8656ZM2.69953 11.3006C2.53682 11.1381 2.40774 10.9451 2.31968 10.7326C2.23161 10.5202 2.18628 10.2924 2.18628 10.0625C2.18628 9.8325 2.23161 9.60477 2.31968 9.39233C2.40774 9.17988 2.53682 8.98688 2.69953 8.82435L4.88703 6.63685C5.04956 6.47414 5.24256 6.34506 5.45501 6.25699C5.66746 6.16893 5.89518 6.1236 6.12516 6.1236C6.35513 6.1236 6.58285 6.16893 6.7953 6.25699C7.00775 6.34506 7.20075 6.47414 7.36328 6.63685C7.48768 6.75277 7.65223 6.81588 7.82224 6.81288C7.99225 6.80988 8.15446 6.741 8.2747 6.62077C8.39494 6.50053 8.46381 6.33832 8.46681 6.1683C8.46981 5.99829 8.4067 5.83375 8.29078 5.70935C8.0064 5.42494 7.66878 5.19933 7.2972 5.0454C6.92562 4.89148 6.52736 4.81225 6.12516 4.81225C5.72296 4.81225 5.3247 4.89148 4.95312 5.0454C4.58154 5.19933 4.24391 5.42494 3.95953 5.70935L1.77203 7.89685C1.19767 8.47121 0.875 9.25021 0.875 10.0625C0.875 10.8747 1.19767 11.6537 1.77203 12.2281C2.34639 12.8025 3.12539 13.1251 3.93766 13.1251C4.74992 13.1251 5.52892 12.8025 6.10328 12.2281L7.19703 11.1343C7.31295 11.0099 7.37606 10.8454 7.37306 10.6754C7.37006 10.5054 7.30119 10.3432 7.18095 10.2229C7.06071 10.1027 6.8985 10.0338 6.72849 10.0308C6.55848 10.0278 6.39393 10.0909 6.26953 10.2068L5.17578 11.3006C5.01325 11.4633 4.82025 11.5924 4.6078 11.6805C4.39535 11.7685 4.16763 11.8138 3.93766 11.8138C3.70768 11.8138 3.47996 11.7685 3.26751 11.6805C3.05506 11.5924 2.86206 11.4633 2.69953 11.3006Z"
+      fill="currentColor"
+    />
+  </g>
+  <defs>
+    <clipPath id="clip0_1081_1237">
+      <rect width="14" height="14" fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+</a>
+Type Aliases</h2></div><div class="namespaceSection"><div id="namespace_autocomplete" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;AutoComplete.html" title="AutoComplete">
+			    <span>AutoComplete</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-kw">string</span></span></span>&gt;</span> = <span><span class="td-ref">T</span><span class="td-op"> | </span>(<span><span class="td-kw">string</span><span class="td-op"> & </span><span class="td-ref">Record</span>&lt;<span class="td-ref">PropertyKey</span><span>, </span><span class="td-kw">unknown</span>&gt;</span>)</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to Autocomplete a string.</p>
+</div></div></div>
+    </div><div id="namespace_brand" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Brand.html" title="Brand">
+			    <span>Brand</span><span><span>&lt;<span><span class="td-tp">T</span></span><span>, </span><span><span class="td-tp">B</span></span>&gt;</span> = <span><span class="td-ref">T</span><span class="td-op"> & </span>{ __brand<span>: <span class="td-ref">B</span></span>;  }</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a type that is branded with a unique symbol.</p>
+</div></div></div>
+    </div><div id="namespace_days-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Days.html" title="Days">
+			    <span>Days</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"days"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in days.</p>
+</div></div></div>
+    </div><div id="namespace_hours-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Hours.html" title="Hours">
+			    <span>Hours</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"hours"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in hours.</p>
+</div></div></div>
+    </div><div id="namespace_keyof" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;KeyOf.html" title="KeyOf">
+			    <span>KeyOf</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span> = <span class="td-ref">T</span> <span class="td-kw">extends</span> <span class="td-ref">Readonly</span>&lt;<span class="td-kw">unknown</span>[]&gt; <span class="td-op">?</span> <span class="td-ref">ValueOf</span>&lt;<span class="td-ref">T</span>&gt; <span class="td-op">:</span> <span class="td-kw">keyof</span> <span class="td-ref">T</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to get the keys from an object or list.</p>
+</div></div></div>
+    </div><div id="namespace_milliseconds-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Milliseconds.html" title="Milliseconds">
+			    <span>Milliseconds</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"milliseconds"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in milliseconds. You should
+always use this type when working with durations of time in milliseconds.
+It helps ensure that you're working with durations of time in milliseconds,
+and not accidentally using a different unit of time.</p>
+</div></div></div>
+    </div><div id="namespace_minutes-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Minutes.html" title="Minutes">
+			    <span>Minutes</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"minutes"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in minutes.</p>
+</div></div></div>
+    </div><div id="namespace_none" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;None.html" title="None">
+			    <span>None</span><span> = <span><span class="td-kw">null</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Syntactic sugar for <code>null | undefined</code>.</p>
+</div></div></div>
+    </div><div id="namespace_nonemptylist" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;NonEmptyList.html" title="NonEmptyList">
+			    <span>NonEmptyList</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span> = <span>[<span class="td-ref">T</span>, ...<span class="td-ref">T</span>[]]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a non-empty list.</p>
+</div></div></div>
+    </div><div id="namespace_oneof" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;OneOf.html" title="OneOf">
+			    <span>OneOf</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Readonly</span>&lt;<span class="td-kw">unknown</span>[]&gt;</span></span>&gt;</span> = <span class="td-ref">T</span>[<span class="td-kw">number</span>]</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to get the keys from a list.</p>
+</div></div></div>
+    </div><div id="namespace_oneormany" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;OneOrMany.html" title="OneOrMany">
+			    <span>OneOrMany</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span> = <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents when there can be one or many of someting</p>
+</div></div></div>
+    </div><div id="namespace_option" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Option.html" title="Option">
+			    <span>Option</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span> = <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a thing that might be <code>None</code> (null or undefined).</p>
+</div></div></div>
+    </div><div id="namespace_prettify" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Prettify.html" title="Prettify">
+			    <span>Prettify</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span> = <span>[<span><span class="td-tp">K</span><span><span class="td-kw"> in </span><span class="td-kw">keyof</span> <span class="td-ref">T</span></span></span>]<span>: <span class="td-ref">T</span>[<span class="td-ref">K</span>]</span><span class="td-op"> & </span>{  }</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>A utility type that takes an object type and makes the hover overlay
+more readable for the developer.</p>
+</div></div></div>
+    </div><div id="namespace_primitive" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Primitive.html" title="Primitive">
+			    <span>Primitive</span><span> = <div class="ml-indent"><span><span class="td-kw">string</span></span><br /><span><span class="td-op"> | </span><span class="td-kw">number</span></span><br /><span><span class="td-op"> | </span><span class="td-kw">boolean</span></span><br /><span><span class="td-op"> | </span><span class="td-kw">bigint</span></span><br /><span><span class="td-op"> | </span><span class="td-kw">symbol</span></span><br /><span><span class="td-op"> | </span><span class="td-kw">null</span></span><br /><span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></div></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents any primitive ECMAScript value.</p>
+</div></div></div>
+    </div><div id="namespace_seconds-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Seconds.html" title="Seconds">
+			    <span>Seconds</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"seconds"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in seconds.</p>
+</div></div></div>
+    </div><div id="namespace_valueof" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;ValueOf.html" title="ValueOf">
+			    <span>ValueOf</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span> = <span class="td-ref">T</span> <span class="td-kw">extends</span> <span class="td-ref">Readonly</span>&lt;<span class="td-kw">unknown</span>[]&gt; <span class="td-op">?</span> <span class="td-ref">T</span>[<span class="td-kw">number</span>] <span class="td-op">:</span> <span class="td-ref">T</span>[<span class="td-kw">keyof</span> <span class="td-ref">T</span>]</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>This is a utility type that allows you to get the values from an object
+or a list.</p>
+</div></div></div>
+    </div><div id="namespace_weeks-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Weeks.html" title="Weeks">
+			    <span>Weeks</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"weeks"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in weeks.</p>
+</div></div></div>
+    </div><div id="namespace_years-1" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15 dark:text-TypeAliasDark dark:bg-TypeAliasDark/15" title="Type Alias">T</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;Years.html" title="Years">
+			    <span>Years</span><span> = <span class="td-ref">Brand</span>&lt;<span class="td-kw">number</span><span>, </span><span class="td-str">"years"</span>&gt;</span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Represents a duration of time in years.</p>
+</div></div></div>
+    </div></div>
+</section>
+</div>
+</div>
+</section>
+</div>
+    </div>
 </div>
 </main>
   </div>
