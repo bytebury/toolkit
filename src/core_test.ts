@@ -13,6 +13,8 @@ import {
   distinct,
   falsy,
   first,
+  includes,
+  includesAny,
   inRange,
   intersection,
   isEmpty,
@@ -349,4 +351,49 @@ Deno.test("intersection", () => {
 Deno.test("union", () => {
   assertStrictEquals(union([1, 2, 3], [2, 3, 4]).length, 4);
   assertStrictEquals(union(["a", "b", "c"], ["b", "c", "d"]).length, 4);
+});
+
+Deno.test("includes string in string", () => {
+  assert(includes("hello world", "hello"));
+  assert(includes("hello world", "world"));
+  assertFalse(includes("hello world", "moon"));
+});
+
+Deno.test("includes list of strings in string", () => {
+  assert(includes("hello world", ["hello", "world"]));
+  assertFalse(includes("hello world", ["hello", "moon"]));
+  assert(includes("hello world", []));
+});
+
+Deno.test("includes string in list", () => {
+  assert(includes(["a", "b", "c"], "a"));
+  assertFalse(includes(["a", "b", "c"], "d"));
+});
+
+Deno.test("includes list in list", () => {
+  assert(includes(["a", "b", "c"], ["a", "b"]));
+  assertFalse(includes(["a", "b", "c"], ["a", "d"]));
+  assert(includes(["a", "b", "c"], []));
+});
+
+Deno.test("includesAny string in string", () => {
+  assert(includesAny("hello world", "hello"));
+  assertFalse(includesAny("hello world", "moon"));
+});
+
+Deno.test("includesAny list of strings in string", () => {
+  assert(includesAny("hello world", ["hello", "moon"]));
+  assertFalse(includesAny("hello world", ["sun", "moon"]));
+  assertFalse(includesAny("hello world", []));
+});
+
+Deno.test("includesAny string in list", () => {
+  assert(includesAny(["a", "b", "c"], "a"));
+  assertFalse(includesAny(["a", "b", "c"], "d"));
+});
+
+Deno.test("includesAny list in list", () => {
+  assert(includesAny(["a", "b", "c"], ["a", "d"]));
+  assertFalse(includesAny(["a", "b", "c"], ["d", "e"]));
+  assertFalse(includesAny(["a", "b", "c"], []));
 });
