@@ -3,6 +3,8 @@ import {
   addDays,
   addMonths,
   addYears,
+  currentMonth,
+  currentYear,
   daysBetween,
   isFriday,
   isMonday,
@@ -54,6 +56,16 @@ Deno.test("yesterday returns yesterday's date at midnight", () => {
   const t = yesterday();
   const expected = subtractDays(today(), 1);
   assertEquals(t.getTime(), expected.getTime());
+});
+
+Deno.test("currentMonth returns the current month as 1-12", () => {
+  const m = currentMonth();
+  assertEquals(m, new Date().getMonth() + 1);
+  assert(m >= 1 && m <= 12);
+});
+
+Deno.test("currentYear returns the current year", () => {
+  assertEquals(currentYear(), new Date().getFullYear());
 });
 
 Deno.test("addDays / subtractDays work correctly", () => {
