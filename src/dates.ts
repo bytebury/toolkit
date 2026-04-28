@@ -33,6 +33,20 @@ export function yesterday(): Date {
 }
 
 /**
+ * The current month as a number from 1 (January) to 12 (December).
+ */
+export function currentMonth(): number {
+  return now().getMonth() + 1;
+}
+
+/**
+ * The current year as a number (e.g. 2026).
+ */
+export function currentYear(): number {
+  return now().getFullYear();
+}
+
+/**
  * Adds the given amount of days to the specified date.
  */
 export function addDays(date: Date, days: number): Date {
