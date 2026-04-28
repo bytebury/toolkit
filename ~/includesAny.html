@@ -165,7 +165,7 @@
   </defs>
 </svg>
 </a>
-<span class="font-bold">includesAny</span><span class="font-medium">(<div class="ml-4"><div><span>searchIn<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span>,</div><div><span>searchFor<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span> </span>
+<span class="font-bold">includesAny</span><span class="font-medium">(<div class="ml-4"><div><span>searchIn<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]<span class="td-op"> | </span><span class="td-kw">null</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span>,</div><div><span>searchFor<span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]<span class="td-op"> | </span><span class="td-kw">null</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span></div></div>)<span>: <span class="td-kw">boolean</span></span> </span>
       </code><div class="space-y-7" id=""><div class="markdown"><p>Determines if <code>searchIn</code> contains any of the given <code>searchFor</code> term(s).</p>
 <p>When <code>searchIn</code> is a string, this performs a substring check.
 When <code>searchIn</code> is a list, this performs an element check.
@@ -224,6 +224,8 @@ includesAny([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], &quot;a&quot;); // tr
 includesAny([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], [&quot;a&quot;, &quot;d&quot;]); // true
 includesAny([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], [&quot;d&quot;, &quot;e&quot;]); // false
 includesAny(&quot;hello world&quot;, []); // false
+includesAny(null, &quot;hello&quot;); // false
+includesAny(&quot;hello world&quot;, undefined); // false
 </code><button class="copyButton" data-copy="includesAny(&quot;hello world&quot;, &quot;hello&quot;); // true
 includesAny(&quot;hello world&quot;, [&quot;hello&quot;, &quot;moon&quot;]); // true
 includesAny(&quot;hello world&quot;, [&quot;sun&quot;, &quot;moon&quot;]); // false
@@ -231,6 +233,8 @@ includesAny([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], &quot;a&quot;); // tr
 includesAny([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], [&quot;a&quot;, &quot;d&quot;]); // true
 includesAny([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], [&quot;d&quot;, &quot;e&quot;]); // false
 includesAny(&quot;hello world&quot;, []); // false
+includesAny(null, &quot;hello&quot;); // false
+includesAny(&quot;hello world&quot;, undefined); // false
 "><svg
   class="copy"
   width="15"
@@ -313,7 +317,7 @@ Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<span class="font-bold font-lg">searchIn</span><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span>
+<span class="font-bold font-lg">searchIn</span><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]<span class="td-op"> | </span><span class="td-kw">null</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span>
       </code>
     </div><a
   class="sourceButton"
@@ -366,7 +370,7 @@ Parameters</h2></div><div class="space-y-8"><div class="anchorable docEntry" id=
   </defs>
 </svg>
 </a>
-<span class="font-bold font-lg">searchFor</span><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]</span></span></span>
+<span class="font-bold font-lg">searchFor</span><span class="font-medium text-stone-500 dark:text-stone-200"><span>: <span><span class="td-kw">string</span><span class="td-op"> | </span><span class="td-kw">string</span>[]<span class="td-op"> | </span><span class="td-kw">null</span><span class="td-op"> | </span><span class="td-kw">undefined</span></span></span></span>
       </code>
     </div><a
   class="sourceButton"
