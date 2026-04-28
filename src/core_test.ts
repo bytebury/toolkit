@@ -408,3 +408,25 @@ Deno.test("includesAny list in list", () => {
   assertFalse(includesAny(["a", "b", "c"], ["d", "e"]));
   assertFalse(includesAny(["a", "b", "c"], []));
 });
+
+Deno.test("includes returns false for null or undefined inputs", () => {
+  assertFalse(includes(null, "hello"));
+  assertFalse(includes(undefined, "hello"));
+  assertFalse(includes("hello world", null));
+  assertFalse(includes("hello world", undefined));
+  assertFalse(includes(null, null));
+  assertFalse(includes(undefined, undefined));
+  assertFalse(includes(null, ["hello"]));
+  assertFalse(includes(["a", "b"], null));
+});
+
+Deno.test("includesAny returns false for null or undefined inputs", () => {
+  assertFalse(includesAny(null, "hello"));
+  assertFalse(includesAny(undefined, "hello"));
+  assertFalse(includesAny("hello world", null));
+  assertFalse(includesAny("hello world", undefined));
+  assertFalse(includesAny(null, null));
+  assertFalse(includesAny(undefined, undefined));
+  assertFalse(includesAny(null, ["hello"]));
+  assertFalse(includesAny(["a", "b"], null));
+});

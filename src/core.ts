@@ -487,6 +487,9 @@ export function intersection<T>(...lists: T[][]): T[] {
  * If `searchFor` is an empty list, this returns `true` (vacuously, since
  * every item in an empty list is found).
  *
+ * If either `searchIn` or `searchFor` is `null` or `undefined`, this
+ * returns `false`.
+ *
  * @example
  * ```ts
  * includes("hello world", "hello"); // true
@@ -496,12 +499,15 @@ export function intersection<T>(...lists: T[][]): T[] {
  * includes(["a", "b", "c"], ["a", "b"]); // true
  * includes(["a", "b", "c"], ["a", "d"]); // false
  * includes("hello world", []); // true
+ * includes(null, "hello"); // false
+ * includes("hello world", undefined); // false
  * ```
  */
 export function includes(
-  searchIn: string | string[],
-  searchFor: string | string[],
+  searchIn: string | string[] | null | undefined,
+  searchFor: string | string[] | null | undefined,
 ): boolean {
+  if (searchIn == null || searchFor == null) return false;
   const terms = Array.isArray(searchFor) ? searchFor : [searchFor];
   return terms.every((term) => searchIn.includes(term));
 }
@@ -517,6 +523,9 @@ export function includes(
  * If `searchFor` is an empty list, this returns `false` (there is no term
  * to match).
  *
+ * If either `searchIn` or `searchFor` is `null` or `undefined`, this
+ * returns `false`.
+ *
  * @example
  * ```ts
  * includesAny("hello world", "hello"); // true
@@ -526,12 +535,15 @@ export function includes(
  * includesAny(["a", "b", "c"], ["a", "d"]); // true
  * includesAny(["a", "b", "c"], ["d", "e"]); // false
  * includesAny("hello world", []); // false
+ * includesAny(null, "hello"); // false
+ * includesAny("hello world", undefined); // false
  * ```
  */
 export function includesAny(
-  searchIn: string | string[],
-  searchFor: string | string[],
+  searchIn: string | string[] | null | undefined,
+  searchFor: string | string[] | null | undefined,
 ): boolean {
+  if (searchIn == null || searchFor == null) return false;
   const terms = Array.isArray(searchFor) ? searchFor : [searchFor];
   return terms.some((term) => searchIn.includes(term));
 }
