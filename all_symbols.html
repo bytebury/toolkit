@@ -261,6 +261,11 @@ Functions</h2></div><div class="namespaceSection"><div id="namespace_adddays" cl
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;distinct.html" title="distinct">
 			    <span>distinct</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>list<span>: <span class="td-ref">T</span>[]</span></span></span>)<span>: <span class="td-ref">T</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns the distinct values from a list.</p>
 </div></div></div>
+    </div><div id="namespace_entries" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;entries.html" title="entries">
+			    <span>entries</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-kw">unknown</span>&gt;</span></span>&gt;</span>(<span><span>obj<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></span></span>)<span>: <span>[<span class="td-kw">keyof</span> <span class="td-ref">T</span>, <span class="td-ref">T</span>[<span class="td-kw">keyof</span> <span class="td-ref">T</span>]]</span>[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a strongly-typed array of an object's own enumerable <code>[key, value]</code> pairs.</p>
+</div></div></div>
     </div><div id="namespace_falsy" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;falsy.html" title="falsy">
@@ -446,6 +451,11 @@ except for spaces. Letters and digits are preserved regardless of case.</p>
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keepNumeric.html" title="keepNumeric">
 			    <span>keepNumeric</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-kw">string</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Removes any non-numeric characters. This includes spaces.</p>
 </div></div></div>
+    </div><div id="namespace_keys" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;keys.html" title="keys">
+			    <span>keys</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-kw">unknown</span>&gt;</span></span>&gt;</span>(<span><span>obj<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></span></span>)<span>: (<span class="td-kw">keyof</span> <span class="td-ref">T</span>)[]</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a strongly-typed array of an object's own enumerable keys.</p>
+</div></div></div>
     </div><div id="namespace_last" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;last.html" title="last">
@@ -457,6 +467,17 @@ is a string, then it will return the last character.</p>
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;lower.html" title="lower">
 			    <span>lower</span><span>(<span><span>text<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span class="td-ref">Lowercase</span>&lt;<span class="td-kw">string</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Converts the string to lowercase.
 An alias for <code>toLowerCase()</code>.</p>
+</div></div></div>
+    </div><div id="namespace_mapkeys" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;mapKeys.html" title="mapKeys">
+			    <span>mapKeys</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-kw">unknown</span>&gt;</span></span>&gt;</span>(<div class="ml-4"><div><span>obj<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></span>,</div><div><span>fn<span>: (<div class="ml-4"><div><span>key<span>: <span class="td-kw">keyof</span> <span class="td-ref">T</span></span></span>,</div><div><span>value<span>: <span class="td-ref">T</span>[<span class="td-kw">keyof</span> <span class="td-ref">T</span>]</span></span></div></div>) =&gt; <span class="td-kw">string</span></span></span></div></div>)<span>: <span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-ref">T</span>[<span class="td-kw">keyof</span> <span class="td-ref">T</span>]&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a new object with each key transformed by <code>fn</code>. Values are unchanged.
+If <code>fn</code> produces duplicate keys, later entries overwrite earlier ones.</p>
+</div></div></div>
+    </div><div id="namespace_mapvalues" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;mapValues.html" title="mapValues">
+			    <span>mapValues</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-kw">unknown</span>&gt;</span></span><span>, </span><span><span class="td-tp">V</span></span>&gt;</span>(<div class="ml-4"><div><span>obj<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></span>,</div><div><span>fn<span>: (<div class="ml-4"><div><span>value<span>: <span class="td-ref">T</span>[<span class="td-kw">keyof</span> <span class="td-ref">T</span>]</span></span>,</div><div><span>key<span>: <span class="td-kw">keyof</span> <span class="td-ref">T</span></span></span></div></div>) =&gt; <span class="td-ref">V</span></span></span></div></div>)<span>: [<span><span class="td-tp">K</span><span><span class="td-kw"> in </span><span class="td-kw">keyof</span> <span class="td-ref">T</span></span></span>]<span>: <span class="td-ref">V</span></span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a new object with the same keys, where each value is transformed by <code>fn</code>.</p>
 </div></div></div>
     </div><div id="namespace_max" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
@@ -493,6 +514,11 @@ An alias for <code>toLowerCase()</code>.</p>
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;now.html" title="now">
 			    <span>now</span><span>()<span>: <span class="td-ref">Date</span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Right now. This is an alias for <code>new Date()</code>.</p>
 </div></div></div>
+    </div><div id="namespace_omit" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;omit.html" title="omit">
+			    <span>omit</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-kw">unknown</span>&gt;</span></span><span>, </span><span><span class="td-tp">K</span><span><span class="td-kw"> extends </span><span class="td-kw">keyof</span> <span class="td-ref">T</span></span></span>&gt;</span>(<div class="ml-4"><div><span>obj<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></span>,</div><div><span>keys<span>: <span class="td-ref">K</span>[]</span></span></div></div>)<span>: <span class="td-ref">Omit</span>&lt;<span class="td-ref">T</span><span>, </span><span class="td-ref">K</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a new object with the specified keys excluded.</p>
+</div></div></div>
     </div><div id="namespace_ordinalize" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;ordinalize.html" title="ordinalize">
@@ -503,6 +529,12 @@ An alias for <code>toLowerCase()</code>.</p>
 		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;parse.html" title="parse">
 			    <span>parse</span><span><span>&lt;<span><span class="td-tp">T</span></span>&gt;</span>(<span><span>thing<span>: <span class="td-kw">string</span></span></span></span>)<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-kw">string</span></span></span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Safely parses a string to JSON or returns the string itself. This will
 never throw an error and internally called <code>JSON.parse(thing)</code></p>
+</div></div></div>
+    </div><div id="namespace_pick" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
+<div class="namespaceItemContent">
+		    <a href=".&#x2F;.&#x2F;.&#x2F;~&#x2F;pick.html" title="pick">
+			    <span>pick</span><span><span>&lt;<span><span class="td-tp">T</span><span><span class="td-kw"> extends </span><span class="td-ref">Record</span>&lt;<span class="td-kw">string</span><span>, </span><span class="td-kw">unknown</span>&gt;</span></span><span>, </span><span><span class="td-tp">K</span><span><span class="td-kw"> extends </span><span class="td-kw">keyof</span> <span class="td-ref">T</span></span></span>&gt;</span>(<div class="ml-4"><div><span>obj<span>: <span><span class="td-ref">T</span><span class="td-op"> | </span><span class="td-ref">None</span></span></span></span>,</div><div><span>keys<span>: <span class="td-ref">K</span>[]</span></span></div></div>)<span>: <span class="td-ref">Pick</span>&lt;<span class="td-ref">T</span><span>, </span><span class="td-ref">K</span>&gt;</span></span></a><div class="namespaceItemContentDoc"><div class="markdown_summary"><p>Returns a new object containing only the specified keys. Keys that are not
+present on the source object are silently ignored.</p>
 </div></div></div>
     </div><div id="namespace_random" class="namespaceItem" ><div class="docNodeKindIcon"><div class="text-Function bg-Function/15 dark:text-FunctionDark dark:bg-FunctionDark/15" title="Function">f</div></div>
 <div class="namespaceItemContent">
