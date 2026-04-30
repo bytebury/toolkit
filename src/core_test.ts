@@ -440,11 +440,11 @@ Deno.test("splice removes elements without mutation", () => {
 });
 
 Deno.test("splice inserts elements", () => {
-  assertEquals(splice([1, 2, 3], 1, 0, 9, 10), [1, 9, 10, 2, 3]);
+  assertEquals(splice([1, 2, 3], 1, 0, [9, 10]), [1, 9, 10, 2, 3]);
 });
 
 Deno.test("splice replaces elements", () => {
-  assertEquals(splice([1, 2, 3, 4], 1, 2, 9), [1, 9, 4]);
+  assertEquals(splice([1, 2, 3, 4], 1, 2, [9]), [1, 9, 4]);
 });
 
 Deno.test("splice with no deleteCount removes from start to end", () => {
