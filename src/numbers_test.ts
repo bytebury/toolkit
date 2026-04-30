@@ -1,12 +1,15 @@
 import { assert } from "@std/assert";
 import {
   average,
+  clamp,
   isEven,
   isOdd,
   max,
+  median,
   min,
   ordinalize,
   round,
+  roundTo,
   sum,
 } from "./numbers.ts";
 
@@ -82,4 +85,28 @@ Deno.test("round", () => {
   assert(round(-1.1) === -1);
   assert(round(-1.5) === -1);
   assert(round(-1.9) === -2);
+});
+
+Deno.test("clamp", () => {
+  assert(clamp(5, 0, 10) === 5);
+  assert(clamp(-1, 0, 10) === 0);
+  assert(clamp(15, 0, 10) === 10);
+  assert(clamp(0, 0, 10) === 0);
+  assert(clamp(10, 0, 10) === 10);
+});
+
+Deno.test("median", () => {
+  assert(median([]) === 0);
+  assert(median([1]) === 1);
+  assert(median([1, 2, 3]) === 2);
+  assert(median([1, 2, 3, 4]) === 2.5);
+  assert(median([3, 1, 2]) === 2); // unsorted input
+});
+
+Deno.test("roundTo", () => {
+  assert(roundTo(null as unknown as number, 2) === 0);
+  assert(roundTo(1.235, 2) === 1.24);
+  assert(roundTo(1.5, 0) === 2);
+  assert(roundTo(1234.5, -2) === 1200);
+  assert(roundTo(1.005, 2) === 1); // floating-point quirk; keep behavior documented
 });

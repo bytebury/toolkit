@@ -1,5 +1,6 @@
 import { assert } from "@std/assert";
 import {
+  camel,
   isNotWhitespace,
   isWhitespace,
   kebab,
@@ -7,9 +8,12 @@ import {
   keepAlphanumeric,
   keepNumeric,
   lower,
+  pascal,
+  slugify,
   snake,
   title,
   trim,
+  truncate,
   upper,
 } from "./strings.ts";
 
@@ -87,4 +91,36 @@ Deno.test("onlyNumeric", () => {
   assert(keepNumeric("123@#Test") === "123");
   assert(keepNumeric("") === "");
   assert(keepNumeric("(555)-457-3456") === "5554573456");
+});
+
+Deno.test("camel", () => {
+  assert(camel(null as unknown as string) === "");
+  assert(camel("") === "");
+  assert(camel("Hello World") === "helloWorld");
+  assert(camel("user_profile_page") === "userProfilePage");
+  assert(camel("HELLO-WORLD") === "helloWorld");
+  assert(camel("one") === "one");
+});
+
+Deno.test("pascal", () => {
+  assert(pascal(null as unknown as string) === "");
+  assert(pascal("") === "");
+  assert(pascal("hello world") === "HelloWorld");
+  assert(pascal("user_profile_page") === "UserProfilePage");
+  assert(pascal("HELLO-WORLD") === "HelloWorld");
+});
+
+Deno.test("truncate", () => {
+  assert(truncate(null as unknown as string, 10) === "");
+  assert(truncate("Hello World", 5) === "He...");
+  assert(truncate("Hello World", 20) === "Hello World");
+  assert(truncate("Hello World", 8, "…") === "Hello W…");
+  assert(truncate("Hi", 10) === "Hi");
+});
+
+Deno.test("slugify", () => {
+  assert(slugify(null as unknown as string) === "");
+  assert(slugify("Hello World!") === "hello-world");
+  assert(slugify("Café à la Carte") === "cafe-a-la-carte");
+  assert(slugify("  Multiple   Spaces  ") === "multiple-spaces");
 });

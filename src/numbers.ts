@@ -183,3 +183,57 @@ export function average(nums: number[]): number {
   if (isEmpty(nums)) return 0;
   return sum(nums) / nums.length;
 }
+
+/**
+ * Clamps a number between a minimum and maximum value.
+ *
+ * @example
+ * ```ts
+ * clamp(5, 0, 10); // 5
+ * clamp(-1, 0, 10); // 0
+ * clamp(15, 0, 10); // 10
+ * ```
+ */
+export function clamp(num: number, min: number, max: number): number {
+  return Math.min(Math.max(num, min), max);
+}
+
+/**
+ * Returns the median value from a list of numbers.
+ *
+ * @remarks
+ * If you pass an empty list, this will return `0`.
+ *
+ * @example
+ * ```ts
+ * median([]); // 0
+ * median([1, 2, 3]); // 2
+ * median([1, 2, 3, 4]); // 2.5
+ * ```
+ */
+export function median(nums: number[]): number {
+  if (isEmpty(nums)) return 0;
+  const sorted = [...nums].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? (sorted[mid - 1] + sorted[mid]) / 2
+    : sorted[mid];
+}
+
+/**
+ * Rounds a number to the given number of decimal places.
+ *
+ * @remarks
+ * This is `null | undefined` safe. If you pass `null | undefined` this will return `0`.
+ *
+ * @example
+ * ```ts
+ * roundTo(1.235, 2); // 1.24
+ * roundTo(1.5, 0); // 2
+ * roundTo(1234.5, -2); // 1200
+ * ```
+ */
+export function roundTo(num: number, decimals: number): number {
+  const factor = Math.pow(10, decimals);
+  return Math.round((num || 0) * factor) / factor;
+}

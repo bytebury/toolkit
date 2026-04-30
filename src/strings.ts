@@ -202,6 +202,89 @@ export function keepNumeric(text: string): string {
   return (text || "").replace(/[^\d]/g, "");
 }
 
+/**
+ * Converts the string to `camelCase` by removing punctuation, trimming extra
+ * spaces, and lowercasing the first word with subsequent words capitalized.
+ *
+ * @remarks
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
+ *
+ * @example
+ * ```ts
+ * camel(null); // ""
+ * camel("Hello World"); // "helloWorld"
+ * camel("user_profile_page"); // "userProfilePage"
+ * camel("HELLO-WORLD"); // "helloWorld"
+ * ```
+ */
+export function camel(text: string): string {
+  const parts = kebab(text).split("-").filter(Boolean);
+  if (parts.length === 0) return "";
+  return parts[0] +
+    parts.slice(1).map((p) => upper(p[0]) + p.slice(1)).join("");
+}
+
+/**
+ * Converts the string to `PascalCase` by removing punctuation, trimming extra
+ * spaces, and capitalizing every word.
+ *
+ * @remarks
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
+ *
+ * @example
+ * ```ts
+ * pascal(null); // ""
+ * pascal("hello world"); // "HelloWorld"
+ * pascal("user_profile_page"); // "UserProfilePage"
+ * ```
+ */
+export function pascal(text: string): string {
+  return kebab(text)
+    .split("-")
+    .filter(Boolean)
+    .map((p) => upper(p[0]) + p.slice(1))
+    .join("");
+}
+
+/**
+ * Truncates a string to the given length. If truncation occurs, the suffix is
+ * appended and counted toward the total length.
+ *
+ * @remarks
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
+ *
+ * @example
+ * ```ts
+ * truncate(null, 10); // ""
+ * truncate("Hello World", 5); // "He..."
+ * truncate("Hello World", 20); // "Hello World"
+ * truncate("Hello World", 8, "…"); // "Hello W…"
+ * ```
+ */
+export function truncate(text: string, length: number, suffix = "..."): string {
+  const t = text || "";
+  if (t.length <= length) return t;
+  return t.slice(0, Math.max(0, length - suffix.length)) + suffix;
+}
+
+/**
+ * Converts a string to a URL-safe slug. Diacritics are stripped, punctuation is
+ * removed, and whitespace is replaced with hyphens.
+ *
+ * @remarks
+ * This is `None` safe. If you pass `null | undefined` then this will return an Empty String.
+ *
+ * @example
+ * ```ts
+ * slugify(null); // ""
+ * slugify("Hello World!"); // "hello-world"
+ * slugify("Café à la Carte"); // "cafe-a-la-carte"
+ * ```
+ */
+export function slugify(text: string): string {
+  return kebab(text);
+}
+
 function removePunctuation(text: string): string {
   return text
     .normalize("NFKD")
