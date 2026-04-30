@@ -605,36 +605,33 @@ export function removeRange(
 }
 
 /**
- * Inserts `items` into the given string or list at the specified `index`.
+ * Inserts items into the given string or list at the specified `index`.
  * The input is not mutated; a new string or array is returned.
  *
  * @example
  * ```ts
- * insertRange("abc", 1, "XY"); // "aXYbc"
- * insertRange([1, 2, 3], 1, [4, 5]); // [1, 4, 5, 2, 3]
+ * insertRange("abc", 1, "X", "Y"); // "aXYbc"
+ * insertRange([1, 2, 3], 1, 4, 5); // [1, 4, 5, 2, 3]
  * ```
  */
 export function insertRange(
   thing: string,
   index: number,
-  items: string,
+  ...items: string[]
 ): string;
 export function insertRange<T>(
   thing: T[],
   index: number,
-  items: T[],
+  ...items: T[]
 ): T[];
 export function insertRange(
   thing: string | unknown[],
   index: number,
-  items: string | unknown[],
+  ...items: unknown[]
 ): string | unknown[] {
   if (typeof thing === "string") {
-    return thing.slice(0, index) + (items as string) + thing.slice(index);
+    return thing.slice(0, index) + (items as string[]).join("") +
+      thing.slice(index);
   }
-  return [
-    ...thing.slice(0, index),
-    ...(items as unknown[]),
-    ...thing.slice(index),
-  ];
+  return [...thing.slice(0, index), ...items, ...thing.slice(index)];
 }
