@@ -6,7 +6,16 @@ const version = denoJson.version;
 await emptyDir("./npm");
 
 await build({
-  entryPoints: ["./mod.ts"],
+  entryPoints: [
+    { name: ".", path: "./mod.ts" },
+    { name: "./core", path: "./src/core.ts" },
+    { name: "./dates", path: "./src/dates.ts" },
+    { name: "./duration", path: "./src/duration.ts" },
+    { name: "./numbers", path: "./src/numbers.ts" },
+    { name: "./objects", path: "./src/objects.ts" },
+    { name: "./strings", path: "./src/strings.ts" },
+    { name: "./utility-types", path: "./src/utility_types.ts" },
+  ],
   outDir: "./npm",
   shims: {
     deno: "dev",
@@ -22,6 +31,7 @@ await build({
     description: "TypeScript utility library to help energize your projects with useful functions for any size project. Save yourself some time and focus on shipping features.",
     license: "MIT",
     private: false,
+    sideEffects: false,
     repository: {
       type: "git",
       url: "https://github.com/bytebury/toolkit",

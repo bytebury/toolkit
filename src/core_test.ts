@@ -18,7 +18,6 @@ import {
   groupBy,
   includes,
   includesAny,
-  inRange,
   intersection,
   isArray,
   isEmpty,
@@ -34,7 +33,6 @@ import {
   noop,
   parse,
   partition,
-  random,
   range,
   reverse,
   sample,
@@ -296,27 +294,6 @@ Deno.test("first/last/sample accept plain T[] and empty arrays", () => {
   assertStrictEquals(last(""), undefined);
 });
 
-// rand
-Deno.test("random range", () => {
-  const original = Math.random;
-
-  Math.random = () => 0;
-  assertStrictEquals(random(3, 7), 3);
-
-  Math.random = () => 0.9999999;
-  assertStrictEquals(random(3, 7), 6);
-
-  Math.random = original;
-});
-
-Deno.test("random range sampling", () => {
-  for (let i = 0; i < 100; i++) {
-    const v = random(0, 5);
-    assert(v >= 0);
-    assert(v < 5);
-  }
-});
-
 Deno.test("isSome", () => {
   assertFalse(isSome(null));
   assertFalse(isSome(undefined));
@@ -346,13 +323,6 @@ Deno.test("noop behavior", () => {
 Deno.test("todo behavior", () => {
   todo();
   todo("Example usage");
-});
-
-Deno.test("inRange", () => {
-  assert(inRange(5, 0, 10));
-  assert(inRange(0, 0, 10));
-  assert(inRange(10, 0, 10));
-  assert(!inRange(11, 0, 10));
 });
 
 Deno.test("chunk", () => {

@@ -237,3 +237,33 @@ export function roundTo(num: number, decimals: number): number {
   const factor = Math.pow(10, decimals);
   return Math.round((num || 0) * factor) / factor;
 }
+
+/**
+ * Gives a random number in the given range. The first parameter is inclusive
+ * and the second one is exclusive. Therefore, it will work with lists out of
+ * the box.
+ *
+ * @example
+ * ```ts
+ * random(0, 10); // 0 -> 9
+ * random(3, 7); // 3 -> 6
+ * ```
+ */
+export function random(start: number, end: number): number {
+  return Math.floor(Math.random() * (end - start)) + start;
+}
+
+/**
+ * Returns true if the given value is within the given range (inclusive on both ends).
+ *
+ * @example
+ * ```ts
+ * inRange(5, 0, 10); // true
+ * inRange(0, 0, 10); // true
+ * inRange(10, 0, 10); // true
+ * inRange(11, 0, 10); // false
+ * ```
+ */
+export function inRange(value: number, min: number, max: number): boolean {
+  return value >= min && value <= max;
+}

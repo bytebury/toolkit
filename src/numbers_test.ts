@@ -1,13 +1,15 @@
-import { assert } from "@std/assert";
+import { assert, assertStrictEquals } from "@std/assert";
 import {
   average,
   clamp,
+  inRange,
   isEven,
   isOdd,
   max,
   median,
   min,
   ordinalize,
+  random,
   round,
   roundTo,
   sum,
@@ -109,4 +111,31 @@ Deno.test("roundTo", () => {
   assert(roundTo(1.5, 0) === 2);
   assert(roundTo(1234.5, -2) === 1200);
   assert(roundTo(1.005, 2) === 1); // floating-point quirk; keep behavior documented
+});
+
+Deno.test("random range", () => {
+  const original = Math.random;
+
+  Math.random = () => 0;
+  assertStrictEquals(random(3, 7), 3);
+
+  Math.random = () => 0.9999999;
+  assertStrictEquals(random(3, 7), 6);
+
+  Math.random = original;
+});
+
+Deno.test("random range sampling", () => {
+  for (let i = 0; i < 100; i++) {
+    const v = random(0, 5);
+    assert(v >= 0);
+    assert(v < 5);
+  }
+});
+
+Deno.test("inRange", () => {
+  assert(inRange(5, 0, 10));
+  assert(inRange(0, 0, 10));
+  assert(inRange(10, 0, 10));
+  assert(!inRange(11, 0, 10));
 });

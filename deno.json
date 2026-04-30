@@ -1,7 +1,16 @@
 {
 	"name": "@bytebury/toolkit",
 	"version": "1.9.0",
-	"exports": "./mod.ts",
+	"exports": {
+		".": "./mod.ts",
+		"./core": "./src/core.ts",
+		"./dates": "./src/dates.ts",
+		"./duration": "./src/duration.ts",
+		"./numbers": "./src/numbers.ts",
+		"./objects": "./src/objects.ts",
+		"./strings": "./src/strings.ts",
+		"./utility-types": "./src/utility_types.ts"
+	},
 	"tasks": {
 		"dev": "deno test --watch"
 	},
