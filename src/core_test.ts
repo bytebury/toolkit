@@ -16,6 +16,7 @@ import {
   includes,
   includesAny,
   inRange,
+  insertRange,
   intersection,
   isEmpty,
   isEqual,
@@ -28,8 +29,10 @@ import {
   last,
   noop, parse,
   random,
+  removeRange,
   reverse,
   sample,
+  sort,
   stringify, todo,
   truthy,
   union,
@@ -396,4 +399,63 @@ Deno.test("includesAny list in list", () => {
   assert(includesAny(["a", "b", "c"], ["a", "d"]));
   assertFalse(includesAny(["a", "b", "c"], ["d", "e"]));
   assertFalse(includesAny(["a", "b", "c"], []));
+});
+
+Deno.test("sort string default", () => {
+  assertStrictEquals(sort("dcba"), "abcd");
+  assertStrictEquals(sort(""), "");
+});
+
+Deno.test("sort string with callback", () => {
+  assertStrictEquals(sort("abcd", (a, b) => b.localeCompare(a)), "dcba");
+});
+
+Deno.test("sort list default", () => {
+  assertEquals(sort([3, 1, 2]), [1, 2, 3]);
+  assertEquals(sort(["b", "a", "c"]), ["a", "b", "c"]);
+});
+
+Deno.test("sort list with callback", () => {
+  assertEquals(sort([3, 1, 2], (a, b) => b - a), [3, 2, 1]);
+});
+
+Deno.test("sort does not mutate the input", () => {
+  const list = [3, 1, 2];
+  sort(list);
+  assertEquals(list, [3, 1, 2]);
+});
+
+Deno.test("removeRange string", () => {
+  assertStrictEquals(removeRange("hello", 1, 3), "ho");
+  assertStrictEquals(removeRange("hello", 0, 5), "");
+  assertStrictEquals(removeRange("hello", 2, 0), "hello");
+});
+
+Deno.test("removeRange list", () => {
+  assertEquals(removeRange([1, 2, 3, 4, 5], 1, 2), [1, 4, 5]);
+  assertEquals(removeRange([1, 2, 3], 0, 3), []);
+});
+
+Deno.test("removeRange does not mutate the input", () => {
+  const list = [1, 2, 3, 4, 5];
+  removeRange(list, 1, 2);
+  assertEquals(list, [1, 2, 3, 4, 5]);
+});
+
+Deno.test("insertRange string", () => {
+  assertStrictEquals(insertRange("abc", 1, "XY"), "aXYbc");
+  assertStrictEquals(insertRange("abc", 0, "X"), "Xabc");
+  assertStrictEquals(insertRange("abc", 3, "X"), "abcX");
+});
+
+Deno.test("insertRange list", () => {
+  assertEquals(insertRange([1, 2, 3], 1, [4, 5]), [1, 4, 5, 2, 3]);
+  assertEquals(insertRange([1, 2, 3], 0, [0]), [0, 1, 2, 3]);
+  assertEquals(insertRange([1, 2, 3], 3, [4]), [1, 2, 3, 4]);
+});
+
+Deno.test("insertRange does not mutate the input", () => {
+  const list = [1, 2, 3];
+  insertRange(list, 1, [9]);
+  assertEquals(list, [1, 2, 3]);
 });

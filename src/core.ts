@@ -542,3 +542,99 @@ export function includesAny(
   const terms = Array.isArray(searchFor) ? searchFor : [searchFor];
   return terms.some((term) => searchIn.includes(term));
 }
+
+/**
+ * Sorts the given string or list. When no callback is passed, the default
+ * sort applies. The input is not mutated; a new string or array is returned.
+ *
+ * @example
+ * ```ts
+ * sort("dcba"); // "abcd"
+ * sort([3, 1, 2]); // [1, 2, 3]
+ * sort([3, 1, 2], (a, b) => b - a); // [3, 2, 1]
+ * ```
+ */
+export function sort(
+  thing: string,
+  compareFn?: (a: string, b: string) => number,
+): string;
+export function sort<T>(
+  thing: T[],
+  compareFn?: (a: T, b: T) => number,
+): T[];
+export function sort(
+  thing: string | unknown[],
+  // deno-lint-ignore no-explicit-any
+  compareFn?: (a: any, b: any) => number,
+): string | unknown[] {
+  if (typeof thing === "string") {
+    return thing.split("").sort(compareFn).join("");
+  }
+  return [...thing].sort(compareFn);
+}
+
+/**
+ * Removes `count` items starting at `index` from the given string or list.
+ * The input is not mutated; a new string or array is returned.
+ *
+ * @example
+ * ```ts
+ * removeRange("hello", 1, 3); // "ho"
+ * removeRange([1, 2, 3, 4, 5], 1, 2); // [1, 4, 5]
+ * ```
+ */
+export function removeRange(
+  thing: string,
+  index: number,
+  count: number,
+): string;
+export function removeRange<T>(
+  thing: T[],
+  index: number,
+  count: number,
+): T[];
+export function removeRange(
+  thing: string | unknown[],
+  index: number,
+  count: number,
+): string | unknown[] {
+  if (typeof thing === "string") {
+    return thing.slice(0, index) + thing.slice(index + count);
+  }
+  return [...thing.slice(0, index), ...thing.slice(index + count)];
+}
+
+/**
+ * Inserts `items` into the given string or list at the specified `index`.
+ * The input is not mutated; a new string or array is returned.
+ *
+ * @example
+ * ```ts
+ * insertRange("abc", 1, "XY"); // "aXYbc"
+ * insertRange([1, 2, 3], 1, [4, 5]); // [1, 4, 5, 2, 3]
+ * ```
+ */
+export function insertRange(
+  thing: string,
+  index: number,
+  items: string,
+): string;
+export function insertRange<T>(
+  thing: T[],
+  index: number,
+  items: T[],
+): T[];
+export function insertRange(
+  thing: string | unknown[],
+  index: number,
+  items: string | unknown[],
+): string | unknown[] {
+  if (typeof thing === "string") {
+    return thing.slice(0, index) + (items as string) + thing.slice(index);
+  }
+  return [
+    ...thing.slice(0, index),
+    ...(items as unknown[]),
+    ...thing.slice(index),
+  ];
+}
