@@ -31,7 +31,7 @@ deno add jsr:@bytebury/toolkit
 
 ```ts
 function sayHelloTo(name: string): void {
-  if (isWhitespace(name) {
+  if ((isWhitespace(name)) {
     console.log("Hello, Guest!");
   } else {
     console.log(`Hello, ${title(name)}!`);
@@ -42,7 +42,7 @@ function getAverageAge(): number {
   const people = [
     { name: "Tom", age: 2 },
     { name: "Carly", age: 8 },
-    { name: "Jenny", age: 5 }
+    { name: "Jenny", age: 5 },
   ];
   return average(people.map(({ age }) => age)); // 5
 }
