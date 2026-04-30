@@ -569,5 +569,7 @@ export function splice<T>(
   deleteCount?: number,
   ...items: T[]
 ): T[] {
-  return list.toSpliced(start, deleteCount ?? list.length, ...items);
+  const copy = [...list];
+  copy.splice(start, deleteCount ?? list.length, ...items);
+  return copy;
 }
