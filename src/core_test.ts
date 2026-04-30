@@ -9,10 +9,13 @@ import {
 import {
   chunk,
   clone,
+  compact,
   difference,
   distinct,
+  drop,
   falsy,
   first,
+  groupBy,
   includes,
   includesAny,
   inRange,
@@ -27,15 +30,24 @@ import {
   isNotEqualIgnoreCase,
   isSome,
   last,
-  noop, parse,
+  move,
+  noop,
+  parse,
+  partition,
   random,
+  range,
   reverse,
   sample,
+  sortBy,
   splice,
-  stringify, todo,
+  stringify,
+  swap,
+  take,
+  todo,
   truthy,
   union,
   unique,
+  zip,
 } from "../src/core.ts";
 
 if (!Set.prototype.symmetricDifference) {
@@ -127,7 +139,6 @@ Deno.test("parse strings to strings", () => {
   assertStrictEquals(parse("thing"), "thing");
   assertStrictEquals(parse("another string"), "another string");
 });
-
 
 Deno.test("parse objects to objects", () => {
   assertEquals(parse(stringify({ foo: "bar" })), { foo: "bar" });
@@ -332,7 +343,6 @@ Deno.test("noop behavior", () => {
   noop();
 });
 
-
 Deno.test("todo behavior", () => {
   todo();
   todo("Example usage");
@@ -471,4 +481,94 @@ Deno.test("isArray narrows the type", () => {
   } else {
     throw new Error("expected isArray to narrow");
   }
+});
+
+Deno.test("groupBy groups items by key function", () => {
+  const result = groupBy([1, 2, 3, 4], (n) => n % 2 === 0 ? "even" : "odd");
+  assertEquals(result.get("even"), [2, 4]);
+  assertEquals(result.get("odd"), [1, 3]);
+  assertEquals(result.size, 2);
+});
+
+Deno.test("groupBy on empty list returns empty map", () => {
+  const result = groupBy<number, string>([], (n) => String(n));
+  assertEquals(result.size, 0);
+});
+
+Deno.test("partition splits list by predicate", () => {
+  assertEquals(partition([1, 2, 3, 4], (n) => n % 2 === 0), [[2, 4], [1, 3]]);
+  assertEquals(partition([], (n: number) => n > 0), [[], []]);
+});
+
+Deno.test("sortBy sorts without mutating", () => {
+  const original = [{ age: 30 }, { age: 20 }, { age: 25 }];
+  const sorted = sortBy(original, (p) => p.age);
+  assertEquals(sorted, [{ age: 20 }, { age: 25 }, { age: 30 }]);
+  assertEquals(original, [{ age: 30 }, { age: 20 }, { age: 25 }]);
+});
+
+Deno.test("sortBy works with string keys", () => {
+  assertEquals(
+    sortBy(["banana", "apple", "cherry"], (s) => s),
+    ["apple", "banana", "cherry"],
+  );
+});
+
+Deno.test("compact removes null and undefined", () => {
+  assertEquals(compact([1, null, 2, undefined, 3]), [1, 2, 3]);
+  assertEquals(compact(["a", "", null, "b"]), ["a", "", "b"]);
+  assertEquals(compact([0, false, null]), [0, false]);
+});
+
+Deno.test("range generates ascending numbers", () => {
+  assertEquals(range(0, 5), [0, 1, 2, 3, 4]);
+  assertEquals(range(2, 8, 2), [2, 4, 6]);
+  assertEquals(range(0, 0), []);
+});
+
+Deno.test("range generates descending numbers with negative step", () => {
+  assertEquals(range(5, 0, -1), [5, 4, 3, 2, 1]);
+});
+
+Deno.test("range throws on zero step", () => {
+  let threw = false;
+  try {
+    range(0, 5, 0);
+  } catch {
+    threw = true;
+  }
+  assert(threw);
+});
+
+Deno.test("zip pairs up two lists, stopping at shorter", () => {
+  assertEquals(zip([1, 2, 3], ["a", "b", "c"]), [[1, "a"], [2, "b"], [3, "c"]]);
+  assertEquals(zip([1, 2, 3], ["a"]), [[1, "a"]]);
+  assertEquals(zip<number, string>([], []), []);
+});
+
+Deno.test("take returns first n elements", () => {
+  assertEquals(take([1, 2, 3, 4], 2), [1, 2]);
+  assertEquals(take([1, 2], 5), [1, 2]);
+  assertEquals(take([1, 2, 3], 0), []);
+  assertEquals(take([1, 2, 3], -1), []);
+});
+
+Deno.test("drop removes first n elements", () => {
+  assertEquals(drop([1, 2, 3, 4], 2), [3, 4]);
+  assertEquals(drop([1, 2], 5), []);
+  assertEquals(drop([1, 2, 3], 0), [1, 2, 3]);
+  assertEquals(drop([1, 2, 3], -1), [1, 2, 3]);
+});
+
+Deno.test("swap swaps two indices without mutation", () => {
+  const original = [1, 2, 3, 4];
+  assertEquals(swap(original, 0, 3), [4, 2, 3, 1]);
+  assertEquals(original, [1, 2, 3, 4]);
+});
+
+Deno.test("move moves an element to a new index without mutation", () => {
+  const original = [1, 2, 3, 4];
+  assertEquals(move(original, 0, 2), [2, 3, 1, 4]);
+  assertEquals(move([1, 2, 3, 4], 3, 0), [4, 1, 2, 3]);
+  assertEquals(original, [1, 2, 3, 4]);
 });

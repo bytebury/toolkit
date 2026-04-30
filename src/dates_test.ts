@@ -11,10 +11,12 @@ import {
   isSaturday,
   isSunday,
   isThursday,
+  isTomorrow,
   isTuesday,
   isWednesday,
   isWeekday,
   isWeekend,
+  isYesterday,
   monthsBetween,
   now,
   subtractDays,
@@ -132,4 +134,18 @@ Deno.test("isWeekend / isWeekday work correctly", () => {
   assert(!isWeekday(sunday));
   assert(isWeekday(monday));
   assert(!isWeekday(saturday));
+});
+
+Deno.test("isYesterday", () => {
+  assert(isYesterday(yesterday()));
+  assert(!isYesterday(today()));
+  assert(!isYesterday(tomorrow()));
+  assert(!isYesterday(subtractDays(today(), 2)));
+});
+
+Deno.test("isTomorrow", () => {
+  assert(isTomorrow(tomorrow()));
+  assert(!isTomorrow(today()));
+  assert(!isTomorrow(yesterday()));
+  assert(!isTomorrow(addDays(today(), 2)));
 });

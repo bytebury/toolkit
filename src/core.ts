@@ -593,3 +593,181 @@ export function splice<T>(
   copy.splice(start, deleteCount ?? list.length, ...items);
   return copy;
 }
+
+/**
+ * Groups items into a `Map` keyed by the value returned from `keyFn`.
+ *
+ * @example
+ * ```ts
+ * groupBy([1, 2, 3, 4], (n) => n % 2 === 0 ? "even" : "odd");
+ * // Map { "odd" => [1, 3], "even" => [2, 4] }
+ *
+ * const people = [{ role: "admin", name: "A" }, { role: "user", name: "B" }];
+ * groupBy(people, (p) => p.role);
+ * // Map { "admin" => [{...}], "user" => [{...}] }
+ * ```
+ */
+export function groupBy<T, K>(list: T[], keyFn: (item: T) => K): Map<K, T[]> {
+  const result = new Map<K, T[]>();
+  for (const item of list) {
+    const key = keyFn(item);
+    const existing = result.get(key);
+    if (existing) existing.push(item);
+    else result.set(key, [item]);
+  }
+  return result;
+}
+
+/**
+ * Splits a list into two: the first contains items where the predicate is true,
+ * the second contains items where it is false.
+ *
+ * @example
+ * ```ts
+ * partition([1, 2, 3, 4], (n) => n % 2 === 0); // [[2, 4], [1, 3]]
+ * ```
+ */
+export function partition<T>(
+  list: T[],
+  predicate: (item: T) => boolean,
+): [T[], T[]] {
+  const pass: T[] = [];
+  const fail: T[] = [];
+  for (const item of list) {
+    if (predicate(item)) pass.push(item);
+    else fail.push(item);
+  }
+  return [pass, fail];
+}
+
+/**
+ * Returns a new array sorted by the value returned from `keyFn`.
+ *
+ * @remarks
+ * Does not mutate the input list.
+ *
+ * @example
+ * ```ts
+ * sortBy([{ age: 30 }, { age: 20 }], (p) => p.age); // [{ age: 20 }, { age: 30 }]
+ * sortBy(["banana", "apple", "cherry"], (s) => s); // ["apple", "banana", "cherry"]
+ * ```
+ */
+export function sortBy<T>(
+  list: T[],
+  keyFn: (item: T) => number | string,
+): T[] {
+  return [...list].sort((a, b) => {
+    const aKey = keyFn(a);
+    const bKey = keyFn(b);
+    if (aKey < bKey) return -1;
+    if (aKey > bKey) return 1;
+    return 0;
+  });
+}
+
+/**
+ * Removes `null` and `undefined` values from a list.
+ *
+ * @example
+ * ```ts
+ * compact([1, null, 2, undefined, 3]); // [1, 2, 3]
+ * compact(["a", "", null, "b"]); // ["a", "", "b"]
+ * ```
+ */
+export function compact<T>(list: (T | null | undefined)[]): T[] {
+  return list.filter(isSome) as T[];
+}
+
+/**
+ * Generates a list of numbers in the given range. The start is inclusive,
+ * the end is exclusive.
+ *
+ * @example
+ * ```ts
+ * range(0, 5); // [0, 1, 2, 3, 4]
+ * range(2, 8, 2); // [2, 4, 6]
+ * range(5, 0, -1); // [5, 4, 3, 2, 1]
+ * ```
+ */
+export function range(start: number, end: number, step: number = 1): number[] {
+  if (step === 0) throw new Error("range step must not be 0");
+  const result: number[] = [];
+  if (step > 0) {
+    for (let i = start; i < end; i += step) result.push(i);
+  } else {
+    for (let i = start; i > end; i += step) result.push(i);
+  }
+  return result;
+}
+
+/**
+ * Pairs up elements from two lists. Stops at the shorter list.
+ *
+ * @example
+ * ```ts
+ * zip([1, 2, 3], ["a", "b", "c"]); // [[1, "a"], [2, "b"], [3, "c"]]
+ * zip([1, 2, 3], ["a"]); // [[1, "a"]]
+ * ```
+ */
+export function zip<A, B>(a: A[], b: B[]): [A, B][] {
+  const length = Math.min(a.length, b.length);
+  const result: [A, B][] = [];
+  for (let i = 0; i < length; i++) result.push([a[i], b[i]]);
+  return result;
+}
+
+/**
+ * Returns the first `n` elements of a list. Does not mutate the input.
+ *
+ * @example
+ * ```ts
+ * take([1, 2, 3, 4], 2); // [1, 2]
+ * take([1, 2], 5); // [1, 2]
+ * take([1, 2, 3], 0); // []
+ * ```
+ */
+export function take<T>(list: T[], n: number): T[] {
+  return list.slice(0, Math.max(0, n));
+}
+
+/**
+ * Returns a list with the first `n` elements removed. Does not mutate the input.
+ *
+ * @example
+ * ```ts
+ * drop([1, 2, 3, 4], 2); // [3, 4]
+ * drop([1, 2], 5); // []
+ * ```
+ */
+export function drop<T>(list: T[], n: number): T[] {
+  return list.slice(Math.max(0, n));
+}
+
+/**
+ * Returns a new list with the elements at indices `i` and `j` swapped.
+ *
+ * @example
+ * ```ts
+ * swap([1, 2, 3, 4], 0, 3); // [4, 2, 3, 1]
+ * ```
+ */
+export function swap<T>(list: T[], i: number, j: number): T[] {
+  const copy = [...list];
+  [copy[i], copy[j]] = [copy[j], copy[i]];
+  return copy;
+}
+
+/**
+ * Returns a new list with an element moved from one index to another.
+ *
+ * @example
+ * ```ts
+ * move([1, 2, 3, 4], 0, 2); // [2, 3, 1, 4]
+ * ```
+ */
+export function move<T>(list: T[], from: number, to: number): T[] {
+  const copy = [...list];
+  const [item] = copy.splice(from, 1);
+  copy.splice(to, 0, item);
+  return copy;
+}

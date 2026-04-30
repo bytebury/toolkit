@@ -240,3 +240,23 @@ export function isInFuture(date: Date): boolean {
 export function isToday(date: Date): boolean {
   return !isInFuture(date) && !isInPast(date);
 }
+
+/**
+ * Determines if the date is yesterday.
+ *
+ * @remarks
+ * this is date specific. Time of day is ignored.
+ */
+export function isYesterday(date: Date): boolean {
+  return date >= yesterday() && date < today();
+}
+
+/**
+ * Determines if the date is tomorrow.
+ *
+ * @remarks
+ * this is date specific. Time of day is ignored.
+ */
+export function isTomorrow(date: Date): boolean {
+  return date >= tomorrow() && date < addDays(tomorrow(), 1);
+}
