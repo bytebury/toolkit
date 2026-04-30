@@ -17,6 +17,7 @@ import {
   includesAny,
   inRange,
   intersection,
+  isArray,
   isEmpty,
   isEqual,
   isEqualIgnoreCase,
@@ -449,4 +450,25 @@ Deno.test("splice replaces elements", () => {
 
 Deno.test("splice with no deleteCount removes from start to end", () => {
   assertEquals(splice([1, 2, 3, 4], 2), [1, 2]);
+});
+
+Deno.test("isArray", () => {
+  assert(isArray([]));
+  assert(isArray([1, 2, 3]));
+  assert(isArray(new Array(5)));
+  assertFalse(isArray("hello"));
+  assertFalse(isArray(null));
+  assertFalse(isArray(undefined));
+  assertFalse(isArray({}));
+  assertFalse(isArray(42));
+  assertFalse(isArray(new Set([1, 2])));
+});
+
+Deno.test("isArray narrows the type", () => {
+  const value: unknown = [1, 2, 3];
+  if (isArray(value)) {
+    assertEquals(value.length, 3);
+  } else {
+    throw new Error("expected isArray to narrow");
+  }
 });
