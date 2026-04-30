@@ -579,21 +579,21 @@ export function sort(
  *
  * @example
  * ```ts
- * removeRange("hello", 1, 3); // "ho"
- * removeRange([1, 2, 3, 4, 5], 1, 2); // [1, 4, 5]
+ * remove("hello", 1, 3); // "ho"
+ * remove([1, 2, 3, 4, 5], 1, 2); // [1, 4, 5]
  * ```
  */
-export function removeRange(
+export function remove(
   thing: string,
   index: number,
   count: number,
 ): string;
-export function removeRange<T>(
+export function remove<T>(
   thing: T[],
   index: number,
   count: number,
 ): T[];
-export function removeRange(
+export function remove(
   thing: string | unknown[],
   index: number,
   count: number,
@@ -610,21 +610,21 @@ export function removeRange(
  *
  * @example
  * ```ts
- * insertRange("abc", 1, ["X", "Y"]); // "aXYbc"
- * insertRange([1, 2, 3], 1, [4, 5]); // [1, 4, 5, 2, 3]
+ * insert("abc", 1, ["X", "Y"]); // "aXYbc"
+ * insert([1, 2, 3], 1, [4, 5]); // [1, 4, 5, 2, 3]
  * ```
  */
-export function insertRange(
+export function insert(
   thing: string,
   index: number,
   items: string[],
 ): string;
-export function insertRange<T>(
+export function insert<T>(
   thing: T[],
   index: number,
   items: T[],
 ): T[];
-export function insertRange(
+export function insert(
   thing: string | unknown[],
   index: number,
   items: unknown[],
