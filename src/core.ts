@@ -547,3 +547,27 @@ export function includesAny(
   const terms = Array.isArray(searchFor) ? searchFor : [searchFor];
   return terms.some((term) => searchIn.includes(term));
 }
+
+/**
+ * Returns a new array with elements removed and/or inserted, without mutating the original.
+ *
+ * @param list - The source array
+ * @param start - Index at which to start changing the array
+ * @param deleteCount - Number of elements to remove
+ * @param items - Elements to insert at the start index
+ * @returns A new array with the modifications applied
+ *
+ * @example
+ * ```ts
+ * splice([1, 2, 3, 4], 1, 2) // [1, 4]
+ * splice([1, 2, 3], 1, 0, 9, 10) // [1, 9, 10, 2, 3]
+ * ```
+ */
+export function splice<T>(
+  list: T[],
+  start: number,
+  deleteCount?: number,
+  ...items: T[]
+): T[] {
+  return list.toSpliced(start, deleteCount ?? list.length, ...items);
+}
