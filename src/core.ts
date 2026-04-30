@@ -363,6 +363,25 @@ export function isNone(thing: unknown): boolean {
 }
 
 /**
+ * Determines if the given value is an array. Acts as a type guard, narrowing
+ * the value to `unknown[]` in branches where the result is `true`.
+ *
+ * @remarks alias for `Array.isArray`.
+ *
+ * @example
+ * ```ts
+ * isArray([]); // true
+ * isArray([1, 2, 3]); // true
+ * isArray("hello"); // false
+ * isArray(null); // false
+ * isArray({}); // false
+ * ```
+ */
+export function isArray(thing: unknown): thing is unknown[] {
+  return Array.isArray(thing);
+}
+
+/**
  * Returns a function that does nothing.
  *
  * @example
