@@ -561,6 +561,7 @@ export function includesAny(
  * ```ts
  * splice([1, 2, 3, 4], 1, 2) // [1, 4]
  * splice([1, 2, 3], 1, 0, [9, 10]) // [1, 9, 10, 2, 3]
+ * splice([1, 2, 3, 4], 2) // [1, 2] — omitting deleteCount removes from start to end
  * ```
  */
 export function splice<T>(
