@@ -30,6 +30,7 @@ import {
   random,
   reverse,
   sample,
+  splice,
   stringify, todo,
   truthy,
   union,
@@ -429,4 +430,23 @@ Deno.test("includesAny returns false for null or undefined inputs", () => {
   assertFalse(includesAny(undefined, undefined));
   assertFalse(includesAny(null, ["hello"]));
   assertFalse(includesAny(["a", "b"], null));
+});
+
+Deno.test("splice removes elements without mutation", () => {
+  const original = [1, 2, 3, 4];
+  const result = splice(original, 1, 2);
+  assertEquals(result, [1, 4]);
+  assertEquals(original, [1, 2, 3, 4]);
+});
+
+Deno.test("splice inserts elements", () => {
+  assertEquals(splice([1, 2, 3], 1, 0, [9, 10]), [1, 9, 10, 2, 3]);
+});
+
+Deno.test("splice replaces elements", () => {
+  assertEquals(splice([1, 2, 3, 4], 1, 2, [9]), [1, 9, 4]);
+});
+
+Deno.test("splice with no deleteCount removes from start to end", () => {
+  assertEquals(splice([1, 2, 3, 4], 2), [1, 2]);
 });
