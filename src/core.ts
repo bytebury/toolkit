@@ -286,22 +286,7 @@ export function distinct<T>(list: T[]): T[] {
  * ```
  */
 export function sample<T>(list: T[]): T | undefined {
-  return list[random(0, list.length)];
-}
-
-/**
- * Gives a random number in the given range. The first parameter is inclusive
- * and the second one is exclusive. Therefore, it will work with lists out of
- * the box.
- *
- * @example
- * ```ts
- * rand(0, 10); // 0 -> 9
- * rand(3, 7); // 3 -> 6
- * ```
- */
-export function random(start: number, end: number): number {
-  return Math.floor(Math.random() * (end - start)) + start;
+  return list[Math.floor(Math.random() * list.length)];
 }
 
 /**
@@ -409,21 +394,6 @@ export function noop(): void {
 // deno-lint-ignore no-unused-vars -- intentional unused variable for demonstration
 export function todo(message?: string): void {
   noop();
-}
-
-/**
- * Returns true if the given value is within the given range.
- *
- * @example
- * ```ts
- * inRange(5, 0, 10); // true
- * inRange(0, 0, 10); // true
- * inRange(10, 0, 10); // true
- * inRange(11, 0, 10); // false
- * ```
- */
-export function inRange(value: number, min: number, max: number): boolean {
-  return value >= min && value <= max;
 }
 
 /**
