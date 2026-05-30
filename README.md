@@ -30,8 +30,10 @@ deno add jsr:@bytebury/toolkit
 ## Sample Usage
 
 ```ts
+import { average, isNoneOrWhitespace, title } from "@bytebury/toolkit";
+
 function sayHelloTo(name: string): void {
-  if ((isWhitespace(name)) {
+  if (isNoneOrWhitespace(name)) {
     console.log("Hello, Guest!");
   } else {
     console.log(`Hello, ${title(name)}!`);
@@ -47,3 +49,10 @@ function getAverageAge(): number {
   return average(people.map(({ age }) => age)); // 5
 }
 ```
+
+## Naming Notes
+
+Helpers such as `isWhitespace` and `isEmpty` are already `null` and `undefined`
+safe. The more explicit `isNoneOrWhitespace`, `isNoneOrEmpty`,
+`isNotNoneOrWhitespace`, and `isNotNoneOrEmpty` aliases are available when that
+behavior should be visible at the call site.

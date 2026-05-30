@@ -1,6 +1,8 @@
 import { assert } from "@std/assert";
 import {
   camel,
+  isNoneOrWhitespace,
+  isNotNoneOrWhitespace,
   isNotWhitespace,
   isWhitespace,
   kebab,
@@ -27,11 +29,31 @@ Deno.test("isWhitespace", () => {
   assert(!isWhitespace("Hello"));
 });
 
+Deno.test("isNoneOrWhitespace", () => {
+  assert(isNoneOrWhitespace(" "));
+  assert(isNoneOrWhitespace(null as unknown as string));
+  assert(isNoneOrWhitespace(undefined as unknown as string));
+  assert(isNoneOrWhitespace(""));
+  assert(isNoneOrWhitespace("\t"));
+  assert(isNoneOrWhitespace("\n"));
+  assert(!isNoneOrWhitespace("Hello"));
+});
+
 Deno.test("isNotWhitespace", () => {
   assert(!isNotWhitespace(" "));
   assert(!isNotWhitespace("\t"));
   assert(!isNotWhitespace("\n"));
   assert(isNotWhitespace("Hello"));
+});
+
+Deno.test("isNotNoneOrWhitespace", () => {
+  assert(!isNotNoneOrWhitespace(" "));
+  assert(!isNotNoneOrWhitespace(null as unknown as string));
+  assert(!isNotNoneOrWhitespace(undefined as unknown as string));
+  assert(!isNotNoneOrWhitespace(""));
+  assert(!isNotNoneOrWhitespace("\t"));
+  assert(!isNotNoneOrWhitespace("\n"));
+  assert(isNotNoneOrWhitespace("Hello"));
 });
 
 Deno.test("trim", () => {

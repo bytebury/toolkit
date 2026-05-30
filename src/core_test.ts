@@ -24,9 +24,11 @@ import {
   isEqual,
   isEqualIgnoreCase,
   isNone,
+  isNoneOrEmpty,
   isNotEmpty,
   isNotEqual,
   isNotEqualIgnoreCase,
+  isNotNoneOrEmpty,
   isSome,
   last,
   move,
@@ -169,7 +171,10 @@ Deno.test("reverse strings", () => {
 });
 
 Deno.test("reverse arrays", () => {
-  assertEquals(reverse([1, 2, 3]), [3, 2, 1]);
+  const list = [1, 2, 3];
+
+  assertEquals(reverse(list), [3, 2, 1]);
+  assertEquals(list, [1, 2, 3]);
 });
 
 Deno.test("reverse sets", () => {
@@ -205,6 +210,19 @@ Deno.test("isEmpty Set and Map", () => {
   assertFalse(isEmpty(new Map([["key", "value"]])));
 });
 
+Deno.test("isNoneOrEmpty behavior", () => {
+  assert(isNoneOrEmpty(null));
+  assert(isNoneOrEmpty(undefined));
+  assert(isNoneOrEmpty(""));
+  assert(isNoneOrEmpty([]));
+  assert(isNoneOrEmpty({}));
+  assert(isNoneOrEmpty(new Set()));
+  assert(isNoneOrEmpty(new Map()));
+  assertFalse(isNoneOrEmpty(" "));
+  assertFalse(isNoneOrEmpty([1]));
+  assertFalse(isNoneOrEmpty({ foo: "bar" }));
+});
+
 Deno.test("isNotEmpty behavior", () => {
   assertFalse(isNotEmpty(null));
   assertFalse(isNotEmpty(""));
@@ -215,6 +233,19 @@ Deno.test("isNotEmpty behavior", () => {
   assertFalse(isNotEmpty({}));
   assert(isNotEmpty(new Set([1])));
   assertFalse(isNotEmpty(new Set()));
+});
+
+Deno.test("isNotNoneOrEmpty behavior", () => {
+  assertFalse(isNotNoneOrEmpty(null));
+  assertFalse(isNotNoneOrEmpty(undefined));
+  assertFalse(isNotNoneOrEmpty(""));
+  assertFalse(isNotNoneOrEmpty([]));
+  assertFalse(isNotNoneOrEmpty({}));
+  assertFalse(isNotNoneOrEmpty(new Set()));
+  assertFalse(isNotNoneOrEmpty(new Map()));
+  assert(isNotNoneOrEmpty(" "));
+  assert(isNotNoneOrEmpty([1]));
+  assert(isNotNoneOrEmpty({ foo: "bar" }));
 });
 
 Deno.test("unique produces distinct values", () => {
@@ -305,6 +336,15 @@ Deno.test("isSome", () => {
   assert(isSome([]));
 });
 
+Deno.test("isSome narrows the type", () => {
+  const value: string | null | undefined = "hello";
+
+  if (isSome(value)) {
+    const text: string = value;
+    assertStrictEquals(text.toUpperCase(), "HELLO");
+  }
+});
+
 Deno.test("isNone", () => {
   assert(isNone(null));
   assert(isNone(undefined));
@@ -314,6 +354,15 @@ Deno.test("isNone", () => {
   assertFalse(isNone(""));
   assertFalse(isNone("Something"));
   assertFalse(isNone([]));
+});
+
+Deno.test("isNone narrows the type", () => {
+  const value: string | null | undefined = null;
+
+  if (isNone(value)) {
+    const none: null | undefined = value;
+    assertStrictEquals(none, null);
+  }
 });
 
 Deno.test("noop behavior", () => {
