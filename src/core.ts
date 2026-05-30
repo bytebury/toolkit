@@ -189,7 +189,7 @@ export function reverse<T>(
 ): string | Set<T> | T[] {
   if (typeof thing === "string") return thing.split("").reverse().join("");
   if (thing instanceof Set) return new Set([...thing].reverse());
-  return thing.reverse();
+  return [...thing].reverse();
 }
 
 /**
@@ -221,6 +221,13 @@ export function isEmpty(thing: unknown): boolean {
 }
 
 /**
+ * Alias for `isEmpty`.
+ */
+export function isNoneOrEmpty(thing: unknown): boolean {
+  return isEmpty(thing);
+}
+
+/**
  * Determines if the given thing is not empty.
  *
  * @remarks this is the inverse of `isEmpty`.
@@ -238,6 +245,13 @@ export function isEmpty(thing: unknown): boolean {
  */
 export function isNotEmpty(thing: unknown): boolean {
   return !isEmpty(thing);
+}
+
+/**
+ * Alias for `isNotEmpty`.
+ */
+export function isNotNoneOrEmpty(thing: unknown): boolean {
+  return isNotEmpty(thing);
 }
 
 /**
@@ -328,7 +342,7 @@ export function falsy(thing: unknown): boolean {
  * isSome({}); // true
  * ```
  */
-export function isSome(thing: unknown): boolean {
+export function isSome<T>(thing: T | null | undefined): thing is T {
   return !isNone(thing);
 }
 
@@ -343,7 +357,7 @@ export function isSome(thing: unknown): boolean {
  * isNone(0); // false
  * ```
  */
-export function isNone(thing: unknown): boolean {
+export function isNone(thing: unknown): thing is null | undefined {
   return thing === null || thing === undefined;
 }
 

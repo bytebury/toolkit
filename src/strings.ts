@@ -19,6 +19,13 @@ export function isWhitespace(text: string): boolean {
 }
 
 /**
+ * Alias for `isWhitespace`.
+ */
+export function isNoneOrWhitespace(text: string): boolean {
+  return isWhitespace(text);
+}
+
+/**
  * Determines if the given text contains any non-whitespace characters.
  *
  * @remarks
@@ -33,6 +40,13 @@ export function isWhitespace(text: string): boolean {
  */
 export function isNotWhitespace(text: string): boolean {
   return !isWhitespace(text);
+}
+
+/**
+ * Alias for `isNotWhitespace`.
+ */
+export function isNotNoneOrWhitespace(text: string): boolean {
+  return isNotWhitespace(text);
 }
 
 /**
