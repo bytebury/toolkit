@@ -16,6 +16,7 @@ import {
   falsy,
   first,
   groupBy,
+  hasOnly,
   includes,
   includesAny,
   intersection,
@@ -438,6 +439,19 @@ Deno.test("includesAny list in list", () => {
   assert(includesAny(["a", "b", "c"], ["a", "d"]));
   assertFalse(includesAny(["a", "b", "c"], ["d", "e"]));
   assertFalse(includesAny(["a", "b", "c"], []));
+});
+
+Deno.test("hasOnly returns true when a list contains only the specified values", () => {
+  assert(hasOnly([1, 2, 3], 1, 2, 3));
+  assert(hasOnly([2, 1], 1, 2));
+  assert(hasOnly([1, 1], 1));
+  assert(hasOnly([]));
+});
+
+Deno.test("hasOnly returns false when values are missing or additional", () => {
+  assertFalse(hasOnly([1], 1, 2));
+  assertFalse(hasOnly([1, 2, 3], 1, 2));
+  assertFalse(hasOnly([1, 2]));
 });
 
 Deno.test("includes returns false for null or undefined inputs", () => {
