@@ -757,29 +757,26 @@ export function move<T>(list: T[], from: number, to: number): T[] {
 }
 
 /**
- * Checks whether a collection contains **exactly** the specified values.
+ * Checks whether a list contains only the specified values.
  *
- * The order of values does not matter, but the set of values must match
- * exactly. Duplicate values are ignored, since both the collection and the
- * expected values are compared as sets.
+ * The order of values does not matter, but the list must contain every
+ * specified value and must not contain any additional values. Duplicate values
+ * are ignored, since both the list and expected values are compared as sets.
  *
- * @template T The type of values in the collection.
- * @param collection The collection to compare.
- * @param values The expected values.
- * @returns `true` if the collection contains exactly the specified values;
- * otherwise, `false`.
+ * @template T The type of values in the list.
+ * @param list The list to compare.
+ * @param values The values the list must contain.
+ * @returns `true` if the list contains only the specified values; otherwise,
+ * `false`.
  *
  * @example
- * includesOnly([1], 1); // true
- * includesOnly([1], 1, 2); // false
- * includesOnly([2, 1], 1, 2); // true
- * includesOnly(new Set(["a", "b"]), "b", "a"); // true
+ * hasOnly([1, 2, 3], 1, 2, 3); // true
+ * hasOnly([1], 1, 2); // false
+ * hasOnly([2, 1], 1, 2); // true
+ * hasOnly([1, 1], 1); // true
  */
-export function includesOnly<T>(
-  collection: Iterable<T>,
-  ...values: T[]
-): boolean {
-  const actual = new Set(collection);
+export function hasOnly<T>(list: T[], ...values: T[]): boolean {
+  const actual = new Set(list);
   const expected = new Set(values);
 
   if (actual.size !== expected.size) {
