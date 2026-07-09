@@ -28,11 +28,10 @@ jobs:
       - name: Setup Node.js and npm
         uses: actions/setup-node@v4
         with:
-          node-version: 26
+          # Use the current LTS release for publishing; Node 26's bundled npm can
+          # fail to resolve npm's optional sigstore dependency during provenance setup.
+          node-version: 24
           registry-url: https://registry.npmjs.org/
-
-      - name: Update npm
-        run: npm install -g npm@latest
 
       - name: Publish to NPM
         run: cd npm && npm publish --access public
