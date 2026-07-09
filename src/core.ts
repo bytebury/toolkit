@@ -755,3 +755,42 @@ export function move<T>(list: T[], from: number, to: number): T[] {
   copy.splice(to, 0, item);
   return copy;
 }
+
+/**
+ * Checks whether a collection contains **exactly** the specified values.
+ *
+ * The order of values does not matter, but the set of values must match
+ * exactly. Duplicate values are ignored, since both the collection and the
+ * expected values are compared as sets.
+ *
+ * @template T The type of values in the collection.
+ * @param collection The collection to compare.
+ * @param values The expected values.
+ * @returns `true` if the collection contains exactly the specified values;
+ * otherwise, `false`.
+ *
+ * @example
+ * includesOnly([1], 1); // true
+ * includesOnly([1], 1, 2); // false
+ * includesOnly([2, 1], 1, 2); // true
+ * includesOnly(new Set(["a", "b"]), "b", "a"); // true
+ */
+export function includesOnly<T>(
+  collection: Iterable<T>,
+  ...values: T[]
+): boolean {
+  const actual = new Set(collection);
+  const expected = new Set(values);
+
+  if (actual.size !== expected.size) {
+    return false;
+  }
+
+  for (const value of actual) {
+    if (!expected.has(value)) {
+      return false;
+    }
+  }
+
+  return true;
+}
