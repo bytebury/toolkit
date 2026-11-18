@@ -100,15 +100,30 @@ export function subtractYears(date: Date, years: number): Date {
 }
 
 /**
- * Calculates the days between two dates.
+ * Calculates the number of full days between two dates. The order of the
+ * arguments does not matter.
+ *
+ * @remarks
+ * Days are counted on the local calendar, so two consecutive midnights are
+ * always 1 day apart, even across a daylight saving time change.
+ *
+ * @example
+ * ```ts
+ * daysBetween(new Date("2026-01-01T00:00"), new Date("2026-01-02T12:00")); // 1
+ * daysBetween(new Date("2026-01-02T12:00"), new Date("2026-01-01T00:00")); // 1
+ * ```
  */
 export function daysBetween(start: Date, end: Date): number {
-  return Math.abs(
-    Math.floor(
-      (new Date(end).getTime() - new Date(start).getTime()) /
-        Duration.days(1 as Days).toMilliseconds(),
-    ),
+  const [earlier, later] = inOrder(start, end);
+  // Comparing calendar dates in UTC keeps every day exactly 24 hours long.
+  const calendarDays = Math.round(
+    (Date.UTC(later.getFullYear(), later.getMonth(), later.getDate()) -
+      Date.UTC(earlier.getFullYear(), earlier.getMonth(), earlier.getDate())) /
+      Duration.days(1 as Days).toMilliseconds(),
   );
+  // The last day only counts once the time of day has been reached.
+  const hasTimePassed = timeOfDay(later) >= timeOfDay(earlier);
+  return hasTimePassed || calendarDays === 0 ? calendarDays : calendarDays - 1;
 }
 
 /**
@@ -123,33 +138,44 @@ export function monthsBetween(start: Date, end: Date): number {
 }
 
 /**
- * Calculates the years between two dates.
+ * Calculates the number of full years between two dates. The order of the
+ * arguments does not matter.
  * The date must be equal or past for it to count as a full year.
  *
  * @example
  * ```ts
- * yearsBetween(new Date('2007-08-01', '2008-07-31')); // 0
- * yearsBetween(new Date('2007-08-01', '2008-08-01')); // 1
+ * yearsBetween(new Date("2007-08-01"), new Date("2008-07-31")); // 0
+ * yearsBetween(new Date("2007-08-01"), new Date("2008-08-01")); // 1
  * ```
  */
 export function yearsBetween(start: Date, end: Date): number {
-  const startDate = new Date(start);
-  const endDate = new Date(end);
-  const years = endDate.getFullYear() - startDate.getFullYear();
+  const [earlier, later] = inOrder(start, end);
+  const years = later.getFullYear() - earlier.getFullYear();
   if (years === 0) {
     return 0;
   }
-  // Check if the end date is before the start date
-  const hasDayPassed = endDate.getMonth() > startDate.getMonth() ||
-    (endDate.getMonth() === startDate.getMonth() &&
-      endDate.getDate() >= startDate.getDate());
-  if (!hasDayPassed) {
-    if (years < 0) {
-      return Math.abs(years);
-    }
-    return Math.abs(years - 1);
-  }
-  return Math.abs(years);
+  // The last year only counts once the anniversary has been reached.
+  const hasDayPassed = later.getMonth() > earlier.getMonth() ||
+    (later.getMonth() === earlier.getMonth() &&
+      later.getDate() >= earlier.getDate());
+  return hasDayPassed ? years : years - 1;
+}
+
+/**
+ * Returns copies of the two dates with the earlier one first.
+ */
+function inOrder(a: Date, b: Date): [Date, Date] {
+  const first = new Date(a);
+  const second = new Date(b);
+  return first <= second ? [first, second] : [second, first];
+}
+
+/**
+ * The milliseconds that have passed on the local clock since midnight.
+ */
+function timeOfDay(date: Date): number {
+  return ((date.getHours() * 60 + date.getMinutes()) * 60 +
+        date.getSeconds()) * 1000 + date.getMilliseconds();
 }
 
 /**

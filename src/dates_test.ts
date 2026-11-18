@@ -110,6 +110,39 @@ Deno.test("yearsBetween calculates full-year differences", () => {
   assertEquals(yearsBetween(start, end2), 1);
 });
 
+Deno.test("yearsBetween does not depend on argument order", () => {
+  const start = new Date(2020, 5, 1, 12);
+  const end = new Date(2021, 4, 1, 12);
+  assertEquals(yearsBetween(start, end), 0);
+  assertEquals(yearsBetween(end, start), 0);
+
+  const anniversary = new Date(2022, 5, 1, 12);
+  assertEquals(yearsBetween(start, anniversary), 2);
+  assertEquals(yearsBetween(anniversary, start), 2);
+});
+
+Deno.test("daysBetween counts full days regardless of argument order", () => {
+  const start = new Date(2026, 0, 1);
+  const end = new Date(2026, 0, 2, 12);
+  assertEquals(daysBetween(start, end), 1);
+  assertEquals(daysBetween(end, start), 1);
+
+  const almostTwoDays = new Date(2026, 0, 2, 23, 59);
+  assertEquals(daysBetween(new Date(2026, 0, 1, 12), almostTwoDays), 1);
+  assertEquals(daysBetween(new Date(2026, 0, 1, 12), new Date(2026, 0, 2)), 0);
+  assertEquals(daysBetween(start, start), 0);
+});
+
+Deno.test("daysBetween counts consecutive midnights as 1 day all year", () => {
+  // Covers every daylight saving time change in the local time zone.
+  for (let day = 0; day < 366; day++) {
+    const midnight = new Date(2026, 0, 1 + day);
+    const nextMidnight = new Date(2026, 0, 2 + day);
+    assertEquals(daysBetween(midnight, nextMidnight), 1);
+    assertEquals(daysBetween(nextMidnight, midnight), 1);
+  }
+});
+
 Deno.test("weekday checks: isSunday → isSaturday", () => {
   const base = new Date(2025, 9, 5); // Sunday Oct 5 2025
 
